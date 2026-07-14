@@ -14,7 +14,7 @@ export default function Home() {
 
       <section className="hero">
         <Image
-          src="/images/zaniar-ahmad.jpg"
+          src="/images/zan.jpg"
           alt="Imam Zaniar Ahmad smiling, wearing a black thobe"
           width={200}
           height={200}
