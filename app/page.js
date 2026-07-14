@@ -1,52 +1,97 @@
+import Image from 'next/image';
+
 export default function Home() {
   return (
     <>
       <nav className="nav">
-        <div className="nav-logo">My Site</div>
+        <div className="nav-logo">Imam Zaniar Ahmad</div>
         <div className="nav-links">
-          <a href="#features">Features</a>
-          <a href="#footer">Contact</a>
+          <a href="#lectures">Lectures</a>
+          <a href="#weddings">Weddings</a>
+          <a href="#questions">Questions</a>
         </div>
       </nav>
 
       <section className="hero">
-        <h1>Build something great.</h1>
+        <Image
+          src="/images/zaniar-ahmad.jpg"
+          alt="Imam Zaniar Ahmad smiling, wearing a black thobe"
+          width={200}
+          height={200}
+          className="hero-photo"
+          priority
+        />
+        <h1>Imam Zaniar Ahmad</h1>
         <p>
-          A clean, simple starting point built with Next.js. Edit
-          app/page.js to make it your own.
+          Sharing Islamic knowledge, officiating weddings, and answering
+          your questions with clarity and compassion.
         </p>
         <div className="button-group">
-          <a className="btn btn-primary" href="#features">
-            Get Started
+          <a className="btn btn-primary" href="#lectures">
+            Watch Lectures
           </a>
-          <a
-            className="btn btn-secondary"
-            href="https://nextjs.org/docs"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Read the Docs
+          <a className="btn btn-secondary" href="#questions">
+            Ask a Question
           </a>
         </div>
       </section>
 
-      <section className="features" id="features">
+      <section className="content-section" id="lectures">
+        <h2>Islamic Lectures</h2>
+        <p>
+          Explore lectures on Islamic theology, daily practice, and
+          contemporary issues facing Muslims today. New lectures are added
+          regularly, covering topics from Quranic reflection to practical
+          guidance for modern life.
+        </p>
         <div className="feature-card">
-          <h3>Fast</h3>
-          <p>Powered by Next.js for quick page loads and smooth navigation.</p>
+          <h3>Recent Topics</h3>
+          <p>
+            Faith &amp; resilience, raising Muslim children in the West,
+            the etiquette of seeking knowledge, and more.
+          </p>
         </div>
+      </section>
+
+      <section className="content-section alt-bg" id="weddings">
+        <h2>Wedding (Nikah) Officiating</h2>
+        <p>
+          Imam Zaniar Ahmad officiates Islamic wedding ceremonies (nikah)
+          for couples, providing guidance through the process and a
+          meaningful, tradition-rooted ceremony for your special day.
+        </p>
         <div className="feature-card">
-          <h3>Simple</h3>
-          <p>A minimal setup with no extra dependencies to get in your way.</p>
+          <h3>What's Included</h3>
+          <p>
+            Pre-marital counseling, ceremony officiating, and marriage
+            contract (aqd) guidance tailored to your family's traditions.
+          </p>
         </div>
+        <a className="btn btn-primary" href="#questions">
+          Inquire About Booking
+        </a>
+      </section>
+
+      <section className="content-section" id="questions">
+        <h2>Ask a Question</h2>
+        <p>
+          Have a question about Islam, worship, or daily practice? Reach
+          out directly and Imam Zaniar Ahmad will respond personally.
+        </p>
         <div className="feature-card">
-          <h3>Customizable</h3>
-          <p>Easy to edit and extend as your project grows.</p>
+          <h3>Common Topics</h3>
+          <p>
+            Prayer, fasting, family matters, and general guidance on
+            living an Islamic life in a modern context.
+          </p>
         </div>
+        <a className="btn btn-primary" href="mailto:youremail@example.com">
+          Send a Question
+        </a>
       </section>
 
       <footer className="footer" id="footer">
-        <p>Made with Next.js &middot; {new Date().getFullYear()}</p>
+        <p>Imam Zaniar Ahmad &middot; {new Date().getFullYear()}</p>
       </footer>
     </>
   );
