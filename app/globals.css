@@ -89,6 +89,11 @@ a {
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
+.btn-small {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.85rem;
+}
+
 .btn-primary {
   background: #1a1a1a;
   color: #ffffff;
@@ -146,6 +151,14 @@ a {
 .feature-card p {
   color: #666;
   font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .footer {
