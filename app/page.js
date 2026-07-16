@@ -14,7 +14,7 @@ export default function Home() {
       </nav>
 
       <section className="hero">
-        <Image src="/images/zaniar-ahmad.jpg" alt="Imam Zaniar Ahmad smiling, wearing a black thobe" width={200} height={200} className="hero-photo" priority />
+        <Image src="/images/zan.jpg" alt="Imam Zaniar Ahmad smiling, wearing a black thobe" width={200} height={200} className="hero-photo" priority />
         <h1>Imam Zaniar Ahmad</h1>
         <p>Officiating weddings, delivering lectures, and answering your questions about Islam with clarity and compassion.</p>
         <div className="button-group">
