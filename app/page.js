@@ -14,7 +14,11 @@ export default function Home() {
       </nav>
 
       <section className="hero">
+<<<<<<< HEAD
         <Image src="/images/zan.jpg" alt="Imam Zaniar Ahmad smiling, wearing a black thobe" width={200} height={200} className="hero-photo" priority />
+=======
+        <Image src="/images/zaniar-ahmad.jpg" alt="Imam Zaniar Ahmad smiling, wearing a black thobe" width={200} height={200} className="hero-photo" priority />
+>>>>>>> ea6327a (text)
         <h1>Imam Zaniar Ahmad</h1>
         <p>Officiating weddings, delivering lectures, and answering your questions about Islam with clarity and compassion.</p>
         <div className="button-group">
@@ -26,17 +30,29 @@ export default function Home() {
       <section className="content-section" id="bio">
         <h2>About Imam Zaniar Ahmad</h2>
         <p>Imam Zaniar Ahmad is dedicated to serving the Muslim community through education, ceremony, and guidance. Beyond his work as an imam, he is involved with several projects supporting the community:</p>
+<<<<<<< HEAD
+=======
+
+>>>>>>> ea6327a (text)
         <div className="project-grid">
           <div className="feature-card">
             <h3>AutoAjr.com</h3>
             <p>Learn more about this project and how it supports the community.</p>
             <a className="btn btn-secondary btn-small" href="https://autoajr.com" target="_blank" rel="noreferrer">Learn More</a>
           </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> ea6327a (text)
           <div className="feature-card">
             <h3>MeezanApp.com</h3>
             <p>Learn more about this project and how it supports the community.</p>
             <a className="btn btn-secondary btn-small" href="https://meezanapp.com" target="_blank" rel="noreferrer">Learn More</a>
           </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> ea6327a (text)
           <div className="feature-card">
             <h3>Zakah.com</h3>
             <p>Learn more about this project and how it supports the community.</p>
@@ -50,7 +66,11 @@ export default function Home() {
         <p>Imam Zaniar Ahmad officiates Islamic wedding ceremonies (nikah) for couples, providing guidance through the process and a meaningful, tradition-rooted ceremony for your special day.</p>
         <div className="feature-card">
           <h3>What is Included</h3>
+<<<<<<< HEAD
           <p>Pre-marital counseling, ceremony officiating, and marriage contract (aqd) guidance tailored to your familys traditions.</p>
+=======
+          <p>Pre-marital counseling, ceremony officiating, and marriage contract (aqd) guidance tailored to your family's traditions.</p>
+>>>>>>> ea6327a (text)
         </div>
         <a className="btn btn-primary" href="mailto:youremail@example.com?subject=Wedding Inquiry">Request a Consultation</a>
       </section>

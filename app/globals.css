@@ -12,7 +12,7 @@ html, body {
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   color: #1a1a1a;
-  background: #ffffff;
+  background: #f2fbf1;
   line-height: 1.6;
 }
 
@@ -115,7 +115,7 @@ a {
 }
 
 .content-section.alt-bg {
-  background: #fafafa;
+  background: #e7f6e6;
   max-width: 100%;
 }
 
