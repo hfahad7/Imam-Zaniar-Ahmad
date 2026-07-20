@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Imam Zaniar Ahmad website preview">
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#223528"/>
+      <stop offset="55%" stop-color="#49624f"/>
+      <stop offset="100%" stop-color="#ae8d3a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1040" cy="120" r="140" fill="#ffffff" fill-opacity="0.08"/>
+  <circle cx="1020" cy="515" r="160" fill="#ffffff" fill-opacity="0.06"/>
+  <text x="70" y="95" fill="#f6f1e6" font-family="Arial, sans-serif" font-size="26" letter-spacing="5">ONTARIO MARRIAGE OFFICIANT AND SPEAKER</text>
+  <text x="70" y="220" fill="#ffffff" font-family="Georgia, serif" font-size="88" font-weight="700">Imam Zaniar Ahmad</text>
+  <text x="70" y="295" fill="#f8f4ea" font-family="Arial, sans-serif" font-size="38">Nikkah, Nikah, lectures, khutbahs, projects, and booking support.</text>
+  <text x="70" y="500" fill="#ffffff" font-family="Arial, sans-serif" font-size="30">Call or text (289) 768-5151</text>
+  <text x="70" y="550" fill="#ffffff" font-family="Arial, sans-serif" font-size="30">@zanahmad</text>
+  <rect x="860" y="340" width="270" height="190" rx="28" fill="#ffffff" fill-opacity="0.14" stroke="#ffffff" stroke-opacity="0.22"/>
+  <text x="995" y="410" text-anchor="middle" fill="#ffffff" font-family="Georgia, serif" font-size="62" font-weight="700">IA</text>
+  <text x="995" y="462" text-anchor="middle" fill="#f6f1e6" font-family="Arial, sans-serif" font-size="22">Imam Zaniar Ahmad</text>
+</svg>
