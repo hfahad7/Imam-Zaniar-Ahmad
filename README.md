@@ -9,6 +9,8 @@ This repository contains the production website for Imam Zaniar Ahmad.
 - JavaScript
 - Custom responsive CSS
 - Server-side contact form handling
+- Responsive image delivery through `next/image`
+- Optional Google Analytics, Search Console, and Bing verification
 
 ## Local development
 
@@ -49,6 +51,17 @@ Update `lib/site-content.js` for:
 - Guide details
 - Contact links
 
+Project logos and photography are stored in `public/images`. Use descriptive
+filenames, keep the original aspect ratio, and update the corresponding path in
+`lib/site-content.js` when replacing an image.
+
+## Publishing a blog post
+
+Add an approved entry to the `blogPosts` array in `lib/site-content.js`. Each
+entry needs a unique slug, title, publication date, excerpt, and reviewed
+sections. The blog index, article route, metadata, and sitemap are generated
+from that centralized content.
+
 ## Contact form setup
 
 The contact form posts to `app/api/contact/route.js`.
@@ -62,6 +75,9 @@ Required environment variables for production:
 - `TURNSTILE_SECRET_KEY`
 
 The route also supports a local development fallback when those credentials are missing.
+Production submissions intentionally fail with a clear message until email and
+Turnstile credentials are configured. The form includes server validation,
+rate limiting, a honeypot, a timing check, and explicit inquiry consent.
 
 ## Google Reviews setup
 
@@ -81,6 +97,9 @@ The app includes:
 - `robots.txt` and `sitemap.xml`
 - Breadcrumb JSON-LD on the service and guide pages
 - A Person JSON-LD profile in the root layout
+- Preview-deployment blocking in `robots.txt`
+- A permanent `/nikkah-weddings` spelling redirect
+- Optional verification metadata from environment variables
 
 See `SEO_SETUP.md` for the next configuration steps.
 
@@ -93,8 +112,21 @@ npm run lint
 npm run build
 ```
 
+After deployment, also test every navigation link, the mobile menu, the contact
+form with real credentials, `/robots.txt`, `/sitemap.xml`, and the
+`/nikkah-weddings` redirect. Run Lighthouse on mobile and desktop against the
+production URL.
+
 ## Vercel deployment
 
 Push the repository to GitHub, connect the project in Vercel, and deploy the main branch.
 
 Set the production environment variables in Vercel before enabling the contact form or review integrations.
+
+## Image sources
+
+- Imam Zaniar Ahmad photographs were supplied directly by the website owner.
+- Meezan, Zakah.com, and AutoAjr marks were obtained from each project's
+  official website for identification within the project showcase.
+- The supplied file labelled as a ChatGPT-generated image is intentionally not
+  used, in keeping with the site&apos;s real-photography requirement.

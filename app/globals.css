@@ -469,6 +469,7 @@ li + li {
 
 .hero-photo {
   width: 100%;
+  height: auto;
   aspect-ratio: 0.82;
   border-radius: 50% 50% 22px 22px;
   object-fit: cover;
@@ -715,7 +716,6 @@ li + li {
   color: var(--forest);
 }
 
-.project-grid,
 .card-grid,
 .review-grid,
 .guide-grid,
@@ -725,10 +725,6 @@ li + li {
 .form-grid {
   display: grid;
   gap: 1.25rem;
-}
-
-.project-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .card-grid,
@@ -743,7 +739,6 @@ li + li {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.project-card,
 .card,
 .review-card,
 .guide-card,
@@ -758,27 +753,122 @@ li + li {
   background: rgba(255, 253, 248, 0.68);
 }
 
-.project-card {
-  display: flex;
-  flex-direction: column;
-  min-height: 430px;
-  padding: 2.3rem;
-  background: var(--paper);
-  box-shadow: 0 16px 50px rgba(21, 56, 45, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.section-heading__aside {
+  display: grid;
+  justify-items: start;
+  gap: 1.4rem;
 }
 
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-soft);
+.section--projects-featured {
+  padding-top: clamp(6rem, 10vw, 10rem);
 }
 
-.project-card__topline {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-bottom: 1.6rem;
+.project-showcase {
+  display: grid;
+  border-top: 1px solid var(--line);
+}
+
+.project-story {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(300px, 0.88fr);
+  align-items: center;
+  gap: clamp(3rem, 7vw, 7rem);
+  padding: clamp(4rem, 7vw, 7rem) 0;
   border-bottom: 1px solid var(--line);
+}
+
+.project-story:nth-child(even) .project-story__visual {
+  order: 2;
+}
+
+.project-story__visual {
+  position: relative;
+  min-width: 0;
+  padding: clamp(1.4rem, 4vw, 3.5rem);
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: var(--sage);
+}
+
+.project-story--meezan .project-story__visual {
+  background: #dcebef;
+}
+
+.project-story--zakah .project-story__visual {
+  background: #e3e8df;
+}
+
+.project-story--autoajr .project-story__visual {
+  background: #d7e7dd;
+}
+
+.project-window {
+  overflow: hidden;
+  border: 1px solid rgba(22, 42, 34, 0.12);
+  border-radius: 18px;
+  background: var(--paper);
+  box-shadow: 0 28px 70px rgba(21, 56, 45, 0.14);
+}
+
+.project-window__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 42px;
+  padding: 0 1rem;
+  border-bottom: 1px solid var(--line);
+  background: rgba(243, 238, 226, 0.72);
+}
+
+.project-window__bar > span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sage-deep);
+}
+
+.project-window__bar p {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 0.64rem;
+  letter-spacing: 0.05em;
+}
+
+.project-window__canvas {
+  display: grid;
+  place-items: center;
+  min-height: 340px;
+  padding: clamp(2rem, 5vw, 4.5rem);
+  background:
+    linear-gradient(rgba(255, 253, 248, 0.94), rgba(255, 253, 248, 0.94)),
+    repeating-linear-gradient(45deg, var(--sage) 0 1px, transparent 1px 24px);
+}
+
+.project-window__canvas > span {
+  align-self: end;
+  margin-top: 3rem;
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.project-logo {
+  width: min(100%, 430px);
+  height: auto;
+  max-height: 150px;
+  object-fit: contain;
+}
+
+.project-story__copy {
+  max-width: 530px;
+}
+
+.project-story__meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
   color: var(--muted);
   font-size: 0.7rem;
   font-weight: 800;
@@ -786,27 +876,55 @@ li + li {
   text-transform: uppercase;
 }
 
-.project-card__topline span {
+.project-story__meta span {
   color: var(--brass);
 }
 
-.project-card h3 {
-  margin-top: 2.2rem;
-  font-size: clamp(2.2rem, 3vw, 3.2rem);
+.project-story h3 {
+  font-size: clamp(3rem, 5vw, 5.6rem);
 }
 
-.project-card > p {
-  margin-top: 1.25rem;
+.project-story__copy > p {
+  margin-top: 1.4rem;
   color: var(--muted);
-  font-size: 0.92rem;
 }
 
-.project-card > a {
-  margin-top: auto;
-  padding-top: 2rem;
-  color: var(--forest-light);
+.project-story__copy > a {
+  display: inline-flex;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  border-bottom: 1px solid currentColor;
+  color: var(--forest);
   font-size: 0.82rem;
   font-weight: 800;
+}
+
+.project-showcase--compact .project-story {
+  padding-block: clamp(3rem, 5vw, 5rem);
+}
+
+.project-showcase--compact .project-window__canvas {
+  min-height: 280px;
+}
+
+.purpose-lines {
+  display: grid;
+  border-top: 1px solid var(--line);
+}
+
+.purpose-lines p {
+  display: grid;
+  grid-template-columns: minmax(110px, 0.25fr) 1fr;
+  gap: 2rem;
+  padding: 1.8rem 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.purpose-lines span {
+  color: var(--forest);
+  font-family: var(--serif);
+  font-size: 1.2rem;
 }
 
 .section-link,
@@ -889,6 +1007,23 @@ li + li {
   text-align: center;
 }
 
+.error-page {
+  justify-items: start;
+  max-width: 860px;
+  padding-block: clamp(7rem, 14vw, 12rem);
+}
+
+.error-page h1 {
+  max-width: 12ch;
+  font-size: clamp(3.2rem, 7vw, 6.5rem);
+}
+
+.error-page p {
+  max-width: 620px;
+  margin: 1.5rem 0 2rem;
+  color: var(--muted);
+}
+
 .closing-cta h2 {
   max-width: 870px;
 }
@@ -923,6 +1058,82 @@ li + li {
 
 .page-hero .content-actions {
   margin-top: 0.7rem;
+}
+
+.page-hero--with-media {
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
+  align-items: center;
+  gap: clamp(3rem, 7vw, 7rem);
+  max-width: none;
+}
+
+.page-hero__copy {
+  display: grid;
+  justify-items: start;
+  gap: 1.5rem;
+}
+
+.page-hero__media,
+.ceremony-gallery figure {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--sage);
+  box-shadow: var(--shadow-soft);
+}
+
+.page-hero__media img,
+.ceremony-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-hero__media--portrait img {
+  aspect-ratio: 0.82;
+  object-position: center 28%;
+}
+
+.page-hero__media--landscape img {
+  aspect-ratio: 1.2;
+  object-position: center;
+}
+
+.page-hero__media figcaption,
+.ceremony-gallery figcaption {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid rgba(255, 253, 248, 0.42);
+  border-radius: 12px;
+  background: rgba(18, 45, 36, 0.84);
+  color: var(--paper);
+  font-size: 0.72rem;
+  line-height: 1.45;
+  backdrop-filter: blur(10px);
+}
+
+.ceremony-gallery {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+  grid-template-rows: repeat(2, minmax(280px, 1fr));
+  gap: 1rem;
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.ceremony-gallery__feature {
+  grid-row: 1 / 3;
+}
+
+.ceremony-gallery__feature img {
+  aspect-ratio: 0.95;
+}
+
+.ceremony-gallery > figure:not(.ceremony-gallery__feature) img {
+  aspect-ratio: 1;
 }
 
 .card h3,
@@ -1067,6 +1278,25 @@ li + li {
 .review-note,
 .small-copy {
   font-size: 0.82rem;
+}
+
+.consent-field {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 253, 248, 0.55);
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.consent-field input {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.18rem;
+  accent-color: var(--forest);
 }
 
 .error {
@@ -1229,10 +1459,20 @@ li + li {
 }
 
 .site-footer__fineprint {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
   padding: 1.5rem 0 2rem;
   border-top: 1px solid var(--line-light);
   color: rgba(255, 253, 248, 0.48);
   font-size: 0.72rem;
+}
+
+.site-footer__fineprint > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 @media (max-width: 1120px) {
@@ -1311,12 +1551,8 @@ li + li {
     justify-self: start;
   }
 
-  .project-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .project-card:last-child {
-    grid-column: 1 / -1;
+  .project-story {
+    gap: 3rem;
   }
 }
 
@@ -1406,7 +1642,6 @@ li + li {
     grid-column: auto;
   }
 
-  .project-grid,
   .card-grid,
   .review-grid,
   .guide-grid,
@@ -1415,16 +1650,32 @@ li + li {
   .contact-grid,
   .form-grid,
   .site-footer__inner,
-  .guide-feature {
+  .guide-feature,
+  .project-story,
+  .page-hero--with-media {
     grid-template-columns: 1fr;
   }
 
-  .project-card:last-child {
-    grid-column: auto;
+  .project-story:nth-child(even) .project-story__visual {
+    order: 0;
   }
 
-  .project-card {
-    min-height: 360px;
+  .project-story__copy {
+    max-width: 660px;
+  }
+
+  .ceremony-gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .ceremony-gallery__feature {
+    grid-row: auto;
+  }
+
+  .ceremony-gallery__feature img,
+  .ceremony-gallery > figure:not(.ceremony-gallery__feature) img {
+    aspect-ratio: 1.05;
   }
 
   .guide-feature__ornament {
@@ -1496,7 +1747,6 @@ li + li {
     font-size: 0.9rem;
   }
 
-  .project-card,
   .card,
   .review-card,
   .guide-card,
@@ -1515,6 +1765,21 @@ li + li {
 
   .closing-cta {
     padding-inline: 0.3rem;
+  }
+
+  .project-window__canvas {
+    min-height: 240px;
+    padding: 2rem 1.4rem;
+  }
+
+  .purpose-lines p {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .site-footer__fineprint {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
 

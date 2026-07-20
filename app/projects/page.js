@@ -1,5 +1,5 @@
+import ProjectShowcase from '../components/project-showcase';
 import { buildMetadata } from '../../lib/metadata';
-import { siteContent } from '../../lib/site-content';
 
 export const metadata = buildMetadata({
   title: 'Projects and Community Initiatives',
@@ -21,69 +21,25 @@ export default function ProjectsPage() {
       </section>
 
       <section className="section">
-        <div className="project-grid">
-          {siteContent.projects.map((project, index) => (
-            <article key={project.name} className="project-card">
-              <div className="project-card__topline">
-                <span>0{index + 1}</span>
-                <p>{project.role}</p>
-              </div>
-              <h3>{project.name}</h3>
-              <p>{project.description}</p>
-              <a
-                href={project.href}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                Visit {project.name} <span aria-hidden="true">&nearr;</span>
-              </a>
-            </article>
-          ))}
-        </div>
+        <ProjectShowcase />
       </section>
 
-      <section className="section section--muted">
+      <section className="section project-purpose">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">Why these projects matter</span>
-            <h2>Practical ideas, built with purpose</h2>
+            <span className="eyebrow">A shared thread</span>
+            <h2>Practical ideas, built around service.</h2>
           </div>
           <p className="section-lead">
-            Each initiative responds to a real community need while making
-            trusted services easier to understand and access.
+            Each initiative addresses a different part of community life while
+            making useful support easier to understand and access.
           </p>
         </div>
 
-        <div className="card-grid">
-          <article className="card card--soft">
-            <h3>Meezan</h3>
-            <p>
-              Helps people find and book qualified Imams and Islamic service
-              providers for Nikah officiation, khutbahs, lectures, fundraising
-              events, and related community services.
-            </p>
-          </article>
-          <article className="card card--soft">
-            <h3>Zakah.com</h3>
-            <p>
-              Supports Muslims with scholar-reviewed Zakah calculation and
-              educational guidance across common wealth categories.
-            </p>
-          </article>
-          <article className="card card--soft">
-            <h3>AutoAjr</h3>
-            <p>
-              Helps Muslim charities and nonprofits with automated giving,
-              recurring donations, and digital fundraising campaigns.
-            </p>
-          </article>
-          <article className="card card--soft">
-            <h3>Shared purpose</h3>
-            <p>
-              Together, the projects support religious services, financial
-              education, and charitable giving across Muslim communities.
-            </p>
-          </article>
+        <div className="purpose-lines">
+          <p><span>Access</span> Connecting people with trusted religious services.</p>
+          <p><span>Clarity</span> Making important Islamic knowledge easier to use.</p>
+          <p><span>Generosity</span> Helping charitable giving happen with intention.</p>
         </div>
       </section>
     </div>

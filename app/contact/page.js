@@ -40,6 +40,9 @@ export default function ContactPage() {
               <a className="button button--ghost" href={siteContent.contact.smsHref}>
                 Text Imam Zaniar Ahmad
               </a>
+              <a className="button button--ghost" href={siteContent.contact.emailHref}>
+                Email Imam Zaniar Ahmad
+              </a>
             </div>
           </article>
 

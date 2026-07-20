@@ -3,33 +3,36 @@
 import Script from 'next/script';
 import { useEffect, useState } from 'react';
 
-const baseFields = {
-  fullName: '',
-  email: '',
-  phone: '',
-  serviceRequested: 'nikah',
-  preferredDate: '',
-  location: '',
-  format: 'in-person',
-  website: '',
-  startedAt: String(Date.now()),
-  turnstileToken: '',
-  message: '',
-  ceremonyDate: '',
-  ceremonyTime: '',
-  ceremonyLocation: '',
-  legalOfficiation: 'religious-only',
-  guests: '',
-  languages: '',
-  travelDetails: '',
-  organization: '',
-  eventType: '',
-  requestedTopic: '',
-  audience: '',
-  ageRange: '',
-  eventDuration: '',
-  additionalDetails: '',
-};
+function createInitialFields() {
+  return {
+    fullName: '',
+    email: '',
+    phone: '',
+    serviceRequested: 'nikah',
+    preferredDate: '',
+    location: '',
+    format: 'in-person',
+    website: '',
+    startedAt: String(Date.now()),
+    turnstileToken: '',
+    message: '',
+    consent: false,
+    ceremonyDate: '',
+    ceremonyTime: '',
+    ceremonyLocation: '',
+    legalOfficiation: 'religious-only',
+    guests: '',
+    languages: '',
+    travelDetails: '',
+    organization: '',
+    eventType: '',
+    requestedTopic: '',
+    audience: '',
+    ageRange: '',
+    eventDuration: '',
+    additionalDetails: '',
+  };
+}
 
 function Field({
   label,
@@ -66,7 +69,7 @@ function Field({
 }
 
 export default function ContactForm({ turnstileSiteKey }) {
-  const [form, setForm] = useState(baseFields);
+  const [form, setForm] = useState(createInitialFields);
   const [status, setStatus] = useState({ kind: 'idle', message: '' });
   const [submitting, setSubmitting] = useState(false);
 
@@ -86,8 +89,8 @@ export default function ContactForm({ turnstileSiteKey }) {
   }, [turnstileSiteKey]);
 
   function handleChange(event) {
-    const { name, value } = event.target;
-    setForm((current) => ({ ...current, [name]: value }));
+    const { checked, name, type, value } = event.target;
+    setForm((current) => ({ ...current, [name]: type === 'checkbox' ? checked : value }));
   }
 
   function renderServiceFields() {
@@ -205,20 +208,13 @@ export default function ContactForm({ turnstileSiteKey }) {
           />
         </div>
 
-        <div className="form-grid">
-          <Field label="Format" name="format" value={form.format} onChange={handleChange} as="select">
-            <option value="in-person">In-person</option>
-            <option value="virtual">Virtual</option>
-            <option value="hybrid">Hybrid</option>
-          </Field>
-          <Field
-            label="Event duration"
-            name="eventDuration"
-            value={form.eventDuration}
-            onChange={handleChange}
-            help="For example: 30 minutes, 1 hour, or multiple sessions."
-          />
-        </div>
+        <Field
+          label="Event duration"
+          name="eventDuration"
+          value={form.eventDuration}
+          onChange={handleChange}
+          help="For example: 30 minutes, 1 hour, or multiple sessions."
+        />
       </>
     );
   }
@@ -244,7 +240,7 @@ export default function ContactForm({ turnstileSiteKey }) {
       }
 
       setStatus({ kind: 'success', message: payload.message });
-      setForm(baseFields);
+      setForm(createInitialFields());
     } catch (error) {
       setStatus({
         kind: 'error',
@@ -291,14 +287,11 @@ export default function ContactForm({ turnstileSiteKey }) {
           value={form.serviceRequested}
           onChange={handleChange}
           as="select"
-          type={
-            <>
-              <option value="nikah">Nikkah / Nikah or Muslim wedding</option>
-              <option value="speaking">Lecture, khutbah, talk, or speaking engagement</option>
-            </>
-          }
           required
-        />
+        >
+          <option value="nikah">Nikkah / Nikah or Muslim wedding</option>
+          <option value="speaking">Lecture, khutbah, talk, or speaking engagement</option>
+        </Field>
       </div>
 
       <div className="form-grid">
@@ -319,14 +312,11 @@ export default function ContactForm({ turnstileSiteKey }) {
           value={form.format}
           onChange={handleChange}
           as="select"
-          type={
-            <>
-              <option value="in-person">In-person</option>
-              <option value="virtual">Virtual</option>
-              <option value="hybrid">Hybrid</option>
-            </>
-          }
-        />
+        >
+          <option value="in-person">In-person</option>
+          <option value="virtual">Virtual</option>
+          <option value="hybrid">Hybrid</option>
+        </Field>
         <Field
           label="Response details"
           name="additionalDetails"
@@ -346,6 +336,21 @@ export default function ContactForm({ turnstileSiteKey }) {
       />
 
       {renderServiceFields()}
+
+      <label className="consent-field" htmlFor="consent">
+        <input
+          id="consent"
+          name="consent"
+          type="checkbox"
+          checked={form.consent}
+          onChange={handleChange}
+          required
+        />
+        <span>
+          I understand this is an inquiry, not a confirmed booking, and consent
+          to being contacted about this request.
+        </span>
+      </label>
 
       <input
         type="text"

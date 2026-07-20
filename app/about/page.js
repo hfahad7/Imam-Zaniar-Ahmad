@@ -1,10 +1,11 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { buildMetadata } from '../../lib/metadata';
 import { siteContent } from '../../lib/site-content';
 
 export const metadata = buildMetadata({
-  title: 'About Imam Zaniar Ahmad',
+  title: 'About',
   description:
     'Learn about Imam Zaniar Ahmad, his work as an Ontario marriage officiant and speaker, and the community projects he has helped build.',
   path: '/about',
@@ -13,15 +14,28 @@ export const metadata = buildMetadata({
 export default function AboutPage() {
   return (
     <div className="page-shell">
-      <section className="page-hero">
-        <span className="eyebrow">About</span>
-        <h1>Faith, service, and community work</h1>
-        <p className="section-lead">
-          Imam Zaniar Ahmad is a registered marriage officiant in Ontario, a
-          community speaker, and a co-founder of Meezan, Zakah.com, and AutoAjr.
-          His work brings together thoughtful religious service and practical
-          tools for Muslim communities.
-        </p>
+      <section className="page-hero page-hero--with-media">
+        <div className="page-hero__copy">
+          <span className="eyebrow">About</span>
+          <h1>Faith, service, and community work</h1>
+          <p className="section-lead">
+            Imam Zaniar Ahmad is a registered marriage officiant in Ontario, a
+            community speaker, and a co-founder of Meezan, Zakah.com, and AutoAjr.
+            His work brings together thoughtful religious service and practical
+            tools for Muslim communities.
+          </p>
+        </div>
+        <figure className="page-hero__media page-hero__media--portrait">
+          <Image
+            src={siteContent.photos.portrait}
+            alt="Imam Zaniar Ahmad speaking at a wedding gathering"
+            width={1206}
+            height={1502}
+            priority
+            sizes="(max-width: 820px) 92vw, 38vw"
+          />
+          <figcaption>Service rooted in clarity, dignity, and care.</figcaption>
+        </figure>
       </section>
 
       <section className="section">
@@ -104,36 +118,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="section-heading">
-          <div>
-            <span className="eyebrow">Projects and initiatives</span>
-            <h2>Community-facing work</h2>
-          </div>
-          <Link className="section-link" href="/projects">
-            View the Projects page
-          </Link>
-        </div>
-
-        <div className="project-grid">
-          {siteContent.projects.map((project) => (
-            <article key={project.name} className="project-card">
-              <p className="card-meta">{project.role}</p>
-              <h3>{project.name}</h3>
-              <p>{project.description}</p>
-              <a
-                className="button button--ghost"
-                href={project.href}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                {project.linkText}
-              </a>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section className="section section--accent">
         <div className="section-heading">
           <div>
@@ -147,11 +131,17 @@ export default function AboutPage() {
         </div>
 
         <div className="content-actions">
+          <Link className="button button--ghost" href="/projects">
+            Explore community projects
+          </Link>
           <Link className="button button--primary" href="/contact">
             Request availability
           </Link>
           <a className="button button--ghost" href={siteContent.contact.phoneHref}>
             Call or text {siteContent.contact.phoneDisplay}
+          </a>
+          <a className="button button--ghost" href={siteContent.contact.emailHref}>
+            Email {siteContent.contact.email}
           </a>
         </div>
       </section>

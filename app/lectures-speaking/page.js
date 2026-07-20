@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { buildBreadcrumbJsonLd, buildMetadata } from '../../lib/metadata';
@@ -7,6 +8,16 @@ const breadcrumbJsonLd = buildBreadcrumbJsonLd([
   { name: 'Home', item: siteContent.siteUrl },
   { name: 'Lectures & Speaking', item: `${siteContent.siteUrl}/lectures-speaking` },
 ]);
+
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Lectures, khutbahs, talks, and speaking engagements',
+  serviceType: 'Islamic lectures and community speaking',
+  url: `${siteContent.siteUrl}/lectures-speaking`,
+  provider: { '@id': `${siteContent.siteUrl}/#person` },
+  areaServed: 'Ontario, Canada',
+};
 
 export const metadata = buildMetadata({
   title: 'Lectures, Khutbahs, Talks, and Speaking Engagements',
@@ -22,23 +33,40 @@ export default function LecturesSpeakingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
 
-      <section className="page-hero">
-        <span className="eyebrow">Lectures and speaking</span>
-        <h1>Talks for mosques, schools, charities, and community events</h1>
-        <p className="section-lead">
-          Imam Zaniar Ahmad can be invited for khutbahs, lectures, workshops,
-          panels, youth sessions, and speaking engagements for Muslim and
-          inter-community audiences.
-        </p>
-        <div className="content-actions">
-          <Link className="button button--primary" href="/contact">
-            Invite Imam Zaniar to speak
-          </Link>
-          <Link className="button button--ghost" href="/projects">
-            See community initiatives
-          </Link>
+      <section className="page-hero page-hero--with-media">
+        <div className="page-hero__copy">
+          <span className="eyebrow">Lectures and speaking</span>
+          <h1>Thoughtful talks for communities of every size</h1>
+          <p className="section-lead">
+            Imam Zaniar Ahmad can be invited for khutbahs, lectures, workshops,
+            panels, youth sessions, and speaking engagements for Muslim and
+            inter-community audiences.
+          </p>
+          <div className="content-actions">
+            <Link className="button button--primary" href="/contact">
+              Invite Imam Zaniar to speak
+            </Link>
+            <Link className="button button--ghost" href="/projects">
+              See community initiatives
+            </Link>
+          </div>
         </div>
+        <figure className="page-hero__media page-hero__media--landscape">
+          <Image
+            src={siteContent.photos.communityEvent}
+            alt="Imam Zaniar Ahmad at a community gathering in Ontario"
+            width={1448}
+            height={1086}
+            priority
+            sizes="(max-width: 820px) 92vw, 42vw"
+          />
+          <figcaption>Available for in-person, virtual, and hybrid events.</figcaption>
+        </figure>
       </section>
 
       <section className="section">

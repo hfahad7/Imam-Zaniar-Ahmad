@@ -7,6 +7,11 @@ This site already includes:
 - Canonical metadata helpers
 - JSON-LD for the public person profile and breadcrumbs
 - Dedicated service pages and guide pages
+- Preview deployment blocking through `robots.txt`
+- Security headers and a permanent `/nikkah-weddings` redirect
+- Optional Google and Bing verification metadata
+- Optional Google Analytics loading only when a real ID is supplied
+- Local, descriptive photography and official project marks
 
 ## What to connect next
 
@@ -30,6 +35,14 @@ This site already includes:
 5. Analytics
    - Add real Google Analytics, Vercel Web Analytics, or other approved IDs only if the owner wants tracking
    - Keep analytics disabled until the real IDs are available
+
+## After deployment
+
+1. Confirm the production canonical domain is `https://imamzaniarahmad.com`.
+2. Open `/robots.txt` and `/sitemap.xml` on production.
+3. Submit `/sitemap.xml` in Google Search Console and Bing Webmaster Tools.
+4. Test the `/nikkah-weddings` redirect and all three external project links.
+5. Run mobile and desktop Lighthouse audits against the production deployment.
 
 ## Google Business Profile notes
 

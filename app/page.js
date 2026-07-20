@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import ProjectShowcase from './components/project-showcase';
 import { buildMetadata } from '../lib/metadata';
 import { siteContent } from '../lib/site-content';
 
 export const metadata = buildMetadata({
-  title: 'Imam Zaniar Ahmad | Nikkah, Nikah, and Islamic Speaking Services in Ontario',
+  title: 'Nikkah, Nikah, and Islamic Speaking Services in Ontario',
   description:
     'Discover Imam Zaniar Ahmad for Nikkah and Nikah ceremonies in Ontario, lectures and speaking engagements, trusted community projects, and clear ways to request availability.',
   path: '/',
@@ -41,10 +42,11 @@ export default function Home() {
           <div className="hero__arch" aria-hidden="true" />
           <Image
             src={siteContent.heroImage}
-            alt="Imam Zaniar Ahmad smiling and wearing a black thobe"
-            width={1080}
-            height={1080}
+            alt="Imam Zaniar Ahmad speaking during a Nikah ceremony"
+            width={1066}
+            height={1600}
             priority
+            sizes="(max-width: 820px) 88vw, 34vw"
             className="hero-photo"
           />
           <div className="hero__caption">
@@ -97,6 +99,26 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section section--projects section--projects-featured">
+        <div className="section-heading section-heading--editorial">
+          <div>
+            <span className="eyebrow">Community initiatives</span>
+            <h2>Service that continues beyond the room.</h2>
+          </div>
+          <div className="section-heading__aside">
+            <p className="section-lead">
+              Three projects co-founded by Imam Zaniar Ahmad connect people with
+              Islamic services, Zakah education, and thoughtful giving.
+            </p>
+            <Link className="section-link" href="/projects">
+              Explore the full story <span aria-hidden="true">&rarr;</span>
+            </Link>
+          </div>
+        </div>
+
+        <ProjectShowcase compact />
+      </section>
+
       <section className="proof-band">
         <div className="proof-band__metric">
           <strong>{siteContent.reviews.reportedCount}</strong>
@@ -134,37 +156,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section section--projects">
-        <div className="section-heading section-heading--editorial">
-          <div>
-            <span className="eyebrow">Beyond the ceremony</span>
-            <h2>Building tools that strengthen community life.</h2>
-          </div>
-          <Link className="section-link" href="/projects">
-            Explore all projects <span aria-hidden="true">&rarr;</span>
-          </Link>
-        </div>
-
-        <div className="project-grid">
-          {siteContent.projects.map((project, index) => (
-            <article key={project.name} className="project-card">
-              <div className="project-card__topline">
-                <span>0{index + 1}</span>
-                <p>{project.role}</p>
-              </div>
-              <h3>{project.name}</h3>
-              <p>{project.description}</p>
-              <a href={project.href} target="_blank" rel="noreferrer noopener">
-                Visit {project.name} <span aria-hidden="true">&nearr;</span>
-              </a>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section className="guide-feature">
         <div className="guide-feature__ornament" aria-hidden="true">
-          <span>ن</span>
+          <span>&#10022;</span>
         </div>
         <div className="guide-feature__copy">
           <span className="eyebrow">A calmer way to prepare</span>

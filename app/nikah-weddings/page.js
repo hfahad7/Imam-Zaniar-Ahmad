@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { buildBreadcrumbJsonLd, buildMetadata } from '../../lib/metadata';
@@ -7,6 +8,16 @@ const breadcrumbJsonLd = buildBreadcrumbJsonLd([
   { name: 'Home', item: siteContent.siteUrl },
   { name: 'Nikah Weddings', item: `${siteContent.siteUrl}/nikah-weddings` },
 ]);
+
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Nikkah, Nikah, and Muslim wedding ceremonies',
+  serviceType: 'Islamic marriage ceremony and Ontario marriage officiation',
+  url: `${siteContent.siteUrl}/nikah-weddings`,
+  provider: { '@id': `${siteContent.siteUrl}/#person` },
+  areaServed: siteContent.serviceAreas,
+};
 
 export const metadata = buildMetadata({
   title: 'Nikkah and Nikah Weddings',
@@ -21,6 +32,10 @@ export default function NikahWeddingsPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
 
       <section className="page-hero">
@@ -39,6 +54,40 @@ export default function NikahWeddingsPage() {
             Read the Nikah guide
           </Link>
         </div>
+      </section>
+
+      <section className="ceremony-gallery" aria-label="Nikah ceremony moments">
+        <figure className="ceremony-gallery__feature">
+          <Image
+            src={siteContent.photos.withGroom}
+            alt="Imam Zaniar Ahmad greeting a groom during an outdoor Nikah ceremony"
+            width={1206}
+            height={1494}
+            priority
+            sizes="(max-width: 820px) 94vw, 58vw"
+          />
+          <figcaption>A warm, personal presence on an important day.</figcaption>
+        </figure>
+        <figure>
+          <Image
+            src={siteContent.photos.signingNikah}
+            alt="Imam Zaniar Ahmad reviewing Nikah ceremony documents outdoors"
+            width={1365}
+            height={2048}
+            sizes="(max-width: 820px) 94vw, 28vw"
+          />
+          <figcaption>Clear preparation before the ceremony begins.</figcaption>
+        </figure>
+        <figure>
+          <Image
+            src={siteContent.photos.weddingOfficiant}
+            alt="Imam Zaniar Ahmad holding ceremony documents at a wedding"
+            width={1206}
+            height={1478}
+            sizes="(max-width: 820px) 94vw, 28vw"
+          />
+          <figcaption>Religious guidance handled with dignity and care.</figcaption>
+        </figure>
       </section>
 
       <section className="section">

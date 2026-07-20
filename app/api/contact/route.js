@@ -118,6 +118,7 @@ export async function POST(request) {
     const location = basicTrim(body.location);
     const format = basicTrim(body.format) || 'in-person';
     const message = basicTrim(body.message);
+    const consent = body.consent === true;
     const website = basicTrim(body.website);
     const startedAt = Number(body.startedAt);
     const turnstileToken = basicTrim(body.turnstileToken);
@@ -126,8 +127,16 @@ export async function POST(request) {
       return json({ message: 'Thanks. Your inquiry has been received.' });
     }
 
-    if (!fullName || !email || !message) {
+    if (!fullName || !email || !message || !consent) {
       return json({ error: 'Please complete the required fields.' }, { status: 400 });
+    }
+
+    if (!/^\S+@\S+\.\S+$/.test(email)) {
+      return json({ error: 'Please enter a valid email address.' }, { status: 400 });
+    }
+
+    if (fullName.length > 120 || email.length > 254 || message.length > 5000) {
+      return json({ error: 'One or more fields are too long.' }, { status: 400 });
     }
 
     if (!Number.isFinite(startedAt) || now - startedAt < 3000) {

@@ -1,6 +1,7 @@
 import './globals.css';
 
 import Link from 'next/link';
+import Script from 'next/script';
 import { siteContent, sitePathLinks } from '../lib/site-content';
 
 const primaryLinks = [
@@ -26,9 +27,16 @@ export const metadata = {
     icon: '/favicon.svg',
     apple: '/apple-touch-icon.svg',
   },
+  verification: {
+    google: process.env.GOOGLE_SEARCH_CONSOLE_VERIFICATION || undefined,
+    other: {
+      'msvalidate.01': process.env.BING_VERIFICATION || undefined,
+    },
+  },
 };
 
 export default function RootLayout({ children }) {
+  const ga4Id = process.env.NEXT_PUBLIC_GA4_ID;
   const personJsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -41,6 +49,7 @@ export default function RootLayout({ children }) {
         jobTitle: siteContent.title,
         description: siteContent.shortDescription,
         telephone: siteContent.contact.phoneHref.replace('tel:', ''),
+        email: siteContent.contact.email,
         sameAs: [siteContent.contact.instagram, siteContent.contact.linkedin],
         areaServed: siteContent.serviceAreas,
         knowsAbout: [
@@ -67,6 +76,20 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        {ga4Id ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', ${JSON.stringify(ga4Id)}, { anonymize_ip: true });`}
+            </Script>
+          </>
+        ) : null}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
@@ -123,6 +146,7 @@ export default function RootLayout({ children }) {
                   <a href={siteContent.contact.phoneHref}>
                     Call {siteContent.contact.phoneDisplay}
                   </a>
+                  <a href={siteContent.contact.emailHref}>Email Imam Zaniar Ahmad</a>
                 </nav>
               </details>
             </div>
@@ -158,17 +182,32 @@ export default function RootLayout({ children }) {
               <p className="footer-heading">Contact</p>
               <ul className="footer-links">
                 <li>
+                  <a href={siteContent.contact.emailHref}>
+                    Email {siteContent.contact.email}
+                  </a>
+                </li>
+                <li>
                   <a href={siteContent.contact.phoneHref}>
                     Call or text {siteContent.contact.phoneDisplay}
                   </a>
                 </li>
                 <li>
-                  <a href={siteContent.contact.instagram} target="_blank" rel="noreferrer">
+                  <a
+                    href={siteContent.contact.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Follow Imam Zaniar Ahmad on Instagram"
+                  >
                     Instagram
                   </a>
                 </li>
                 <li>
-                  <a href={siteContent.contact.linkedin} target="_blank" rel="noreferrer">
+                  <a
+                    href={siteContent.contact.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Connect with Imam Zaniar Ahmad on LinkedIn"
+                  >
                     LinkedIn
                   </a>
                 </li>
@@ -180,9 +219,14 @@ export default function RootLayout({ children }) {
             </div>
           </div>
 
-          <p className="site-footer__fineprint">
-            Copyright {new Date().getFullYear()} Imam Zaniar Ahmad. All rights reserved.
-          </p>
+          <div className="site-footer__fineprint">
+            <p>Copyright {new Date().getFullYear()} Imam Zaniar Ahmad. All rights reserved.</p>
+            <div>
+              <Link href="/privacy">Privacy</Link>
+              <Link href="/accessibility">Accessibility</Link>
+              <a href="/sitemap.xml">Sitemap</a>
+            </div>
+          </div>
         </footer>
       </body>
     </html>

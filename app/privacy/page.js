@@ -46,8 +46,8 @@ export default function PrivacyPage() {
 
         <h2>Analytics</h2>
         <p>
-          Basic, privacy-conscious analytics may be used to understand how people
-          find and use the website.
+          If analytics is enabled, privacy-conscious usage data may be collected
+          to understand how people find and use the website.
         </p>
 
         <h2>Direct contact</h2>

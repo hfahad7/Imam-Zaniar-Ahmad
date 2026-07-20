@@ -3,7 +3,7 @@ import { buildMetadata } from '../../lib/metadata';
 export const metadata = buildMetadata({
   title: 'Accessibility Statement',
   description:
-    'Accessibility statement describing keyboard support, contrast, semantics, responsive layout, and the site’s accessibility goals.',
+    "Accessibility statement describing keyboard support, contrast, semantics, responsive layout, and the site's accessibility goals.",
   path: '/accessibility',
 });
 
