@@ -3,6 +3,18 @@ import './globals.css';
 import Link from 'next/link';
 import { siteContent, sitePathLinks } from '../lib/site-content';
 
+const primaryLinks = [
+  { href: '/nikah-weddings', label: 'Nikah Weddings' },
+  { href: '/lectures-speaking', label: 'Speaking' },
+  { href: '/about', label: 'About' },
+];
+
+const exploreLinks = [
+  { href: '/nikah-guide', label: 'Nikah Guide' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/blog', label: 'Journal' },
+];
+
 export const metadata = {
   metadataBase: new URL(siteContent.siteUrl),
   title: {
@@ -74,26 +86,45 @@ export default function RootLayout({ children }) {
               </span>
             </Link>
 
-            <nav className="site-nav" aria-label="Primary">
+            <nav className="site-nav site-nav--desktop" aria-label="Primary">
               <ul>
-                {sitePathLinks.map((link) => (
+                {primaryLinks.map((link) => (
                   <li key={link.href}>
                     <Link href={link.href}>{link.label}</Link>
                   </li>
                 ))}
+                <li>
+                  <details className="nav-more">
+                    <summary>Explore</summary>
+                    <div className="nav-more__panel">
+                      {exploreLinks.map((link) => (
+                        <Link key={link.href} href={link.href}>
+                          {link.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </details>
+                </li>
               </ul>
             </nav>
 
             <div className="header-actions">
-              <a className="button button--ghost" href={siteContent.contact.phoneHref}>
-                Call {siteContent.contact.phoneDisplay}
-              </a>
-              <a
-                className="button button--primary"
-                href={siteContent.contact.smsHref}
-              >
-                Text Imam Zaniar Ahmad
-              </a>
+              <Link className="button button--primary button--header" href="/contact">
+                Request availability
+              </Link>
+              <details className="mobile-nav">
+                <summary aria-label="Open navigation">Menu</summary>
+                <nav className="mobile-nav__panel" aria-label="Mobile">
+                  {sitePathLinks.slice(1).map((link) => (
+                    <Link key={link.href} href={link.href}>
+                      {link.label === 'Blog' ? 'Journal' : link.label}
+                    </Link>
+                  ))}
+                  <a href={siteContent.contact.phoneHref}>
+                    Call {siteContent.contact.phoneDisplay}
+                  </a>
+                </nav>
+              </details>
             </div>
           </div>
         </header>
@@ -104,9 +135,12 @@ export default function RootLayout({ children }) {
 
         <footer className="site-footer">
           <div className="site-footer__inner">
-            <div>
+            <div className="footer-intro">
               <p className="footer-eyebrow">Imam Zaniar Ahmad</p>
               <p className="footer-description">{siteContent.shortDescription}</p>
+              <Link className="footer-cta" href="/contact">
+                Begin an inquiry <span aria-hidden="true">&rarr;</span>
+              </Link>
             </div>
 
             <div>
@@ -118,17 +152,6 @@ export default function RootLayout({ children }) {
                   </li>
                 ))}
               </ul>
-            </div>
-
-            <div>
-              <p className="footer-heading">Service areas</p>
-              <div className="pill-list">
-                {siteContent.serviceAreas.slice(0, 8).map((area) => (
-                  <span key={area} className="pill">
-                    {area}
-                  </span>
-                ))}
-              </div>
             </div>
 
             <div>
@@ -150,12 +173,15 @@ export default function RootLayout({ children }) {
                   </a>
                 </li>
               </ul>
+              <p className="footer-area">
+                Serving the Greater Toronto Area, Hamilton, Niagara, Waterloo
+                Region, and communities across Ontario.
+              </p>
             </div>
           </div>
 
           <p className="site-footer__fineprint">
-            Copyright {new Date().getFullYear()} Imam Zaniar Ahmad. Built for clear
-            discovery, respectful booking, and accessible use on mobile and desktop.
+            Copyright {new Date().getFullYear()} Imam Zaniar Ahmad. All rights reserved.
           </p>
         </footer>
       </body>

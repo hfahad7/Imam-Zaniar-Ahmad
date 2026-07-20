@@ -4,7 +4,7 @@ import { siteContent } from '../../lib/site-content';
 export const metadata = buildMetadata({
   title: 'Projects and Community Initiatives',
   description:
-    'Explore Meezan, Zakah.com, and AutoAjr, and see how Imam Zaniar Ahmad is accurately described as a co-founder of each project.',
+    'Explore Meezan, Zakah.com, and AutoAjr, three community initiatives co-founded by Imam Zaniar Ahmad.',
   path: '/projects',
 });
 
@@ -13,31 +13,29 @@ export default function ProjectsPage() {
     <div className="page-shell">
       <section className="page-hero">
         <span className="eyebrow">Projects</span>
-        <h1>Community initiatives connected to the same public identity</h1>
+        <h1>Ideas built to serve the Muslim community</h1>
         <p className="section-lead">
-          The site presents Imam Zaniar Ahmad’s project roles consistently: he is
-          a co-founder of Meezan, Zakah.com, and AutoAjr.
+          Imam Zaniar Ahmad is a co-founder of Meezan, Zakah.com, and AutoAjr,
+          three initiatives shaped around access, education, and generosity.
         </p>
       </section>
 
       <section className="section">
         <div className="project-grid">
-          {siteContent.projects.map((project) => (
+          {siteContent.projects.map((project, index) => (
             <article key={project.name} className="project-card">
-              <p className="card-meta">{project.role}</p>
+              <div className="project-card__topline">
+                <span>0{index + 1}</span>
+                <p>{project.role}</p>
+              </div>
               <h3>{project.name}</h3>
               <p>{project.description}</p>
-              <p className="review-note">
-                {project.name} is linked here as a descriptive destination, not
-                as a standalone advertisement.
-              </p>
               <a
-                className="button button--primary"
                 href={project.href}
                 target="_blank"
                 rel="noreferrer noopener"
               >
-                {project.linkText}
+                Visit {project.name} <span aria-hidden="true">&nearr;</span>
               </a>
             </article>
           ))}
@@ -48,8 +46,12 @@ export default function ProjectsPage() {
         <div className="section-heading">
           <div>
             <span className="eyebrow">Why these projects matter</span>
-            <h2>They reinforce the public story</h2>
+            <h2>Practical ideas, built with purpose</h2>
           </div>
+          <p className="section-lead">
+            Each initiative responds to a real community need while making
+            trusted services easier to understand and access.
+          </p>
         </div>
 
         <div className="card-grid">
@@ -76,10 +78,10 @@ export default function ProjectsPage() {
             </p>
           </article>
           <article className="card card--soft">
-            <h3>What stays accurate</h3>
+            <h3>Shared purpose</h3>
             <p>
-              The site avoids inflated titles and uses co-founder wording
-              consistently across the pages and structured data.
+              Together, the projects support religious services, financial
+              education, and charitable giving across Muslim communities.
             </p>
           </article>
         </div>

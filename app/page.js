@@ -13,31 +13,32 @@ export const metadata = buildMetadata({
 
 export default function Home() {
   return (
-    <div className="page-shell">
-      <section className="hero">
-        <div>
-          <span className="eyebrow">Ontario marriage officiant and speaker</span>
-          <h1>Imam Zaniar Ahmad</h1>
-          <p className="section-lead">
-            {siteContent.tagline} The website is built to help couples, families,
-            mosques, and organizations find the right service quickly and contact
-            him by call, text, Instagram, or the protected inquiry form.
+    <div className="page-shell home-page">
+      <section className="hero hero--home">
+        <div className="hero__copy">
+          <span className="eyebrow eyebrow--light">Imam Zaniar Ahmad</span>
+          <h1>A meaningful beginning, held with care.</h1>
+          <p className="hero__lead">
+            Nikah ceremonies and thoughtful speaking engagements for Muslim
+            couples, families, and communities across Ontario.
           </p>
 
           <div className="hero-actions">
-            <Link className="button button--primary" href="/contact">
+            <Link className="button button--cream" href="/contact">
               Request availability
             </Link>
-            <Link className="button button--ghost" href="/lectures-speaking">
-              Invite Imam Zaniar to speak
+            <Link className="button button--outline-light" href="/nikah-weddings">
+              Plan your Nikah
             </Link>
-            <a className="button button--ghost" href={siteContent.contact.phoneHref}>
-              Call or text {siteContent.contact.phoneDisplay}
-            </a>
           </div>
+
+          <a className="hero__phone" href={siteContent.contact.phoneHref}>
+            Prefer to speak directly? {siteContent.contact.phoneDisplay}
+          </a>
         </div>
 
-        <aside className="hero-panel">
+        <div className="hero__portrait" aria-label="Portrait of Imam Zaniar Ahmad">
+          <div className="hero__arch" aria-hidden="true" />
           <Image
             src={siteContent.heroImage}
             alt="Imam Zaniar Ahmad smiling and wearing a black thobe"
@@ -46,218 +47,157 @@ export default function Home() {
             priority
             className="hero-photo"
           />
-          <div className="hero-kicker">
-            <p className="small-copy">
-              Registered marriage officiant in Ontario. Co-founder of Meezan,
-              Zakah.com, and AutoAjr.
-            </p>
+          <div className="hero__caption">
+            <span>Ontario</span>
+            <strong>Registered marriage officiant</strong>
           </div>
-        </aside>
+        </div>
+
+        <div className="hero__credentials" aria-label="At a glance">
+          <div>
+            <span>01</span>
+            <p>Religious Nikah ceremonies</p>
+          </div>
+          <div>
+            <span>02</span>
+            <p>Ontario legal officiation</p>
+          </div>
+          <div>
+            <span>03</span>
+            <p>Lectures and community talks</p>
+          </div>
+        </div>
       </section>
 
-      <section className="section section--muted">
-        <div className="section-heading">
+      <section className="section section--services">
+        <div className="section-heading section-heading--editorial">
           <div>
-            <span className="eyebrow">Two clear public services</span>
-            <h2>Built around the two ways people most often need him</h2>
+            <span className="eyebrow">How Imam Zaniar can help</span>
+            <h2>Two services, one thoughtful approach.</h2>
           </div>
           <p className="section-lead">
-            The site keeps the public structure focused on Nikkah and wedding
-            services, and lectures and speaking engagements. No separate
-            consultation service is presented as a main category.
+            Every engagement begins with listening, clear expectations, and
+            respect for the people in the room.
           </p>
         </div>
 
-        <div className="service-grid">
-          {siteContent.services.map((service) => (
-            <article key={service.slug} className="service-card">
-              <p className="card-meta">Primary service</p>
-              <h3>{service.name}</h3>
-              <p>{service.summary}</p>
-              <div className="content-actions">
-                <Link className="button button--primary" href={`/${service.slug}`}>
-                  Learn more
-                </Link>
-                <Link className="button button--ghost" href="/contact">
-                  {service.cta}
-                </Link>
+        <div className="service-editorial">
+          {siteContent.services.map((service, index) => (
+            <article key={service.slug} className="service-feature">
+              <span className="service-feature__number">0{index + 1}</span>
+              <div>
+                <h3>{service.name}</h3>
+                <p>{service.summary}</p>
               </div>
+              <Link className="circle-link" href={`/${service.slug}`} aria-label={`Learn more about ${service.name}`}>
+                <span aria-hidden="true">&rarr;</span>
+              </Link>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="section">
-        <div className="section-heading">
+      <section className="proof-band">
+        <div className="proof-band__metric">
+          <strong>{siteContent.reviews.reportedCount}</strong>
+          <span>Google reviews</span>
+        </div>
+        <div className="proof-band__copy">
+          <span className="eyebrow eyebrow--light">Community trust</span>
+          <h2>Presence matters on life&apos;s important days.</h2>
+          <p>
+            Couples and organizers value a calm process, thoughtful guidance,
+            and communication that feels personal from the first conversation.
+          </p>
+        </div>
+        <Link className="button button--outline-light" href="/contact">
+          Start a conversation
+        </Link>
+      </section>
+
+      <section className="section section--locations">
+        <div className="section-heading section-heading--editorial">
           <div>
-            <span className="eyebrow">Service area</span>
-            <h2>Confirmed Ontario locations</h2>
+            <span className="eyebrow">Across Ontario</span>
+            <h2>Serving couples and communities close to home.</h2>
           </div>
           <p className="section-lead">
-            These are the confirmed Ontario service areas currently shown on the
-            website.
+            Available throughout the Greater Toronto Area, Hamilton, Niagara,
+            Waterloo Region, and beyond. Travel ceremonies are welcomed by request.
           </p>
         </div>
 
-        <div className="pill-list">
+        <div className="location-list" aria-label="Ontario service areas">
           {siteContent.serviceAreas.map((area) => (
-            <span key={area} className="pill">
-              {area}
-            </span>
+            <span key={area}>{area}</span>
           ))}
         </div>
       </section>
 
-      <section className="section section--accent">
-        <div className="section-heading">
+      <section className="section section--projects">
+        <div className="section-heading section-heading--editorial">
           <div>
-            <span className="eyebrow">Google Reviews</span>
-            <h2>Trusted by the community</h2>
-          </div>
-          <p className="section-lead">
-            {siteContent.reviews.reportedCount} Google reviews are currently
-            reported by the owner. The verified Google Business Profile link can
-            be connected once the Place ID and full review URL are confirmed.
-          </p>
-        </div>
-
-        <div className="review-grid">
-          <article className="review-card review-panel">
-            <p className="review-rating">
-              Owner-reported count: {siteContent.reviews.reportedCount} reviews
-            </p>
-            <p>{siteContent.reviews.note}</p>
-            <p className="review-note">
-              Live review text is intentionally not fabricated or scraped. Add the
-              verified Google Business Profile details in the content checklist
-              before publishing any review feed.
-            </p>
-            <div className="review-actions">
-              <Link className="button button--primary" href="/contact">
-                Ask about availability
-              </Link>
-              <Link className="button button--ghost" href="/nikah-weddings">
-                View Nikah service details
-              </Link>
-            </div>
-          </article>
-
-          <article className="review-card">
-            <p className="card-meta">Trust signals</p>
-            <h3>Clear contact paths</h3>
-            <ul className="service-list">
-              <li>Call or text Imam Zaniar Ahmad at {siteContent.contact.phoneDisplay}.</li>
-              <li>Message him on Instagram at @zanahmad.</li>
-              <li>Use the protected inquiry form for structured requests.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="section-heading">
-          <div>
-            <span className="eyebrow">Community initiatives</span>
-            <h2>Projects connected to his public work</h2>
+            <span className="eyebrow">Beyond the ceremony</span>
+            <h2>Building tools that strengthen community life.</h2>
           </div>
           <Link className="section-link" href="/projects">
-            View all projects
+            Explore all projects <span aria-hidden="true">&rarr;</span>
           </Link>
         </div>
 
         <div className="project-grid">
-          {siteContent.projects.map((project) => (
+          {siteContent.projects.map((project, index) => (
             <article key={project.name} className="project-card">
-              <p className="card-meta">{project.role}</p>
+              <div className="project-card__topline">
+                <span>0{index + 1}</span>
+                <p>{project.role}</p>
+              </div>
               <h3>{project.name}</h3>
               <p>{project.description}</p>
-              <div className="content-actions">
-                <a
-                  className="button button--primary"
-                  href={project.href}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
-                  {project.linkText}
-                </a>
-              </div>
+              <a href={project.href} target="_blank" rel="noreferrer noopener">
+                Visit {project.name} <span aria-hidden="true">&nearr;</span>
+              </a>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="section section--muted">
-        <div className="section-heading">
-          <div>
-            <span className="eyebrow">Nikah guide</span>
-            <h2>Crawlable Ontario wedding preparation resource</h2>
-          </div>
-          <p className="section-lead">
-            The guide page explains the difference between a religious Nikkah and
-            the Ontario legal marriage process, with a clear HTML layout and a
-            downloadable PDF.
-          </p>
+      <section className="guide-feature">
+        <div className="guide-feature__ornament" aria-hidden="true">
+          <span>ن</span>
         </div>
-
-        <div className="guide-grid">
-          <article className="guide-card">
-            <h3>{siteContent.guide.title}</h3>
-            <p>Last updated {siteContent.guide.lastUpdated}.</p>
-            <div className="content-actions">
-              <Link className="button button--primary" href="/nikah-guide">
-                Open the guide
-              </Link>
-              <a className="button button--ghost" href={siteContent.guide.downloadPath}>
-                Download the PDF
-              </a>
-            </div>
-          </article>
-
-          <article className="guide-card">
-            <h3>Booking flow</h3>
-            <ol className="guide-list">
-              <li>Send the request.</li>
-              <li>Confirm the details and availability.</li>
-              <li>Finalize the engagement.</li>
-            </ol>
-          </article>
+        <div className="guide-feature__copy">
+          <span className="eyebrow">A calmer way to prepare</span>
+          <h2>{siteContent.guide.title}</h2>
+          <p>
+            Understand the religious ceremony, Ontario marriage requirements,
+            and the details worth arranging before your wedding day.
+          </p>
+          <div className="content-actions">
+            <Link className="button button--primary" href="/nikah-guide">
+              Read the guide
+            </Link>
+            <a className="text-link" href={siteContent.guide.downloadPath}>
+              Download the PDF <span aria-hidden="true">&darr;</span>
+            </a>
+          </div>
         </div>
       </section>
 
-      <section className="section">
-        <div className="section-heading">
-          <div>
-            <span className="eyebrow">About and contact</span>
-            <h2>Learn more or get in touch</h2>
-          </div>
-          <p className="section-lead">
-            The website makes it easy to call, text, message on Instagram, or
-            submit a secure inquiry from a dedicated contact page.
-          </p>
-        </div>
-
-        <div className="card-grid">
-          <article className="card card--soft">
-            <h3>About Imam Zaniar Ahmad</h3>
-            <p>
-              See the biography page for a clearer overview of his confirmed
-              public work, project roles, and community-facing identity.
-            </p>
-            <Link className="button button--ghost" href="/about">
-              Read the biography
-            </Link>
-          </article>
-
-          <article className="card card--soft">
-            <h3>Need a booking?</h3>
-            <p>
-              Use the contact page for Nikkah, Nikah, lectures, khutbahs, talks,
-              workshops, and speaking engagements.
-            </p>
-            <Link className="button button--primary" href="/contact">
-              Open the contact page
-            </Link>
-          </article>
+      <section className="closing-cta">
+        <span className="eyebrow">When you are ready</span>
+        <h2>Let&apos;s make the next step feel simple.</h2>
+        <p>
+          Share your date, location, and the kind of support you need. Imam Zaniar
+          will follow up to discuss availability and details.
+        </p>
+        <div className="content-actions content-actions--center">
+          <Link className="button button--primary" href="/contact">
+            Request availability
+          </Link>
+          <a className="button button--quiet" href={siteContent.contact.smsHref}>
+            Send a text
+          </a>
         </div>
       </section>
     </div>

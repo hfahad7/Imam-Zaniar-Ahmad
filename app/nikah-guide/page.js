@@ -11,7 +11,7 @@ const breadcrumbJsonLd = buildBreadcrumbJsonLd([
 export const metadata = buildMetadata({
   title: siteContent.guide.title,
   description:
-    'A crawlable Ontario Nikkah and Nikah guide that explains the ceremony, the legal marriage process, preparation steps, and the downloadable PDF.',
+    'An Ontario Nikkah and Nikah guide explaining the ceremony, legal marriage process, preparation steps, and downloadable checklist.',
   path: '/nikah-guide',
 });
 
@@ -27,8 +27,8 @@ export default function NikahGuidePage() {
         <span className="eyebrow">Nikah guide</span>
         <h1>{siteContent.guide.title}</h1>
         <p className="section-lead">
-          A crawlable HTML version of the guide, written so couples can read it
-          on mobile or desktop and still access the original PDF download.
+          A practical resource for couples who want to understand the ceremony,
+          prepare with confidence, and keep the important details in one place.
         </p>
         <div className="content-actions">
           <a className="button button--primary" href={siteContent.guide.downloadPath}>
@@ -61,7 +61,7 @@ export default function NikahGuidePage() {
         <div className="section-heading">
           <div>
             <span className="eyebrow">Guide content</span>
-            <h2>What the HTML version covers</h2>
+            <h2>What the guide covers</h2>
           </div>
         </div>
 
@@ -96,12 +96,12 @@ export default function NikahGuidePage() {
             </ul>
           </article>
           <article className="card card--soft">
-            <h3>Navigation</h3>
+            <h3>Helpful resources</h3>
             <ul className="service-list">
-              <li>Internal links to the wedding service page</li>
-              <li>Downloadable PDF button</li>
-              <li>Breadcrumb navigation</li>
-              <li>Visible last updated date</li>
+              <li>Ontario marriage information</li>
+              <li>A downloadable copy for easy reference</li>
+              <li>Wedding service and booking details</li>
+              <li>Clear next steps for couples</li>
             </ul>
           </article>
         </div>

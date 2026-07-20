@@ -27,10 +27,9 @@ export default function NikahWeddingsPage() {
         <span className="eyebrow">Nikkah and Nikah weddings</span>
         <h1>Book a Muslim wedding officiant in Ontario</h1>
         <p className="section-lead">
-          This page is built for people searching for an Imam, a registered
-          Ontario marriage officiant, or a Muslim wedding officiant for a
-          Nikkah/Nikah ceremony. It keeps the religious ceremony and the legal
-          Ontario process clearly separated.
+          Celebrate your Nikkah or Nikah with thoughtful guidance from an Imam
+          and registered Ontario marriage officiant. Religious ceremony details
+          and Ontario legal requirements are explained clearly from the start.
         </p>
         <div className="content-actions">
           <Link className="button button--primary" href="/contact">
@@ -66,9 +65,9 @@ export default function NikahWeddingsPage() {
             <h2>Understand the difference before the ceremony</h2>
           </div>
           <p className="section-lead">
-            A religious Nikkah/Nikah is not the same thing as a legal marriage
-            registration. Visitors should review the official Ontario resources
-            before publishing or relying on legal details.
+            A religious Nikkah or Nikah is distinct from legal marriage
+            registration. Review the official Ontario resources below as you
+            prepare your documents and ceremony plans.
           </p>
         </div>
 
@@ -93,8 +92,8 @@ export default function NikahWeddingsPage() {
           <article className="info-card">
             <h3 className="small-heading">Religious ceremony</h3>
             <p>
-              The site uses both Nikkah and Nikah naturally so visitors can find
-              the service regardless of spelling.
+              Both Nikkah and Nikah refer to the Islamic marriage ceremony. The
+              spelling may vary, but the care given to the occasion does not.
             </p>
             <ul className="service-list">
               <li>Religious ceremony details are kept clear and accessible.</li>
@@ -109,11 +108,11 @@ export default function NikahWeddingsPage() {
         <div className="section-heading">
           <div>
             <span className="eyebrow">Service areas</span>
-            <h2>Confirmed Ontario locations</h2>
+            <h2>Ontario service areas</h2>
           </div>
           <p className="section-lead">
-            These cities are listed centrally and shown consistently throughout
-            the website.
+            Based in Ontario and available across the following cities and
+            surrounding communities.
           </p>
         </div>
 
@@ -130,25 +129,20 @@ export default function NikahWeddingsPage() {
         <div className="section-heading">
           <div>
             <span className="eyebrow">Google Reviews</span>
-            <h2>Community trust section</h2>
+            <h2>Trusted by couples and families</h2>
           </div>
           <p className="section-lead">
-            The current public count is owner-reported as {siteContent.reviews.reportedCount}
-            reviews. The live review listing should be connected only after the
-            verified Google Business Profile URL is supplied.
+            {siteContent.reviews.reportedCount} Google reviews reflect a growing
+            record of trust across ceremonies and community engagements.
           </p>
         </div>
 
         <div className="review-grid">
           <article className="review-card review-panel">
             <p className="review-rating">
-              Reported count: {siteContent.reviews.reportedCount} reviews
+              {siteContent.reviews.reportedCount} Google reviews
             </p>
             <p>{siteContent.reviews.note}</p>
-            <p className="review-note">
-              No review text is fabricated. Once the Place ID and full review URL
-              are added, the section can point to the live Google profile.
-            </p>
           </article>
 
           <article className="review-card">

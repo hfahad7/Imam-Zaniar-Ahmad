@@ -368,13 +368,12 @@ export default function ContactForm({ turnstileSiteKey }) {
             data-expired-callback="onTurnstileExpired"
           />
         ) : (
-          <span>Human verification will activate after the Turnstile site key is added.</span>
+          <span>A quick security check will appear here when needed.</span>
         )}
       </div>
 
       <p className="field-help">
-        This form is protected with server-side validation, a honeypot field, and
-        timing checks. Do not submit highly sensitive details.
+        Please do not include highly sensitive personal information in your message.
       </p>
 
       <button className="button button--primary" type="submit" disabled={submitting}>

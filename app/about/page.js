@@ -6,7 +6,7 @@ import { siteContent } from '../../lib/site-content';
 export const metadata = buildMetadata({
   title: 'About Imam Zaniar Ahmad',
   description:
-    'Learn about Imam Zaniar Ahmad, his verified public roles, his community projects, and the kinds of people and organizations he serves.',
+    'Learn about Imam Zaniar Ahmad, his work as an Ontario marriage officiant and speaker, and the community projects he has helped build.',
   path: '/about',
 });
 
@@ -15,24 +15,24 @@ export default function AboutPage() {
     <div className="page-shell">
       <section className="page-hero">
         <span className="eyebrow">About</span>
-        <h1>Biography, community work, and public identity</h1>
+        <h1>Faith, service, and community work</h1>
         <p className="section-lead">
-          The public biography focuses on the information that is already
-          confirmed for the website: Imam Zaniar Ahmad is a registered marriage
-          officiant in Ontario, a community speaker, and a co-founder of Meezan,
-          Zakah.com, and AutoAjr.
+          Imam Zaniar Ahmad is a registered marriage officiant in Ontario, a
+          community speaker, and a co-founder of Meezan, Zakah.com, and AutoAjr.
+          His work brings together thoughtful religious service and practical
+          tools for Muslim communities.
         </p>
       </section>
 
       <section className="section">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">Verified public identity</span>
-            <h2>What the site states clearly</h2>
+            <span className="eyebrow">His work</span>
+            <h2>Serving people at meaningful moments</h2>
           </div>
           <p className="section-lead">
-            The page avoids unsupported claims and keeps the public identity
-            centered on the roles that have been confirmed.
+            From a couple&apos;s wedding day to a room full of students, each
+            engagement is approached with care, clarity, and respect.
           </p>
         </div>
 
@@ -63,9 +63,8 @@ export default function AboutPage() {
           <article className="card">
             <h3>Service area</h3>
             <p>
-              The site lists the confirmed Ontario service areas and explains
-              that travel outside Ontario is available by request for Nikkah and
-              Nikah ceremonies only.
+              Available across many Ontario communities, with travel outside the
+              province considered by request for Nikkah and Nikah ceremonies.
             </p>
           </article>
         </div>
@@ -74,18 +73,18 @@ export default function AboutPage() {
       <section className="section section--muted">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">Biography notes</span>
-            <h2>What can expand later</h2>
+            <span className="eyebrow">A thoughtful approach</span>
+            <h2>What guides the work</h2>
           </div>
           <p className="section-lead">
-            Additional biography material can be added once verified copy and
-            approved images are supplied.
+            The work is grounded in service that feels personal, practical, and
+            connected to community needs.
           </p>
         </div>
 
         <div className="card-grid">
           <article className="card card--soft">
-            <h3>Education and background</h3>
+            <h3>Principles in practice</h3>
             <ul className="service-list">
               {siteContent.biographyNotes.map((note) => (
                 <li key={note}>{note}</li>
@@ -94,7 +93,7 @@ export default function AboutPage() {
           </article>
 
           <article className="card card--soft">
-            <h3>What visitors can do next</h3>
+            <h3>Explore the work</h3>
             <ul className="service-list">
               <li>Read the Nikkah and Nikah service page.</li>
               <li>Review the speaking page for event bookings.</li>
@@ -142,8 +141,8 @@ export default function AboutPage() {
             <h2>Reach out respectfully</h2>
           </div>
           <p className="section-lead">
-            The contact page keeps call and text at the top, then Instagram, then
-            the protected website form.
+            Share the date, location, and type of engagement you have in mind.
+            Call, text, Instagram, and the inquiry form are all available.
           </p>
         </div>
 

@@ -66,7 +66,7 @@ export default function LecturesSpeakingPage() {
         <div className="section-heading">
           <div>
             <span className="eyebrow">Topics</span>
-            <h2>Confirmed speaking themes</h2>
+            <h2>Speaking themes</h2>
           </div>
         </div>
 
@@ -112,8 +112,8 @@ export default function LecturesSpeakingPage() {
           <article className="card">
             <h3>Formats</h3>
             <p>
-              The site supports in-person, virtual, and hybrid speaking requests
-              without creating a separate consultation service.
+              In-person, virtual, and hybrid requests are welcome, depending on
+              the audience, location, and event needs.
             </p>
           </article>
         </div>

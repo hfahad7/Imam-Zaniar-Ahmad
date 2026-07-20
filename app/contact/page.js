@@ -61,11 +61,10 @@ export default function ContactPage() {
             <p className="card-meta">3. Protected website inquiry</p>
             <h3>Inquiry form</h3>
             <p>
-              Use the form for structured booking requests. Submissions are sent
-              to the server-side destination email and protected by validation and
-              human verification.
+              Use the form when you would like to share the full details of your
+              ceremony, event, or speaking request in one message.
             </p>
-            <p className="small-copy">The destination email stays server-side.</p>
+            <p className="small-copy">Your information is used only to respond to your inquiry.</p>
           </article>
         </div>
 

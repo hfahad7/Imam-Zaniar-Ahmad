@@ -4,7 +4,7 @@ import { siteContent } from '../../lib/site-content';
 export const metadata = buildMetadata({
   title: 'Privacy Policy',
   description:
-    'Read how the website handles contact-form submissions, analytics placeholders, and basic privacy expectations.',
+    'Read how information submitted through the contact form is collected, used, and protected.',
   path: '/privacy',
 });
 
@@ -15,17 +15,16 @@ export default function PrivacyPage() {
         <span className="eyebrow">Privacy</span>
         <h1>Privacy policy</h1>
         <p className="section-lead">
-          This policy explains how the site handles the information visitors
-          choose to send through the contact form or through direct contact
-          methods.
+          This policy explains how information you choose to share through the
+          inquiry form or direct contact methods is handled.
         </p>
       </section>
 
       <section className="section prose">
         <h2>What we collect</h2>
         <p>
-          The site only collects information that visitors choose to submit, such
-          as name, email, phone number, booking details, and message content.
+          We only collect information you choose to submit, such as your name,
+          email, phone number, booking details, and message.
         </p>
 
         <h2>How we use it</h2>
@@ -34,23 +33,21 @@ export default function PrivacyPage() {
           availability, and follow up on the service requested.
         </p>
 
-        <h2>Email delivery</h2>
+        <h2>How inquiries are delivered</h2>
         <p>
-          The contact form is intended to send requests to the server-side
-          destination email configured for the site. The destination address is
-          kept out of the public UI.
+          Contact-form requests are delivered privately to the email address used
+          to review and respond to inquiries.
         </p>
 
-        <h2>Verification and spam protection</h2>
+        <h2>Spam protection</h2>
         <p>
-          The form uses a honeypot, timing checks, and Cloudflare Turnstile when
-          configured.
+          A security check may be used to reduce automated or unwanted messages.
         </p>
 
         <h2>Analytics</h2>
         <p>
-          Optional analytics and webmaster tools can be added later only when the
-          owner supplies real IDs and chooses to activate them.
+          Basic, privacy-conscious analytics may be used to understand how people
+          find and use the website.
         </p>
 
         <h2>Direct contact</h2>
