@@ -1,6 +1,8 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 import ContactForm from './contact-form';
+import Icon from '../components/ui-icon';
 import { buildMetadata } from '../../lib/metadata';
 import { siteContent } from '../../lib/site-content';
 
@@ -14,18 +16,32 @@ export const metadata = buildMetadata({
 export default function ContactPage() {
   return (
     <div className="page-shell">
-      <section className="page-hero">
-        <span className="eyebrow">Contact and Booking</span>
-        <h1>Book a Nikah or Speaking Engagement</h1>
-        <p className="section-lead">
-          Share the service, date, location, and details you already know. Call,
-          text, email, Instagram, or the booking form are all available.
-        </p>
+      <section className="page-hero page-hero--with-media contact-hero">
+        <div className="page-hero__copy">
+          <span className="eyebrow">Contact and Booking</span>
+          <h1>Book a Nikah or Speaking Engagement</h1>
+          <p className="section-lead">
+            Share the service, date, location, and details you already know. Call,
+            text, email, Instagram, or the booking form are all available.
+          </p>
+        </div>
+        <figure className="page-hero__media page-hero__media--landscape">
+          <Image
+            src={siteContent.photos.weddingOfficiant}
+            alt="Imam Zaniar Ahmad ready to officiate an outdoor wedding"
+            width={1206}
+            height={1478}
+            priority
+            sizes="(max-width: 820px) 92vw, 40vw"
+          />
+          <figcaption>Tell us what you are planning and where it will take place.</figcaption>
+        </figure>
       </section>
 
       <section className="section section--compact contact-grid">
         <div className="contact-methods">
           <article className="contact-method">
+            <span className="card-icon"><Icon name="phone" /></span>
             <p className="card-meta">Fastest Option</p>
             <h3>Call or Text</h3>
             <p>
@@ -46,6 +62,7 @@ export default function ContactPage() {
           </article>
 
           <article className="contact-method">
+            <span className="card-icon"><Icon name="message" /></span>
             <p className="card-meta">Social Message</p>
             <h3>Instagram</h3>
             <p>Message Imam Zaniar Ahmad on Instagram for a quick follow-up.</p>
@@ -60,6 +77,7 @@ export default function ContactPage() {
           </article>
 
           <article className="contact-method">
+            <span className="card-icon"><Icon name="document" /></span>
             <p className="card-meta">Detailed Booking</p>
             <h3>Booking Form</h3>
             <p>
@@ -70,7 +88,8 @@ export default function ContactPage() {
           </article>
         </div>
 
-        <div className="card card--soft">
+        <div className="card card--soft visual-card contact-checklist">
+          <span className="card-icon"><Icon name="check" /></span>
           <h3>What to Include</h3>
           <ul className="service-list">
             <li>Your name and best contact method.</li>

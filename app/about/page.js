@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import Icon from '../components/ui-icon';
 import { buildMetadata } from '../../lib/metadata';
 import { siteContent } from '../../lib/site-content';
 
@@ -86,7 +87,8 @@ export default function AboutPage() {
         </div>
 
         <div className="card-grid card-grid--three">
-          <article className="card">
+          <article className="card visual-card">
+            <span className="card-icon"><Icon name="ring" /></span>
             <h3>Nikah and Marriage Officiation</h3>
             <p>
               Religious Nikah ceremonies, Ontario legal marriage officiation,
@@ -96,7 +98,8 @@ export default function AboutPage() {
               View Nikah Services <span aria-hidden="true">&rarr;</span>
             </Link>
           </article>
-          <article className="card">
+          <article className="card visual-card">
+            <span className="card-icon"><Icon name="microphone" /></span>
             <h3>Community Speaking</h3>
             <p>
               Lectures, khutbahs, workshops, panels, and youth sessions for
@@ -106,7 +109,8 @@ export default function AboutPage() {
               Book a Speaking Engagement <span aria-hidden="true">&rarr;</span>
             </Link>
           </article>
-          <article className="card">
+          <article className="card visual-card">
+            <span className="card-icon"><Icon name="sparkle" /></span>
             <h3>Purpose-Led Projects</h3>
             <p>
               Digital tools that improve access to Islamic services, Zakah
@@ -117,6 +121,39 @@ export default function AboutPage() {
             </Link>
           </article>
         </div>
+      </section>
+
+      <section className="editorial-photo-ribbon" aria-label="Imam Zaniar Ahmad serving couples and communities">
+        <figure>
+          <Image
+            src={siteContent.photos.withGroom}
+            alt="Imam Zaniar Ahmad welcoming a groom at an outdoor Nikah"
+            width={1206}
+            height={1494}
+            sizes="(max-width: 820px) 82vw, 32vw"
+          />
+          <figcaption><Icon name="heart" /> Present for meaningful milestones</figcaption>
+        </figure>
+        <figure>
+          <Image
+            src={siteContent.photos.communityEvent}
+            alt="Imam Zaniar Ahmad attending a Muslim community gathering"
+            width={1448}
+            height={1086}
+            sizes="(max-width: 820px) 82vw, 36vw"
+          />
+          <figcaption><Icon name="community" /> Connected to the community</figcaption>
+        </figure>
+        <figure>
+          <Image
+            src={siteContent.photos.weddingOfficiant}
+            alt="Imam Zaniar Ahmad holding ceremony documents after a wedding"
+            width={1206}
+            height={1478}
+            sizes="(max-width: 820px) 82vw, 32vw"
+          />
+          <figcaption><Icon name="document" /> Care in every detail</figcaption>
+        </figure>
       </section>
 
       <section className="section section--muted section--compact">
@@ -130,7 +167,7 @@ export default function AboutPage() {
         <div className="principle-grid">
           {siteContent.biographyNotes.map((note, index) => (
             <article className="principle" key={note}>
-              <span>0{index + 1}</span>
+              <span className="principle__icon"><Icon name={['book', 'heart', 'community'][index]} /></span>
               <p>{note}</p>
             </article>
           ))}

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 import { siteContent } from '../../lib/site-content';
+import Icon from './ui-icon';
 
 export default function ProjectShowcase({ compact = false }) {
   return (
@@ -11,6 +12,7 @@ export default function ProjectShowcase({ compact = false }) {
           className={`project-story project-story--${project.slug}`}
         >
           <div className="project-story__visual">
+            <span className="project-story__orbit" aria-hidden="true"><Icon name={['community', 'book', 'heart'][index]} /></span>
             <Image
               src={project.image}
               alt={`${project.name} logo`}

@@ -1,12 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="Imam Zaniar Ahmad">
   <defs>
-    <linearGradient id="g" x1="0%" x2="100%" y1="0%" y2="100%">
-      <stop offset="0%" stop-color="#102e25"/>
-      <stop offset="100%" stop-color="#285344"/>
+    <linearGradient id="seal" x1="20" y1="14" x2="160" y2="166" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#285344"/>
+      <stop offset="1" stop-color="#102E25"/>
     </linearGradient>
   </defs>
-  <rect x="3" y="3" width="174" height="174" rx="50" fill="url(#g)"/>
-  <path d="M51 133V81c0-23 18-40 39-40s39 17 39 40v52" fill="none" stroke="#c5a15a" stroke-width="9" stroke-linecap="round"/>
-  <path d="M70 133V87c0-12 9-22 20-22s20 10 20 22v46" fill="none" stroke="#fffdf8" stroke-width="9" stroke-linecap="round"/>
-  <circle cx="90" cy="96" r="9" fill="#c5a15a"/>
+  <rect x="6" y="6" width="168" height="168" rx="48" fill="url(#seal)"/>
+  <circle cx="90" cy="90" r="66" fill="none" stroke="#C5A15A" stroke-width="3.5" opacity=".78"/>
+  <path d="m90 38 14.5 37.5L142 90l-37.5 14.5L90 142l-14.5-37.5L38 90l37.5-14.5L90 38Z" fill="none" stroke="#FFFDF8" stroke-width="6" stroke-linejoin="round"/>
+  <path d="m53 53 37 22 37-22-22 37 22 37-37-22-37 22 22-37-22-37Z" fill="none" stroke="#C5A15A" stroke-width="4.5" stroke-linejoin="round"/>
+  <circle cx="90" cy="90" r="11.5" fill="#FFFDF8"/>
+  <circle cx="90" cy="90" r="5" fill="#C5A15A"/>
 </svg>

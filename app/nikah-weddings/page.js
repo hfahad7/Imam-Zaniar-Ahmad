@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import Icon from '../components/ui-icon';
+import OntarioServiceMap from '../components/ontario-service-map';
 import { buildBreadcrumbJsonLd, buildMetadata } from '../../lib/metadata';
 import { siteContent } from '../../lib/site-content';
 
@@ -28,18 +30,21 @@ export const metadata = buildMetadata({
 
 const serviceOptions = [
   {
+    icon: 'ring',
     label: 'Religious Service',
     title: 'Religious Nikah',
     description:
       'The Islamic marriage ceremony, including the essential religious elements and guidance for the couple and family.',
   },
   {
+    icon: 'document',
     label: 'Legal Service',
     title: 'Ontario Legal Officiation',
     description:
       'Legal marriage officiation for couples with a valid Ontario marriage licence and the required documents.',
   },
   {
+    icon: 'layers',
     label: 'Combined Service',
     title: 'Nikah and Legal Officiation',
     description:
@@ -125,7 +130,10 @@ export default function NikahWeddingsPage() {
         <div className="service-path-grid">
           {serviceOptions.map((option) => (
             <article className="service-path" key={option.title}>
-              <span className="card-meta">{option.label}</span>
+              <div className="card-icon-row">
+                <span className="card-icon"><Icon name={option.icon} /></span>
+                <span className="card-meta">{option.label}</span>
+              </div>
               <h3>{option.title}</h3>
               <p>{option.description}</p>
               <Link className="text-link" href="/contact">
@@ -155,7 +163,8 @@ export default function NikahWeddingsPage() {
         </div>
 
         <div className="split">
-          <article className="info-card">
+          <article className="info-card visual-card">
+            <span className="card-icon"><Icon name="document" /></span>
             <h3 className="small-heading">Ontario Legal Marriage</h3>
             <p>
               Ontario.ca explains that you need a valid marriage licence and an
@@ -172,7 +181,8 @@ export default function NikahWeddingsPage() {
             </ul>
           </article>
 
-          <article className="info-card">
+          <article className="info-card visual-card">
+            <span className="card-icon"><Icon name="ring" /></span>
             <h3 className="small-heading">Religious Nikah Ceremony</h3>
             <p>
               The Nikah is the Islamic marriage ceremony. It can be booked on its
@@ -199,14 +209,7 @@ export default function NikahWeddingsPage() {
           </p>
         </div>
 
-        <div className="service-region-grid" aria-label="Ontario service areas by region">
-          {siteContent.serviceAreaGroups.map((group) => (
-            <article className="service-region" key={group.region}>
-              <h3>{group.region}</h3>
-              <p>{group.areas.join(' · ')}</p>
-            </article>
-          ))}
-        </div>
+        <OntarioServiceMap />
       </section>
 
       <section className="section section--accent section--compact">
@@ -223,6 +226,7 @@ export default function NikahWeddingsPage() {
 
         <div className="review-grid">
           <article className="review-card review-panel">
+            <span className="card-icon"><Icon name="star" /></span>
             <p className="review-rating">
               {siteContent.reviews.reportedCount} Google reviews
             </p>
@@ -255,7 +259,8 @@ export default function NikahWeddingsPage() {
 
         <div className="card-grid">
           {siteContent.weddingFaqs.map((faq) => (
-            <article key={faq.question} className="faq-card">
+            <article key={faq.question} className="faq-card visual-card">
+              <span className="card-icon"><Icon name="message" /></span>
               <h3>{faq.question}</h3>
               <p>{faq.answer}</p>
             </article>
@@ -271,10 +276,10 @@ export default function NikahWeddingsPage() {
           </div>
         </div>
 
-        <ol className="guide-list">
-          <li>Send the request with the ceremony details.</li>
-          <li>Confirm availability, location, and any travel details.</li>
-          <li>Finalize the engagement once the details are agreed.</li>
+        <ol className="visual-steps">
+          <li><span><Icon name="message" /></span><div><strong>Send the Request</strong><p>Share the date, city, and ceremony details.</p></div></li>
+          <li><span><Icon name="calendar" /></span><div><strong>Confirm Availability</strong><p>Review the location, timing, and travel details.</p></div></li>
+          <li><span><Icon name="check" /></span><div><strong>Finalize the Booking</strong><p>Agree on the details and prepare for the ceremony.</p></div></li>
         </ol>
         <div className="content-actions">
           <Link className="button button--primary" href="/contact">

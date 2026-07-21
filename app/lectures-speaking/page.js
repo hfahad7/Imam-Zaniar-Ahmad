@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import Icon from '../components/ui-icon';
 import { buildBreadcrumbJsonLd, buildMetadata } from '../../lib/metadata';
 import { siteContent } from '../../lib/site-content';
 
@@ -84,7 +85,7 @@ export default function LecturesSpeakingPage() {
         <div className="pill-list">
           {siteContent.speakingAudiences.map((audience) => (
             <span key={audience} className="pill">
-              {audience}
+              <Icon name="community" />{audience}
             </span>
           ))}
         </div>
@@ -99,8 +100,9 @@ export default function LecturesSpeakingPage() {
         </div>
 
         <div className="card-grid card-grid--three">
-          {siteContent.speakingTopics.map((topic) => (
-            <article key={topic} className="card card--soft">
+          {siteContent.speakingTopics.map((topic, index) => (
+            <article key={topic} className="card card--soft visual-card">
+              <span className="card-icon"><Icon name={['heart', 'ring', 'school', 'community', 'microphone', 'book'][index]} /></span>
               <p>{topic}</p>
             </article>
           ))}
@@ -115,29 +117,33 @@ export default function LecturesSpeakingPage() {
           </div>
         </div>
 
-        <div className="card-grid">
-          <article className="card">
+        <div className="booking-step-grid">
+          <article className="card visual-card">
+            <span className="card-icon"><Icon name="message" /></span>
             <h3>1. Send the Request</h3>
             <p>
               Include the event date, audience, location, topic, and whether the
               event is in-person, virtual, or hybrid.
             </p>
           </article>
-          <article className="card">
+          <article className="card visual-card">
+            <span className="card-icon"><Icon name="calendar" /></span>
             <h3>2. Confirm Details and Availability</h3>
             <p>
               The booking is reviewed to confirm the fit, timing, and any travel
               or technology requirements.
             </p>
           </article>
-          <article className="card">
+          <article className="card visual-card">
+            <span className="card-icon"><Icon name="check" /></span>
             <h3>3. Finalize the Engagement</h3>
             <p>
               Once the details are agreed, the event can be finalized and
               prepared with the organizer.
             </p>
           </article>
-          <article className="card">
+          <article className="card visual-card booking-format-card">
+            <span className="card-icon"><Icon name="video" /></span>
             <h3>Formats</h3>
             <p>
               In-person, virtual, and hybrid requests are welcome, depending on
@@ -147,26 +153,37 @@ export default function LecturesSpeakingPage() {
         </div>
       </section>
 
-      <section className="section section--accent section--compact">
-        <div className="section-heading">
-          <div>
+      <section className="speaking-cta">
+        <div className="speaking-cta__copy">
+          <div className="section-heading">
+            <div>
             <span className="eyebrow">Contact</span>
             <h2>Book Imam Zaniar for Your Event</h2>
+            </div>
           </div>
-          <p className="section-lead">
-            Use the contact page to provide the audience, topic, venue, and
-            preferred format so the request can be reviewed efficiently.
-          </p>
-        </div>
+          <p>
+              Share the audience, topic, venue, and preferred format so the
+              request can be reviewed efficiently.
+            </p>
 
-        <div className="content-actions">
-          <Link className="button button--primary" href="/contact">
-            Book a Speaking Engagement
-          </Link>
-          <a className="button button--ghost" href={siteContent.contact.phoneHref}>
-            Call or text {siteContent.contact.phoneDisplay}
-          </a>
+          <div className="content-actions">
+            <Link className="button button--cream" href="/contact">
+              Book a Speaking Engagement
+            </Link>
+            <a className="button button--outline-light" href={siteContent.contact.phoneHref}>
+              Call or Text {siteContent.contact.phoneDisplay}
+            </a>
+          </div>
         </div>
+        <figure className="speaking-cta__media">
+          <Image
+            src={siteContent.photos.portrait}
+            alt="Imam Zaniar Ahmad speaking to a community audience"
+            width={1206}
+            height={1502}
+            sizes="(max-width: 820px) 92vw, 34vw"
+          />
+        </figure>
       </section>
     </div>
   );

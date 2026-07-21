@@ -3,7 +3,14 @@ import './globals.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import Script from 'next/script';
+import { Manrope } from 'next/font/google';
 import { siteContent, sitePathLinks } from '../lib/site-content';
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  variable: '--font-body',
+  display: 'swap',
+});
 
 const primaryLinks = [
   { href: '/nikah-weddings', label: 'Nikah Services' },
@@ -71,7 +78,7 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="en">
+    <html lang="en" className={manrope.variable}>
       <body>
         {ga4Id ? (
           <>

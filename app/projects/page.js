@@ -1,4 +1,5 @@
 import ProjectShowcase from '../components/project-showcase';
+import Icon from '../components/ui-icon';
 import { buildMetadata } from '../../lib/metadata';
 
 export const metadata = buildMetadata({
@@ -37,9 +38,9 @@ export default function ProjectsPage() {
         </div>
 
         <div className="purpose-lines">
-          <p><span>Access</span> Connecting people with trusted religious services.</p>
-          <p><span>Clarity</span> Making important Islamic knowledge easier to use.</p>
-          <p><span>Generosity</span> Helping charitable giving happen with intention.</p>
+          <p><span><Icon name="community" />Access</span> Connecting people with trusted religious services.</p>
+          <p><span><Icon name="book" />Clarity</span> Making important Islamic knowledge easier to use.</p>
+          <p><span><Icon name="heart" />Generosity</span> Helping charitable giving happen with intention.</p>
         </div>
       </section>
     </div>

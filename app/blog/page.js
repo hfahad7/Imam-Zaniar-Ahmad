@@ -1,5 +1,7 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
+import Icon from '../components/ui-icon';
 import { buildMetadata } from '../../lib/metadata';
 import { siteContent } from '../../lib/site-content';
 
@@ -13,25 +15,45 @@ export const metadata = buildMetadata({
 export default function BlogIndexPage() {
   return (
     <div className="page-shell">
-      <section className="page-hero">
-        <span className="eyebrow">Blog</span>
-        <h1>Practical Guidance for Couples and Communities</h1>
-        <p className="section-lead">
-          Clear, useful articles about preparing for a Nikah, inviting a speaker,
-          and serving Muslim communities with intention.
-        </p>
+      <section className="page-hero page-hero--with-media blog-hero">
+        <div className="page-hero__copy">
+          <span className="eyebrow">Blog</span>
+          <h1>Practical Guidance for Couples and Communities</h1>
+          <p className="section-lead">
+            Clear, useful articles about preparing for a Nikah, inviting a speaker,
+            and serving Muslim communities with intention.
+          </p>
+        </div>
+        <figure className="page-hero__media page-hero__media--landscape">
+          <Image
+            src={siteContent.photos.signingNikah}
+            alt="Imam Zaniar Ahmad writing notes while preparing for a ceremony"
+            width={1365}
+            height={2048}
+            priority
+            sizes="(max-width: 820px) 92vw, 38vw"
+          />
+          <figcaption>Notes on faith, family, preparation, and service.</figcaption>
+        </figure>
       </section>
 
       <section className="section section--compact">
         <div className="card-grid">
-          {siteContent.blogPosts.map((post) => (
-            <article key={post.slug} className="card card--soft">
-              <p className="card-meta">{post.date}</p>
-              <h3>{post.title}</h3>
-              <p>{post.excerpt}</p>
-              <div className="content-actions">
-                <Link className="button button--primary" href={`/blog/${post.slug}`}>
-                  Read article
+          {siteContent.blogPosts.map((post, index) => (
+            <article key={post.slug} className="blog-card">
+              <Image
+                src={[siteContent.photos.withGroom, siteContent.photos.communityEvent][index]}
+                alt={index === 0 ? 'Imam Zaniar Ahmad with a groom at a Nikah' : 'Imam Zaniar Ahmad at a community event'}
+                width={index === 0 ? 1206 : 1448}
+                height={index === 0 ? 1494 : 1086}
+                sizes="(max-width: 820px) 92vw, 44vw"
+              />
+              <div className="blog-card__copy">
+                <p className="card-meta"><Icon name="calendar" />{post.date}</p>
+                <h3>{post.title}</h3>
+                <p>{post.excerpt}</p>
+                <Link className="text-link" href={`/blog/${post.slug}`}>
+                  Read Article <span aria-hidden="true">&rarr;</span>
                 </Link>
               </div>
             </article>

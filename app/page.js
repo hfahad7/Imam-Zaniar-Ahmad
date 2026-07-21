@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import Icon from './components/ui-icon';
+import OntarioServiceMap from './components/ontario-service-map';
 import ProjectShowcase from './components/project-showcase';
 import { buildMetadata } from '../lib/metadata';
 import { siteContent } from '../lib/site-content';
@@ -14,6 +16,7 @@ export const metadata = buildMetadata({
 
 const nikahOptions = [
   {
+    icon: 'ring',
     label: 'Religious Service',
     title: 'Religious Nikah',
     description:
@@ -21,6 +24,7 @@ const nikahOptions = [
     cta: 'Book a Religious Nikah',
   },
   {
+    icon: 'document',
     label: 'Legal Service',
     title: 'Ontario Legal Officiation',
     description:
@@ -28,6 +32,7 @@ const nikahOptions = [
     cta: 'Book Legal Officiation',
   },
   {
+    icon: 'layers',
     label: 'Combined Service',
     title: 'Nikah and Legal Officiation',
     description:
@@ -115,7 +120,10 @@ export default function Home() {
         <div className="service-path-grid">
           {nikahOptions.map((option) => (
             <article className="service-path" key={option.title}>
-              <span className="card-meta">{option.label}</span>
+              <div className="card-icon-row">
+                <span className="card-icon"><Icon name={option.icon} /></span>
+                <span className="card-meta">{option.label}</span>
+              </div>
               <h3>{option.title}</h3>
               <p>{option.description}</p>
               <Link className="text-link" href="/contact">
@@ -162,7 +170,7 @@ export default function Home() {
           </p>
           <ul className="mission-points">
             {siteContent.biographyNotes.map((note) => (
-              <li key={note}>{note}</li>
+              <li key={note}><Icon name="check" />{note}</li>
             ))}
           </ul>
           <div className="content-actions">
@@ -208,18 +216,12 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="service-region-grid" aria-label="Ontario service areas by region">
-          {siteContent.serviceAreaGroups.map((group) => (
-            <article className="service-region" key={group.region}>
-              <h3>{group.region}</h3>
-              <p>{group.areas.join(' · ')}</p>
-            </article>
-          ))}
-        </div>
+        <OntarioServiceMap compact />
       </section>
 
       <section className="home-resource-grid">
         <article className="guide-feature guide-feature--compact">
+          <span className="feature-icon"><Icon name="book" /></span>
           <span className="eyebrow">Free Wedding Resource</span>
           <h2>{siteContent.guide.title}</h2>
           <p>
@@ -237,6 +239,7 @@ export default function Home() {
         </article>
 
         <article className="review-feature">
+          <span className="feature-icon feature-icon--light"><Icon name="star" /></span>
           <span className="eyebrow eyebrow--light">Community Trust</span>
           <div className="review-feature__metric">
             <strong>{siteContent.reviews.reportedCount}</strong>
@@ -254,6 +257,7 @@ export default function Home() {
       </section>
 
       <section className="closing-cta closing-cta--compact">
+        <span className="closing-cta__seal" aria-hidden="true"><Icon name="ring" /></span>
         <span className="eyebrow">Book Your Service</span>
         <h2>Plan Your Nikah with Clarity</h2>
         <p>
