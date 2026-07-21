@@ -9,5 +9,5 @@ export const metadata = {
 };
 
 export default function ErrorTestPage() {
-  return <ErrorState onTryAgain={() => {}} preview />;
+  return <ErrorState preview />;
 }

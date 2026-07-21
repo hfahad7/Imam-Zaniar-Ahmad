@@ -13,7 +13,7 @@ export default function ErrorState({ onTryAgain, preview = false }) {
         className="button button--primary"
         type="button"
         onClick={onTryAgain}
-        disabled={preview}
+        disabled={preview || !onTryAgain}
       >
         Try again
       </button>
