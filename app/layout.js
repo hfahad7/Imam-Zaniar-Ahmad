@@ -211,8 +211,8 @@ gtag('config', ${JSON.stringify(ga4Id)}, { anonymize_ip: true });`}
                 </li>
               </ul>
               <p className="footer-area">
-                Serving the Greater Toronto Area, Hamilton, Niagara, Waterloo
-                Region, and communities across Ontario.
+                Serving Toronto, Peel-Halton, Hamilton-Waterloo, Niagara-Brant,
+                and nearby Ontario communities.
               </p>
             </div>
           </div>

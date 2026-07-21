@@ -190,8 +190,10 @@ export default function NikahWeddingsPage() {
             </p>
             <ul className="service-list">
               <li>Religious ceremony details are kept clear and accessible.</li>
-              <li>Travel outside Ontario is available for Nikah ceremonies by request.</li>
-              <li>Travel fees are covered by the client for out-of-province requests.</li>
+              <li>
+                Nikah ceremonies outside Ontario are available by request, with
+                additional travel fees.
+              </li>
             </ul>
           </article>
         </div>
@@ -204,8 +206,8 @@ export default function NikahWeddingsPage() {
             <h2>Where Imam Zaniar Serves</h2>
           </div>
           <p className="section-lead">
-            Based in Ontario and available across the following cities and
-            surrounding communities.
+            Based in Ontario and available across the following communities.
+            Out-of-province Nikah requests include additional travel fees.
           </p>
         </div>
 

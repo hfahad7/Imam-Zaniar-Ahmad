@@ -2394,66 +2394,133 @@ body {
 .ontario-map {
   align-self: center;
   justify-self: center;
-  width: min(100%, 560px);
+  width: min(100%, 660px);
   height: auto;
-  max-height: 470px;
+  max-height: 490px;
+  overflow: visible;
 }
 
 .ontario-map__outline {
   fill: url(#ontario-fill);
-  stroke: rgba(255, 253, 248, 0.58);
-  stroke-width: 2;
+  stroke: rgba(255, 253, 248, 0.72);
+  stroke-width: 2.2;
   stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
 }
 
-.ontario-map__water {
-  fill: #102e25;
-  stroke: rgba(197, 161, 90, 0.28);
+.ontario-map__province-label {
+  fill: rgba(255, 253, 248, 0.84);
+  font-family: var(--serif);
+  font-size: 31px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.ontario-map__service-focus {
+  fill: rgba(197, 161, 90, 0.16);
+  stroke: var(--brass);
+  stroke-width: 2;
+  stroke-dasharray: 5 7;
+  vector-effect: non-scaling-stroke;
+}
+
+.ontario-map__north {
+  fill: var(--brass);
+}
+
+.ontario-map__north text {
+  fill: rgba(255, 253, 248, 0.7);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.ontario-map__inset-connector {
+  fill: none;
+  stroke: var(--brass);
   stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-dasharray: 4 7;
+  opacity: 0.72;
+}
+
+.ontario-map__connector-dot {
+  fill: var(--brass);
+}
+
+.ontario-map__inset rect {
+  fill: rgba(7, 29, 23, 0.82);
+  stroke: rgba(197, 161, 90, 0.52);
+  stroke-width: 1.5;
+}
+
+.ontario-map__inset-kicker {
+  fill: var(--brass);
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.ontario-map__inset-title {
+  fill: var(--paper);
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.ontario-map__inset-land {
+  fill: rgba(50, 107, 86, 0.66);
+  stroke: rgba(255, 253, 248, 0.54);
+  stroke-width: 1.1;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
 }
 
 .ontario-map__corridor {
   fill: none;
   stroke: var(--brass);
-  stroke-width: 3;
+  stroke-width: 2.4;
   stroke-linecap: round;
-  stroke-dasharray: 5 9;
-  opacity: 0.85;
+  stroke-dasharray: 4 5;
+  vector-effect: non-scaling-stroke;
 }
 
-.ontario-map__corridor--soft {
-  stroke-width: 1.5;
-  opacity: 0.45;
-}
-
-.ontario-map__south-highlight {
-  fill: rgba(197, 161, 90, 0.06);
-  stroke: rgba(197, 161, 90, 0.34);
-  stroke-width: 1.5;
-  stroke-dasharray: 6 8;
+.map-marker line {
+  stroke: rgba(255, 253, 248, 0.65);
+  stroke-width: 0.8;
+  vector-effect: non-scaling-stroke;
 }
 
 .map-marker__pulse {
-  fill: rgba(197, 161, 90, 0.18);
-  stroke: rgba(197, 161, 90, 0.5);
-  stroke-width: 1;
+  fill: rgba(197, 161, 90, 0.24);
+  stroke: rgba(197, 161, 90, 0.68);
+  stroke-width: 0.9;
+  transform-box: fill-box;
+  transform-origin: center;
+  vector-effect: non-scaling-stroke;
 }
 
 .map-marker__dot {
   fill: #fffdf8;
   stroke: var(--brass);
-  stroke-width: 3;
+  stroke-width: 1.2;
+  vector-effect: non-scaling-stroke;
+}
+
+.map-marker__label {
+  fill: #15382d;
+  stroke: var(--brass);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
 }
 
 .map-marker text {
   fill: #fffdf8;
   font-family: var(--sans);
-  font-size: 16px;
-  font-weight: 750;
-  paint-order: stroke;
-  stroke: #15382d;
-  stroke-width: 4px;
-  stroke-linejoin: round;
+  font-size: 4.5px;
+  font-weight: 850;
 }
 
 .service-map__legend {
@@ -2539,6 +2606,14 @@ body {
   margin-bottom: 0.5rem;
   font-size: 0.82rem;
   font-weight: 750;
+}
+
+.service-map__travel-note {
+  max-width: 30ch;
+  margin-bottom: 0.75rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.5;
 }
 
 .service-map--compact {
@@ -3245,7 +3320,7 @@ body {
   }
 
   .map-marker text {
-    font-size: 14px;
+    font-size: 7px;
   }
 
   .service-map__legend {
