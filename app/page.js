@@ -6,11 +6,35 @@ import { buildMetadata } from '../lib/metadata';
 import { siteContent } from '../lib/site-content';
 
 export const metadata = buildMetadata({
-  title: 'Nikkah, Nikah, and Islamic Speaking Services in Ontario',
+  title: 'Nikah Ceremonies and Islamic Speaking Services in Ontario',
   description:
-    'Discover Imam Zaniar Ahmad for Nikkah and Nikah ceremonies in Ontario, lectures and speaking engagements, trusted community projects, and clear ways to request availability.',
+    'Book Imam Zaniar Ahmad for a religious Nikah ceremony, Ontario legal marriage officiation, or an Islamic speaking engagement.',
   path: '/',
 });
+
+const nikahOptions = [
+  {
+    label: 'Religious Service',
+    title: 'Religious Nikah',
+    description:
+      'An Islamic marriage ceremony centred on consent, the wali, mahr, witnesses, and a meaningful beginning.',
+    cta: 'Book a Religious Nikah',
+  },
+  {
+    label: 'Legal Service',
+    title: 'Ontario Legal Officiation',
+    description:
+      'Legal marriage officiation for couples who have the required Ontario marriage licence and documents.',
+    cta: 'Book Legal Officiation',
+  },
+  {
+    label: 'Combined Service',
+    title: 'Nikah and Legal Officiation',
+    description:
+      'The religious ceremony and Ontario legal officiation thoughtfully coordinated for the same occasion.',
+    cta: 'Book Both Services',
+  },
+];
 
 export default function Home() {
   return (
@@ -18,24 +42,29 @@ export default function Home() {
       <section className="hero hero--home">
         <div className="hero__copy">
           <span className="eyebrow eyebrow--light">Imam Zaniar Ahmad</span>
-          <h1>A meaningful beginning, held with care.</h1>
+          <h1>A Meaningful Beginning, Held with Care</h1>
           <p className="hero__lead">
-            Nikah ceremonies and thoughtful speaking engagements for Muslim
-            couples, families, and communities across Ontario.
+            Religious Nikah ceremonies, Ontario legal marriage officiation, and
+            thoughtful speaking engagements for Muslim communities.
           </p>
 
           <div className="hero-actions">
             <Link className="button button--cream" href="/contact">
-              Request availability
+              Book a Nikah Consultation
             </Link>
-            <Link className="button button--outline-light" href="/nikah-weddings">
-              Plan your Nikah
+            <Link className="button button--outline-light" href="/lectures-speaking">
+              Invite Imam Zaniar to Speak
             </Link>
           </div>
 
-          <a className="hero__phone" href={siteContent.contact.phoneHref}>
-            Prefer to speak directly? {siteContent.contact.phoneDisplay}
-          </a>
+          <div className="hero__secondary-actions">
+            <Link href="/nikah-guide">
+              Get the Free Nikkah Guide <span aria-hidden="true">&darr;</span>
+            </Link>
+            <a href={siteContent.contact.phoneHref}>
+              Call {siteContent.contact.phoneDisplay}
+            </a>
+          </div>
         </div>
 
         <div className="hero__portrait" aria-label="Portrait of Imam Zaniar Ahmad">
@@ -51,67 +80,115 @@ export default function Home() {
           />
           <div className="hero__caption">
             <span>Ontario</span>
-            <strong>Registered marriage officiant</strong>
+            <strong>Registered Marriage Officiant</strong>
           </div>
         </div>
 
-        <div className="hero__credentials" aria-label="At a glance">
+        <div className="hero__credentials" aria-label="Nikah service options">
           <div>
             <span>01</span>
-            <p>Religious Nikah ceremonies</p>
+            <p>Religious Nikah Ceremony</p>
           </div>
           <div>
             <span>02</span>
-            <p>Ontario legal officiation</p>
+            <p>Ontario Legal Officiation</p>
           </div>
           <div>
             <span>03</span>
-            <p>Lectures and community talks</p>
+            <p>Both Services Together</p>
           </div>
         </div>
       </section>
 
-      <section className="section section--services">
+      <section className="section section--compact section--service-choice">
         <div className="section-heading section-heading--editorial">
           <div>
-            <span className="eyebrow">How Imam Zaniar can help</span>
-            <h2>Two services, one thoughtful approach.</h2>
+            <span className="eyebrow">Nikah Services</span>
+            <h2>Choose the Service You Need</h2>
           </div>
           <p className="section-lead">
-            Every engagement begins with listening, clear expectations, and
-            respect for the people in the room.
+            Know exactly what you are booking before the wedding day. Choose a
+            religious ceremony, legal Ontario officiation, or both.
           </p>
         </div>
 
-        <div className="service-editorial">
-          {siteContent.services.map((service, index) => (
-            <article key={service.slug} className="service-feature">
-              <span className="service-feature__number">0{index + 1}</span>
-              <div>
-                <h3>{service.name}</h3>
-                <p>{service.summary}</p>
-              </div>
-              <Link className="circle-link" href={`/${service.slug}`} aria-label={`Learn more about ${service.name}`}>
-                <span aria-hidden="true">&rarr;</span>
+        <div className="service-path-grid">
+          {nikahOptions.map((option) => (
+            <article className="service-path" key={option.title}>
+              <span className="card-meta">{option.label}</span>
+              <h3>{option.title}</h3>
+              <p>{option.description}</p>
+              <Link className="text-link" href="/contact">
+                {option.cta} <span aria-hidden="true">&rarr;</span>
               </Link>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="section section--projects section--projects-featured">
+      <section className="section section--compact mission-feature">
+        <div className="mission-feature__media">
+          <Image
+            src={siteContent.photos.communityEvent}
+            alt="Imam Zaniar Ahmad serving at a Muslim community gathering"
+            width={1448}
+            height={1086}
+            sizes="(max-width: 820px) 92vw, 48vw"
+            className="mission-feature__main-image"
+          />
+          <Image
+            src={siteContent.photos.portrait}
+            alt="Portrait of Imam Zaniar Ahmad"
+            width={1206}
+            height={1502}
+            sizes="(max-width: 540px) 38vw, 16vw"
+            className="mission-feature__accent-image"
+          />
+        </div>
+
+        <div className="mission-feature__copy">
+          <span className="eyebrow">About Imam Zaniar</span>
+          <h2>A Mission Grounded in Faith and Service</h2>
+          <p>
+            Imam Zaniar Ahmad serves Muslim communities at the meeting point of
+            faith, family, practical education, and technology. His work is
+            focused on making important religious services easier to understand
+            and access.
+          </p>
+          <p>
+            Alongside Nikah officiation, he speaks with students, families, and
+            community organizations about faith, responsible ambition, and
+            building a meaningful life without losing sight of Islamic values.
+          </p>
+          <ul className="mission-points">
+            {siteContent.biographyNotes.map((note) => (
+              <li key={note}>{note}</li>
+            ))}
+          </ul>
+          <div className="content-actions">
+            <Link className="button button--primary" href="/about">
+              Learn About Imam Zaniar
+            </Link>
+            <Link className="button button--ghost" href="/lectures-speaking">
+              Invite Him to Speak
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--compact section--projects section--projects-featured">
         <div className="section-heading section-heading--editorial">
           <div>
-            <span className="eyebrow">Community initiatives</span>
-            <h2>Service that continues beyond the room.</h2>
+            <span className="eyebrow">Community Projects</span>
+            <h2>Tools Built to Serve</h2>
           </div>
           <div className="section-heading__aside">
             <p className="section-lead">
-              Three projects co-founded by Imam Zaniar Ahmad connect people with
-              Islamic services, Zakah education, and thoughtful giving.
+              Three initiatives co-founded by Imam Zaniar that support Islamic
+              services, Zakah education, and charitable giving.
             </p>
             <Link className="section-link" href="/projects">
-              Explore the full story <span aria-hidden="true">&rarr;</span>
+              View All Projects <span aria-hidden="true">&rarr;</span>
             </Link>
           </div>
         </div>
@@ -119,78 +196,76 @@ export default function Home() {
         <ProjectShowcase compact />
       </section>
 
-      <section className="proof-band">
-        <div className="proof-band__metric">
-          <strong>{siteContent.reviews.reportedCount}</strong>
-          <span>Google reviews</span>
-        </div>
-        <div className="proof-band__copy">
-          <span className="eyebrow eyebrow--light">Community trust</span>
-          <h2>Presence matters on life&apos;s important days.</h2>
-          <p>
-            Couples and organizers value a calm process, thoughtful guidance,
-            and communication that feels personal from the first conversation.
-          </p>
-        </div>
-        <Link className="button button--outline-light" href="/contact">
-          Start a conversation
-        </Link>
-      </section>
-
-      <section className="section section--locations">
+      <section className="section section--compact section--locations">
         <div className="section-heading section-heading--editorial">
           <div>
-            <span className="eyebrow">Across Ontario</span>
-            <h2>Serving couples and communities close to home.</h2>
+            <span className="eyebrow">Service Areas</span>
+            <h2>Serving Communities Across Ontario</h2>
           </div>
           <p className="section-lead">
             Available throughout the Greater Toronto Area, Hamilton, Niagara,
-            Waterloo Region, and beyond. Travel ceremonies are welcomed by request.
+            Waterloo Region, and nearby communities. Travel requests are welcome.
           </p>
         </div>
 
-        <div className="location-list" aria-label="Ontario service areas">
-          {siteContent.serviceAreas.map((area) => (
-            <span key={area}>{area}</span>
+        <div className="service-region-grid" aria-label="Ontario service areas by region">
+          {siteContent.serviceAreaGroups.map((group) => (
+            <article className="service-region" key={group.region}>
+              <h3>{group.region}</h3>
+              <p>{group.areas.join(' · ')}</p>
+            </article>
           ))}
         </div>
       </section>
 
-      <section className="guide-feature">
-        <div className="guide-feature__ornament" aria-hidden="true">
-          <span>&#10022;</span>
-        </div>
-        <div className="guide-feature__copy">
-          <span className="eyebrow">A calmer way to prepare</span>
+      <section className="home-resource-grid">
+        <article className="guide-feature guide-feature--compact">
+          <span className="eyebrow">Free Wedding Resource</span>
           <h2>{siteContent.guide.title}</h2>
           <p>
-            Understand the religious ceremony, Ontario marriage requirements,
-            and the details worth arranging before your wedding day.
+            Prepare for the religious ceremony, Ontario marriage requirements,
+            and the details worth confirming before your wedding day.
           </p>
           <div className="content-actions">
             <Link className="button button--primary" href="/nikah-guide">
-              Read the guide
+              Get the Free Guide
             </Link>
             <a className="text-link" href={siteContent.guide.downloadPath}>
-              Download the PDF <span aria-hidden="true">&darr;</span>
+              Download PDF <span aria-hidden="true">&darr;</span>
             </a>
           </div>
-        </div>
+        </article>
+
+        <article className="review-feature">
+          <span className="eyebrow eyebrow--light">Community Trust</span>
+          <div className="review-feature__metric">
+            <strong>{siteContent.reviews.reportedCount}</strong>
+            <span>Google Reviews</span>
+          </div>
+          <h2>Care People Remember</h2>
+          <p>
+            Couples and organizers value a calm process, clear communication,
+            and a personal presence on important days.
+          </p>
+          <Link className="button button--outline-light" href="/contact">
+            Contact Imam Zaniar
+          </Link>
+        </article>
       </section>
 
-      <section className="closing-cta">
-        <span className="eyebrow">When you are ready</span>
-        <h2>Let&apos;s make the next step feel simple.</h2>
+      <section className="closing-cta closing-cta--compact">
+        <span className="eyebrow">Book Your Service</span>
+        <h2>Plan Your Nikah with Clarity</h2>
         <p>
-          Share your date, location, and the kind of support you need. Imam Zaniar
-          will follow up to discuss availability and details.
+          Share your date, location, and whether you need a religious ceremony,
+          Ontario legal officiation, or both.
         </p>
         <div className="content-actions content-actions--center">
           <Link className="button button--primary" href="/contact">
-            Request availability
+            Book a Nikah Consultation
           </Link>
           <a className="button button--quiet" href={siteContent.contact.smsHref}>
-            Send a text
+            Text {siteContent.contact.phoneDisplay}
           </a>
         </div>
       </section>

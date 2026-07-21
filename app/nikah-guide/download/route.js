@@ -59,7 +59,7 @@ function buildPdf(lines) {
 export async function GET() {
   const lines = [
     siteContent.guide.title,
-    'A practical Ontario Nikkah and Nikah guide.',
+    'A free, practical Nikkah guide for Ontario couples.',
     `Last updated: ${siteContent.guide.lastUpdated}`,
     'Includes:',
     '- Religious preparation and ceremony checklist',

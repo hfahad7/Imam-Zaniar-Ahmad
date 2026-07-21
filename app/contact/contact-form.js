@@ -158,7 +158,7 @@ export default function ContactForm({ turnstileSiteKey }) {
             value={form.travelDetails}
             onChange={handleChange}
             as="textarea"
-            help="Only fill this in for travel Nikkah requests outside Ontario."
+            help="Only fill this in for travel Nikah requests outside Ontario."
           />
         </>
       );
@@ -289,7 +289,7 @@ export default function ContactForm({ turnstileSiteKey }) {
           as="select"
           required
         >
-          <option value="nikah">Nikkah / Nikah or Muslim wedding</option>
+          <option value="nikah">Nikah ceremony or Muslim wedding</option>
           <option value="speaking">Lecture, khutbah, talk, or speaking engagement</option>
         </Field>
       </div>

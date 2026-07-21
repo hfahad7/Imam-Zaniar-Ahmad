@@ -11,7 +11,7 @@ const breadcrumbJsonLd = buildBreadcrumbJsonLd([
 export const metadata = buildMetadata({
   title: siteContent.guide.title,
   description:
-    'An Ontario Nikkah and Nikah guide explaining the ceremony, legal marriage process, preparation steps, and downloadable checklist.',
+    'A free Nikkah guide explaining the religious ceremony, Ontario legal marriage process, preparation steps, and downloadable checklist.',
   path: '/nikah-guide',
 });
 
@@ -24,15 +24,15 @@ export default function NikahGuidePage() {
       />
 
       <section className="page-hero">
-        <span className="eyebrow">Nikah guide</span>
+        <span className="eyebrow">Free Wedding Resource</span>
         <h1>{siteContent.guide.title}</h1>
         <p className="section-lead">
-          A practical resource for couples who want to understand the ceremony,
-          prepare with confidence, and keep the important details in one place.
+          A free, practical resource for couples who want to understand the Nikah,
+          prepare with confidence, and keep important details in one place.
         </p>
         <div className="content-actions">
           <a className="button button--primary" href={siteContent.guide.downloadPath}>
-            Download the PDF
+            Download the Free PDF
           </a>
           <Link className="button button--ghost" href="/nikah-weddings">
             Back to the Nikah page
@@ -41,33 +41,32 @@ export default function NikahGuidePage() {
         <p className="small-copy">Last updated {siteContent.guide.lastUpdated}.</p>
       </section>
 
-      <section className="section">
+      <section className="section section--compact">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">Who it is for</span>
-            <h2>Couples planning a ceremony in Ontario</h2>
+            <span className="eyebrow">Who It Is For</span>
+            <h2>Couples Planning a Ceremony in Ontario</h2>
           </div>
         </div>
 
         <p className="prose">
           The guide is written for couples who want to understand the difference
-          between the religious Nikkah/Nikah and the legal marriage process in
-          Ontario, and for families who want a practical checklist before the
-          ceremony day.
+          between a religious Nikah and the legal marriage process in Ontario. It
+          also gives families a practical checklist for the ceremony day.
         </p>
       </section>
 
-      <section className="section section--muted">
+      <section className="section section--muted section--compact">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">Guide content</span>
-            <h2>What the guide covers</h2>
+            <span className="eyebrow">Guide Content</span>
+            <h2>What the Guide Covers</h2>
           </div>
         </div>
 
         <div className="card-grid">
           <article className="card card--soft">
-            <h3>Religious preparation</h3>
+            <h3>Religious Preparation</h3>
             <ul className="service-list">
               <li>Consent</li>
               <li>The wali</li>
@@ -77,7 +76,7 @@ export default function NikahGuidePage() {
             </ul>
           </article>
           <article className="card card--soft">
-            <h3>Ontario legal process</h3>
+            <h3>Ontario Legal Process</h3>
             <ul className="service-list">
               <li>Marriage licence basics</li>
               <li>Authorized officiants</li>
@@ -87,7 +86,7 @@ export default function NikahGuidePage() {
             </ul>
           </article>
           <article className="card card--soft">
-            <h3>Planning support</h3>
+            <h3>Planning Support</h3>
             <ul className="service-list">
               <li>Venue and vendor questions</li>
               <li>Trusted Imam and officiant selection</li>
@@ -96,7 +95,7 @@ export default function NikahGuidePage() {
             </ul>
           </article>
           <article className="card card--soft">
-            <h3>Helpful resources</h3>
+            <h3>Helpful Resources</h3>
             <ul className="service-list">
               <li>Ontario marriage information</li>
               <li>A downloadable copy for easy reference</li>
@@ -107,11 +106,11 @@ export default function NikahGuidePage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--compact">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">Official Ontario resources</span>
-            <h2>Useful reference links</h2>
+            <span className="eyebrow">Official Ontario Resources</span>
+            <h2>Useful Reference Links</h2>
           </div>
         </div>
 
@@ -127,11 +126,11 @@ export default function NikahGuidePage() {
         </div>
       </section>
 
-      <section className="section section--accent">
+      <section className="section section--accent section--compact">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">Next step</span>
-            <h2>Continue to the wedding page or book directly</h2>
+            <span className="eyebrow">Next Step</span>
+            <h2>Review Nikah Services or Book Directly</h2>
           </div>
         </div>
 
@@ -140,7 +139,7 @@ export default function NikahGuidePage() {
             Open the Nikah wedding page
           </Link>
           <Link className="button button--ghost" href="/contact">
-            Request availability
+            Book a Nikah Consultation
           </Link>
         </div>
       </section>

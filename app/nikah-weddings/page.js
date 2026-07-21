@@ -12,7 +12,7 @@ const breadcrumbJsonLd = buildBreadcrumbJsonLd([
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Nikkah, Nikah, and Muslim wedding ceremonies',
+  name: 'Nikah ceremonies and Ontario marriage officiation',
   serviceType: 'Islamic marriage ceremony and Ontario marriage officiation',
   url: `${siteContent.siteUrl}/nikah-weddings`,
   provider: { '@id': `${siteContent.siteUrl}/#person` },
@@ -20,11 +20,32 @@ const serviceJsonLd = {
 };
 
 export const metadata = buildMetadata({
-  title: 'Nikkah and Nikah Weddings',
+  title: 'Nikah Weddings and Marriage Officiation',
   description:
-    'Nikkah and Nikah wedding officiation in Ontario, with clear explanations of religious ceremonies, legal marriage paperwork, service areas, and travel requests.',
+    'Book a religious Nikah ceremony, Ontario legal marriage officiation, or both, with clear preparation and service-area information.',
   path: '/nikah-weddings',
 });
+
+const serviceOptions = [
+  {
+    label: 'Religious Service',
+    title: 'Religious Nikah',
+    description:
+      'The Islamic marriage ceremony, including the essential religious elements and guidance for the couple and family.',
+  },
+  {
+    label: 'Legal Service',
+    title: 'Ontario Legal Officiation',
+    description:
+      'Legal marriage officiation for couples with a valid Ontario marriage licence and the required documents.',
+  },
+  {
+    label: 'Combined Service',
+    title: 'Nikah and Legal Officiation',
+    description:
+      'Both services coordinated for the same occasion, so the religious and legal steps are clear from the start.',
+  },
+];
 
 export default function NikahWeddingsPage() {
   return (
@@ -39,19 +60,18 @@ export default function NikahWeddingsPage() {
       />
 
       <section className="page-hero">
-        <span className="eyebrow">Nikkah and Nikah weddings</span>
-        <h1>Book a Muslim wedding officiant in Ontario</h1>
+        <span className="eyebrow">Nikah Services in Ontario</span>
+        <h1>Book a Muslim Wedding Officiant in Ontario</h1>
         <p className="section-lead">
-          Celebrate your Nikkah or Nikah with thoughtful guidance from an Imam
-          and registered Ontario marriage officiant. Religious ceremony details
-          and Ontario legal requirements are explained clearly from the start.
+          Book a religious Nikah ceremony, Ontario legal marriage officiation,
+          or both with an Imam who is also a registered Ontario marriage officiant.
         </p>
         <div className="content-actions">
           <Link className="button button--primary" href="/contact">
-            Request Nikah availability
+            Book a Nikah Consultation
           </Link>
           <Link className="button button--ghost" href="/nikah-guide">
-            Read the Nikah guide
+            Get the Free Nikkah Guide
           </Link>
         </div>
       </section>
@@ -90,39 +110,53 @@ export default function NikahWeddingsPage() {
         </figure>
       </section>
 
-      <section className="section">
+      <section className="section section--compact">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">What is included</span>
-            <h2>Practical ceremony support</h2>
+            <span className="eyebrow">Choose Your Service</span>
+            <h2>Religious, Legal, or Both</h2>
           </div>
+          <p className="section-lead">
+            These services are related, but they are not the same. Choose the
+            option that matches what you need for your wedding.
+          </p>
         </div>
 
-        <div className="card-grid">
-          {siteContent.weddingHighlights.map((highlight) => (
-            <article key={highlight} className="card">
-              <p>{highlight}</p>
+        <div className="service-path-grid">
+          {serviceOptions.map((option) => (
+            <article className="service-path" key={option.title}>
+              <span className="card-meta">{option.label}</span>
+              <h3>{option.title}</h3>
+              <p>{option.description}</p>
+              <Link className="text-link" href="/contact">
+                Book This Service <span aria-hidden="true">&rarr;</span>
+              </Link>
             </article>
           ))}
         </div>
+
+        <ul className="inclusion-list" aria-label="Additional Nikah service details">
+          {siteContent.weddingHighlights.map((highlight) => (
+            <li key={highlight}>{highlight}</li>
+          ))}
+        </ul>
       </section>
 
-      <section className="section section--muted">
+      <section className="section section--muted section--compact">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">Religious and legal distinction</span>
-            <h2>Understand the difference before the ceremony</h2>
+            <span className="eyebrow">Religious and Legal</span>
+            <h2>Understand the Difference Before the Ceremony</h2>
           </div>
           <p className="section-lead">
-            A religious Nikkah or Nikah is distinct from legal marriage
-            registration. Review the official Ontario resources below as you
-            prepare your documents and ceremony plans.
+            A religious Nikah is distinct from legal marriage registration in
+            Ontario. Review both paths before finalizing your plans.
           </p>
         </div>
 
         <div className="split">
           <article className="info-card">
-            <h3 className="small-heading">Ontario legal marriage</h3>
+            <h3 className="small-heading">Ontario Legal Marriage</h3>
             <p>
               Ontario.ca explains that you need a valid marriage licence and an
               authorized officiant for a legal ceremony.
@@ -139,25 +173,25 @@ export default function NikahWeddingsPage() {
           </article>
 
           <article className="info-card">
-            <h3 className="small-heading">Religious ceremony</h3>
+            <h3 className="small-heading">Religious Nikah Ceremony</h3>
             <p>
-              Both Nikkah and Nikah refer to the Islamic marriage ceremony. The
-              spelling may vary, but the care given to the occasion does not.
+              The Nikah is the Islamic marriage ceremony. It can be booked on its
+              own or coordinated with Ontario legal officiation.
             </p>
             <ul className="service-list">
               <li>Religious ceremony details are kept clear and accessible.</li>
-              <li>Travel outside Ontario is available for Nikkah ceremonies by request.</li>
+              <li>Travel outside Ontario is available for Nikah ceremonies by request.</li>
               <li>Travel fees are covered by the client for out-of-province requests.</li>
             </ul>
           </article>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--compact">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">Service areas</span>
-            <h2>Ontario service areas</h2>
+            <span className="eyebrow">Service Areas</span>
+            <h2>Where Imam Zaniar Serves</h2>
           </div>
           <p className="section-lead">
             Based in Ontario and available across the following cities and
@@ -165,20 +199,21 @@ export default function NikahWeddingsPage() {
           </p>
         </div>
 
-        <div className="pill-list">
-          {siteContent.serviceAreas.map((area) => (
-            <span key={area} className="pill">
-              {area}
-            </span>
+        <div className="service-region-grid" aria-label="Ontario service areas by region">
+          {siteContent.serviceAreaGroups.map((group) => (
+            <article className="service-region" key={group.region}>
+              <h3>{group.region}</h3>
+              <p>{group.areas.join(' · ')}</p>
+            </article>
           ))}
         </div>
       </section>
 
-      <section className="section section--accent">
+      <section className="section section--accent section--compact">
         <div className="section-heading">
           <div>
             <span className="eyebrow">Google Reviews</span>
-            <h2>Trusted by couples and families</h2>
+            <h2>Trusted by Couples and Families</h2>
           </div>
           <p className="section-lead">
             {siteContent.reviews.reportedCount} Google reviews reflect a growing
@@ -195,27 +230,26 @@ export default function NikahWeddingsPage() {
           </article>
 
           <article className="review-card">
-            <h3>Simple next step</h3>
+            <h3>Book the Service You Need</h3>
             <p>
               If you are ready to ask about a wedding, use the contact page and
-              include the ceremony date, location, and whether the request is a
-              religious ceremony, an Ontario legal officiation request, or a
-              travel Nikkah.
+              include the ceremony date, location, and whether you need a
+              religious ceremony, Ontario legal officiation, or both.
             </p>
             <div className="content-actions">
               <Link className="button button--primary" href="/contact">
-                Request availability
+                Book a Nikah Consultation
               </Link>
             </div>
           </article>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--compact">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">Frequently asked questions</span>
-            <h2>Common wedding questions</h2>
+            <span className="eyebrow">Frequently Asked Questions</span>
+            <h2>Common Wedding Questions</h2>
           </div>
         </div>
 
@@ -229,11 +263,11 @@ export default function NikahWeddingsPage() {
         </div>
       </section>
 
-      <section className="section section--muted">
+      <section className="section section--muted section--compact">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">Booking flow</span>
-            <h2>What happens next</h2>
+            <span className="eyebrow">Booking Process</span>
+            <h2>What Happens Next</h2>
           </div>
         </div>
 
@@ -242,6 +276,11 @@ export default function NikahWeddingsPage() {
           <li>Confirm availability, location, and any travel details.</li>
           <li>Finalize the engagement once the details are agreed.</li>
         </ol>
+        <div className="content-actions">
+          <Link className="button button--primary" href="/contact">
+            Book a Nikah Consultation
+          </Link>
+        </div>
       </section>
     </div>
   );

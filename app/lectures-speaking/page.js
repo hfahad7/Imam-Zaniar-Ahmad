@@ -40,8 +40,8 @@ export default function LecturesSpeakingPage() {
 
       <section className="page-hero page-hero--with-media">
         <div className="page-hero__copy">
-          <span className="eyebrow">Lectures and speaking</span>
-          <h1>Thoughtful talks for communities of every size</h1>
+          <span className="eyebrow">Lectures and Speaking</span>
+          <h1>Thoughtful Talks for Communities of Every Size</h1>
           <p className="section-lead">
             Imam Zaniar Ahmad can be invited for khutbahs, lectures, workshops,
             panels, youth sessions, and speaking engagements for Muslim and
@@ -69,15 +69,15 @@ export default function LecturesSpeakingPage() {
         </figure>
       </section>
 
-      <section className="section">
+      <section className="section section--compact">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">Who this serves</span>
-            <h2>Audiences that commonly book a speaker</h2>
+            <span className="eyebrow">Who This Serves</span>
+            <h2>Audiences Who Book Imam Zaniar</h2>
           </div>
           <p className="section-lead">
-            The website highlights the people and organizations that most often
-            need a speaker for a formal event or community gathering.
+            Speaking engagements can be tailored for students, families,
+            professionals, and community organizations.
           </p>
         </div>
 
@@ -90,15 +90,15 @@ export default function LecturesSpeakingPage() {
         </div>
       </section>
 
-      <section className="section section--muted">
+      <section className="section section--muted section--compact">
         <div className="section-heading">
           <div>
             <span className="eyebrow">Topics</span>
-            <h2>Speaking themes</h2>
+            <h2>Speaking Themes</h2>
           </div>
         </div>
 
-        <div className="card-grid">
+        <div className="card-grid card-grid--three">
           {siteContent.speakingTopics.map((topic) => (
             <article key={topic} className="card card--soft">
               <p>{topic}</p>
@@ -107,31 +107,31 @@ export default function LecturesSpeakingPage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--compact">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">Booking process</span>
-            <h2>Three simple steps</h2>
+            <span className="eyebrow">Booking Process</span>
+            <h2>Three Simple Steps</h2>
           </div>
         </div>
 
         <div className="card-grid">
           <article className="card">
-            <h3>1. Send the request</h3>
+            <h3>1. Send the Request</h3>
             <p>
               Include the event date, audience, location, topic, and whether the
               event is in-person, virtual, or hybrid.
             </p>
           </article>
           <article className="card">
-            <h3>2. Confirm details and availability</h3>
+            <h3>2. Confirm Details and Availability</h3>
             <p>
               The booking is reviewed to confirm the fit, timing, and any travel
               or technology requirements.
             </p>
           </article>
           <article className="card">
-            <h3>3. Finalize the engagement</h3>
+            <h3>3. Finalize the Engagement</h3>
             <p>
               Once the details are agreed, the event can be finalized and
               prepared with the organizer.
@@ -147,11 +147,11 @@ export default function LecturesSpeakingPage() {
         </div>
       </section>
 
-      <section className="section section--accent">
+      <section className="section section--accent section--compact">
         <div className="section-heading">
           <div>
             <span className="eyebrow">Contact</span>
-            <h2>Best next step for organizers</h2>
+            <h2>Book Imam Zaniar for Your Event</h2>
           </div>
           <p className="section-lead">
             Use the contact page to provide the audience, topic, venue, and
@@ -161,7 +161,7 @@ export default function LecturesSpeakingPage() {
 
         <div className="content-actions">
           <Link className="button button--primary" href="/contact">
-            Start a speaking request
+            Book a Speaking Engagement
           </Link>
           <a className="button button--ghost" href={siteContent.contact.phoneHref}>
             Call or text {siteContent.contact.phoneDisplay}

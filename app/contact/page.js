@@ -7,7 +7,7 @@ import { siteContent } from '../../lib/site-content';
 export const metadata = buildMetadata({
   title: 'Contact and Booking',
   description:
-    'Call, text, message on Instagram, or send a protected website inquiry to Imam Zaniar Ahmad for Nikah and speaking bookings.',
+    'Contact Imam Zaniar Ahmad to book a Nikah ceremony, Ontario legal marriage officiation, or speaking engagement.',
   path: '/contact',
 });
 
@@ -15,20 +15,19 @@ export default function ContactPage() {
   return (
     <div className="page-shell">
       <section className="page-hero">
-        <span className="eyebrow">Contact and booking</span>
-        <h1>Choose the contact method that fits best</h1>
+        <span className="eyebrow">Contact and Booking</span>
+        <h1>Book a Nikah or Speaking Engagement</h1>
         <p className="section-lead">
-          Call or text first, message on Instagram second, or use the protected
-          website inquiry form. The form is designed for Nikkah, Nikah, lectures,
-          khutbahs, talks, workshops, and speaking engagements.
+          Share the service, date, location, and details you already know. Call,
+          text, email, Instagram, or the booking form are all available.
         </p>
       </section>
 
-      <section className="section contact-grid">
+      <section className="section section--compact contact-grid">
         <div className="contact-methods">
           <article className="contact-method">
-            <p className="card-meta">1. Primary contact</p>
-            <h3>Call or text</h3>
+            <p className="card-meta">Fastest Option</p>
+            <h3>Call or Text</h3>
             <p>
               People may call or text {siteContent.contact.phoneDisplay} for direct
               booking questions.
@@ -47,7 +46,7 @@ export default function ContactPage() {
           </article>
 
           <article className="contact-method">
-            <p className="card-meta">2. Secondary contact</p>
+            <p className="card-meta">Social Message</p>
             <h3>Instagram</h3>
             <p>Message Imam Zaniar Ahmad on Instagram for a quick follow-up.</p>
             <a
@@ -61,8 +60,8 @@ export default function ContactPage() {
           </article>
 
           <article className="contact-method">
-            <p className="card-meta">3. Protected website inquiry</p>
-            <h3>Inquiry form</h3>
+            <p className="card-meta">Detailed Booking</p>
+            <h3>Booking Form</h3>
             <p>
               Use the form when you would like to share the full details of your
               ceremony, event, or speaking request in one message.
@@ -72,7 +71,7 @@ export default function ContactPage() {
         </div>
 
         <div className="card card--soft">
-          <h3>What to include</h3>
+          <h3>What to Include</h3>
           <ul className="service-list">
             <li>Your name and best contact method.</li>
             <li>The date, location, and service you need.</li>
@@ -90,11 +89,11 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="section section--muted">
+      <section className="section section--muted section--compact">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">Secure inquiry form</span>
-            <h2>Send a structured request</h2>
+            <span className="eyebrow">Booking Form</span>
+            <h2>Send Your Booking Details</h2>
           </div>
           <p className="section-lead">
             The form only asks for information needed to review availability and

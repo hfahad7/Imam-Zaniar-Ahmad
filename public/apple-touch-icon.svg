@@ -1,10 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="Imam Zaniar Ahmad">
   <defs>
     <linearGradient id="g" x1="0%" x2="100%" y1="0%" y2="100%">
-      <stop offset="0%" stop-color="#223528"/>
-      <stop offset="100%" stop-color="#49624f"/>
+      <stop offset="0%" stop-color="#102e25"/>
+      <stop offset="100%" stop-color="#285344"/>
     </linearGradient>
   </defs>
-  <rect width="180" height="180" rx="42" fill="url(#g)"/>
-  <text x="90" y="112" text-anchor="middle" font-family="Georgia, serif" font-size="76" font-weight="700" fill="#ffffff">IA</text>
+  <rect x="3" y="3" width="174" height="174" rx="50" fill="url(#g)"/>
+  <path d="M51 133V81c0-23 18-40 39-40s39 17 39 40v52" fill="none" stroke="#c5a15a" stroke-width="9" stroke-linecap="round"/>
+  <path d="M70 133V87c0-12 9-22 20-22s20 10 20 22v46" fill="none" stroke="#fffdf8" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="90" cy="96" r="9" fill="#c5a15a"/>
 </svg>

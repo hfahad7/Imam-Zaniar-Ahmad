@@ -36,13 +36,13 @@ export default function BlogArticlePage({ params }) {
   return (
     <div className="page-shell">
       <section className="page-hero">
-        <span className="eyebrow">Blog post</span>
+        <span className="eyebrow">Blog Post</span>
         <h1>{post.title}</h1>
         <p className="section-lead">{post.excerpt}</p>
         <p className="small-copy">Published {post.date}.</p>
       </section>
 
-      <section className="section prose">
+      <section className="section section--compact prose">
         {post.sections.map((section) => (
           <div key={section.heading}>
             <h2>{section.heading}</h2>

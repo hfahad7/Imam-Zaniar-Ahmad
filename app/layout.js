@@ -1,19 +1,16 @@
 import './globals.css';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import Script from 'next/script';
 import { siteContent, sitePathLinks } from '../lib/site-content';
 
 const primaryLinks = [
-  { href: '/nikah-weddings', label: 'Nikah Weddings' },
+  { href: '/nikah-weddings', label: 'Nikah Services' },
   { href: '/lectures-speaking', label: 'Speaking' },
   { href: '/about', label: 'About' },
-];
-
-const exploreLinks = [
-  { href: '/nikah-guide', label: 'Nikah Guide' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/blog', label: 'Journal' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/nikah-guide', label: 'Free Nikkah Guide', featured: true },
 ];
 
 export const metadata = {
@@ -53,8 +50,8 @@ export default function RootLayout({ children }) {
         sameAs: [siteContent.contact.instagram, siteContent.contact.linkedin],
         areaServed: siteContent.serviceAreas,
         knowsAbout: [
-          'Nikkah ceremonies',
           'Nikah ceremonies',
+          'Nikkah preparation',
           'Ontario marriage officiation',
           'Lectures and khutbahs',
           'Community speaking',
@@ -100,12 +97,16 @@ gtag('config', ${JSON.stringify(ga4Id)}, { anonymize_ip: true });`}
         <header className="site-header">
           <div className="site-header__inner">
             <Link className="brand" href="/" aria-label="Imam Zaniar Ahmad home">
-              <span className="brand__mark" aria-hidden="true">
-                IA
-              </span>
+              <Image
+                className="brand__mark"
+                src="/favicon.svg"
+                width={44}
+                height={44}
+                alt=""
+                priority
+              />
               <span className="brand__text">
                 <strong>Imam Zaniar Ahmad</strong>
-                <span>{siteContent.title}</span>
               </span>
             </Link>
 
@@ -113,34 +114,24 @@ gtag('config', ${JSON.stringify(ga4Id)}, { anonymize_ip: true });`}
               <ul>
                 {primaryLinks.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href}>{link.label}</Link>
+                    <Link className={link.featured ? 'nav-featured' : undefined} href={link.href}>
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
-                <li>
-                  <details className="nav-more">
-                    <summary>Explore</summary>
-                    <div className="nav-more__panel">
-                      {exploreLinks.map((link) => (
-                        <Link key={link.href} href={link.href}>
-                          {link.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </details>
-                </li>
               </ul>
             </nav>
 
             <div className="header-actions">
               <Link className="button button--primary button--header" href="/contact">
-                Request availability
+                Book a Consultation
               </Link>
               <details className="mobile-nav">
                 <summary aria-label="Open navigation">Menu</summary>
                 <nav className="mobile-nav__panel" aria-label="Mobile">
                   {sitePathLinks.slice(1).map((link) => (
                     <Link key={link.href} href={link.href}>
-                      {link.label === 'Blog' ? 'Journal' : link.label}
+                      {link.label}
                     </Link>
                   ))}
                   <a href={siteContent.contact.phoneHref}>
@@ -163,7 +154,7 @@ gtag('config', ${JSON.stringify(ga4Id)}, { anonymize_ip: true });`}
               <p className="footer-eyebrow">Imam Zaniar Ahmad</p>
               <p className="footer-description">{siteContent.shortDescription}</p>
               <Link className="footer-cta" href="/contact">
-                Begin an inquiry <span aria-hidden="true">&rarr;</span>
+                Contact Imam Zaniar <span aria-hidden="true">&rarr;</span>
               </Link>
             </div>
 

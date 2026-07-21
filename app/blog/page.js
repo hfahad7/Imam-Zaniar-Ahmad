@@ -6,7 +6,7 @@ import { siteContent } from '../../lib/site-content';
 export const metadata = buildMetadata({
   title: 'Blog and Resources',
   description:
-    'Read approved blog posts and practical resources related to Nikkah preparation, speaking invitations, and community service.',
+    'Read practical articles about Nikah preparation, speaking invitations, and community service.',
   path: '/blog',
 });
 
@@ -15,14 +15,14 @@ export default function BlogIndexPage() {
     <div className="page-shell">
       <section className="page-hero">
         <span className="eyebrow">Blog</span>
-        <h1>Approved articles and practical resources</h1>
+        <h1>Practical Guidance for Couples and Communities</h1>
         <p className="section-lead">
-          Only approved posts are listed here. The guide remains the main public
-          resource for Ontario Nikkah and Nikah preparation.
+          Clear, useful articles about preparing for a Nikah, inviting a speaker,
+          and serving Muslim communities with intention.
         </p>
       </section>
 
-      <section className="section">
+      <section className="section section--compact">
         <div className="card-grid">
           {siteContent.blogPosts.map((post) => (
             <article key={post.slug} className="card card--soft">
@@ -39,20 +39,20 @@ export default function BlogIndexPage() {
         </div>
       </section>
 
-      <section className="section section--muted">
+      <section className="section section--muted section--compact">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">Featured resource</span>
-            <h2>The Nikah guide remains the centerpiece</h2>
+            <span className="eyebrow">Featured Resource</span>
+            <h2>Download the Free Nikkah Guide</h2>
           </div>
         </div>
 
         <div className="content-actions">
           <Link className="button button--primary" href="/nikah-guide">
-            Open the guide
+            Read the Free Guide
           </Link>
           <a className="button button--ghost" href={siteContent.guide.downloadPath}>
-            Download the PDF
+            Download the Free PDF
           </a>
         </div>
       </section>

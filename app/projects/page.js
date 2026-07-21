@@ -13,22 +13,22 @@ export default function ProjectsPage() {
     <div className="page-shell">
       <section className="page-hero">
         <span className="eyebrow">Projects</span>
-        <h1>Ideas built to serve the Muslim community</h1>
+        <h1>Ideas Built to Serve the Muslim Community</h1>
         <p className="section-lead">
           Imam Zaniar Ahmad is a co-founder of Meezan, Zakah.com, and AutoAjr,
           three initiatives shaped around access, education, and generosity.
         </p>
       </section>
 
-      <section className="section">
+      <section className="section section--compact">
         <ProjectShowcase />
       </section>
 
-      <section className="section project-purpose">
+      <section className="section section--compact project-purpose">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">A shared thread</span>
-            <h2>Practical ideas, built around service.</h2>
+            <span className="eyebrow">A Shared Purpose</span>
+            <h2>Practical Ideas Built Around Service</h2>
           </div>
           <p className="section-lead">
             Each initiative addresses a different part of community life while
