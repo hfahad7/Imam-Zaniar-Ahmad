@@ -32,8 +32,8 @@ export default function OntarioServiceMap({ compact = false }) {
           </title>
           <desc id="ontario-map-description">
             A recognizable outline of Ontario with a magnified Southern Ontario
-            inset marking the Toronto, Peel-Halton, Hamilton-Waterloo, and
-            Niagara-Brant service regions.
+            inset marking the Toronto, Peel–Halton, Hamilton–Waterloo, and
+            Niagara–Brant service regions.
           </desc>
           <defs>
             <linearGradient id="ontario-fill" x1="0" x2="1" y1="0" y2="1">

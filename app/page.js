@@ -211,7 +211,7 @@ export default function Home() {
             <h2>Serving Communities Across Ontario</h2>
           </div>
           <p className="section-lead">
-            Serving Toronto, Peel-Halton, Hamilton-Waterloo, and Niagara-Brant.
+            Serving Toronto, Peel–Halton, Hamilton–Waterloo, and Niagara–Brant.
             Nikah ceremonies outside Ontario are available by request with
             additional travel fees.
           </p>
