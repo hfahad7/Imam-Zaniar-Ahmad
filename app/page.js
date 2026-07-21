@@ -13,6 +13,8 @@ export const metadata = buildMetadata({
 });
 
 export default function Home() {
+  throw new Error('Test error');
+
   return (
     <div className="page-shell home-page">
       <section className="hero hero--home">
