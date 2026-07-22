@@ -4096,7 +4096,7 @@ body {
 .service-map,
 .service-map.service-map--compact {
   display: grid;
-  grid-template-columns: minmax(0, 2.85fr) minmax(320px, 1fr);
+  grid-template-columns: minmax(0, 1.25fr) minmax(420px, 0.95fr);
   grid-template-areas:
     "visual regions"
     "action action";
@@ -4107,13 +4107,16 @@ body {
 .service-map__visual,
 .service-map.service-map--compact .service-map__visual {
   grid-area: visual;
-  grid-template-rows: auto minmax(0, 1fr);
-  min-height: 760px;
-  padding: clamp(2.25rem, 4vw, 4rem);
+  grid-template-rows: auto auto;
+  align-content: center;
+  align-self: start;
+  gap: clamp(1.25rem, 2.4vw, 2.2rem);
+  min-height: 460px;
+  padding: clamp(1.4rem, 2.5vw, 2.3rem);
 }
 
 .service-map.service-map--compact .service-map__visual {
-  min-height: 700px;
+  min-height: 440px;
 }
 
 .service-map__heading {
@@ -4126,15 +4129,15 @@ body {
 
 .service-map__heading strong {
   max-width: none;
-  font-size: clamp(2.4rem, 4vw, 4.25rem);
+  font-size: clamp(2rem, 2.85vw, 3.05rem);
   line-height: 0.98;
   letter-spacing: -0.035em;
 }
 
 .service-map .ontario-map,
 .service-map.service-map--compact .ontario-map {
-  width: min(100%, 710px);
-  max-height: 610px;
+  width: min(100%, 500px);
+  max-height: 360px;
   transform: none;
 }
 
@@ -4149,8 +4152,9 @@ body {
 
 .service-map__regions {
   grid-area: regions;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  align-self: stretch;
   gap: 2px;
   padding-left: 6px;
   background: #e9e5da;
@@ -4162,7 +4166,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   min-height: 0;
-  padding: clamp(1.5rem, 2.4vw, 2.35rem);
+  padding: clamp(1rem, 1.45vw, 1.35rem);
   border: 0;
   background:
     radial-gradient(circle at 100% 0, rgba(197, 161, 90, 0.11), transparent 10rem),
@@ -4176,16 +4180,17 @@ body {
 }
 
 .service-map__region > div {
-  margin-top: 0.8rem;
+  margin-top: 0.55rem;
 }
 
 .service-map__region h3 {
-  font-size: clamp(1.2rem, 1.65vw, 1.55rem);
+  font-size: clamp(0.98rem, 1.05vw, 1.08rem);
 }
 
 .service-map__region p {
-  margin-top: 0.75rem;
-  font-size: clamp(0.76rem, 1vw, 0.9rem);
+  margin-top: 0.55rem;
+  font-size: clamp(0.74rem, 0.9vw, 0.84rem);
+  line-height: 1.45;
 }
 
 .service-map__city-count {
@@ -4200,11 +4205,22 @@ body {
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   justify-items: initial;
-  padding: clamp(2.2rem, 4vw, 3.6rem);
+  gap: clamp(1rem, 1.8vw, 1.45rem);
+  padding: clamp(1rem, 1.8vw, 1.45rem);
 }
 
 .service-map__action p {
-  font-size: clamp(2rem, 3.4vw, 3.3rem);
+  font-size: clamp(1.35rem, 2vw, 1.9rem);
+}
+
+.service-map__action-icon {
+  width: 3.65rem;
+  height: 3.65rem;
+}
+
+.service-map__action-icon .icon {
+  width: 1.55rem;
+  height: 1.55rem;
 }
 
 @media (max-width: 980px) {
@@ -4219,12 +4235,12 @@ body {
 
   .service-map__visual,
   .service-map.service-map--compact .service-map__visual {
-    min-height: 650px;
+    min-height: 500px;
   }
 
   .service-map__regions {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(2, minmax(230px, auto));
+    grid-template-rows: repeat(2, minmax(185px, auto));
     padding: 6px 0 0;
   }
 }
@@ -4232,8 +4248,8 @@ body {
 @media (max-width: 620px) {
   .service-map__visual,
   .service-map.service-map--compact .service-map__visual {
-    min-height: 530px;
-    padding: 1.6rem;
+    min-height: 360px;
+    padding: 1.35rem;
   }
 
   .service-map__heading strong {
@@ -4243,8 +4259,8 @@ body {
 
   .service-map .ontario-map,
   .service-map.service-map--compact .ontario-map {
-    width: min(100%, 430px);
-    max-height: 400px;
+    width: min(100%, 310px);
+    max-height: 250px;
     transform: none;
   }
 
@@ -4255,13 +4271,53 @@ body {
 
   .service-map__region,
   .service-map__region:nth-child(4) {
-    min-height: 220px;
-    padding: 1.5rem;
+    min-height: 0;
+    padding: 0.95rem;
     border: 0;
+  }
+
+  .service-map__region > div {
+    margin-top: 0.35rem;
+  }
+
+  .service-map__region h3 {
+    font-size: 0.98rem;
+  }
+
+  .service-map__region p {
+    margin-top: 0.35rem;
+    font-size: 0.72rem;
+    line-height: 1.35;
+  }
+
+  .service-map__city-count {
+    margin-top: 0.65rem;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.58rem;
   }
 
   .service-map__action {
     grid-template-columns: 1fr;
     justify-items: start;
+    gap: 0.85rem;
+    padding: 1rem;
+  }
+
+  .service-map__action-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .service-map__action-icon .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .service-map__action p {
+    font-size: 1.35rem;
+  }
+
+  .service-map__travel-note {
+    font-size: 0.86rem;
   }
 }
