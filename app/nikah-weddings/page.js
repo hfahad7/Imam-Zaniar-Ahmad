@@ -214,40 +214,35 @@ export default function NikahWeddingsPage() {
         <OntarioServiceMap />
       </section>
 
-      <section className="section section--accent section--compact">
-        <div className="section-heading">
-          <div>
-            <span className="eyebrow">Google Reviews</span>
-            <h2>Trusted by Couples and Families</h2>
+      <section className="reviews-showcase">
+        <div className="reviews-showcase__proof">
+          <div className="reviews-showcase__stars" aria-label="Google review community">
+            {[0, 1, 2, 3, 4].map((star) => (
+              <Icon name="star" key={star} />
+            ))}
           </div>
-          <p className="section-lead">
-            {siteContent.reviews.reportedCount} Google reviews reflect a growing
-            record of trust across ceremonies and community engagements.
-          </p>
+          <span className="eyebrow">Google Reviews</span>
+          <strong>{siteContent.reviews.reportedCount}</strong>
+          <p>reviews from couples, families, and community members</p>
+          <div className="reviews-showcase__monogram" aria-hidden="true">G</div>
         </div>
 
-        <div className="review-grid">
-          <article className="review-card review-panel">
-            <span className="card-icon"><Icon name="star" /></span>
-            <p className="review-rating">
-              {siteContent.reviews.reportedCount} Google reviews
-            </p>
-            <p>{siteContent.reviews.note}</p>
-          </article>
-
-          <article className="review-card">
-            <h3>Book the Service You Need</h3>
-            <p>
-              If you are ready to ask about a wedding, use the contact page and
-              include the ceremony date, location, and whether you need a
-              religious ceremony, Ontario legal officiation, or both.
-            </p>
-            <div className="content-actions">
-              <Link className="button button--primary" href="/contact">
-                Book a Nikah Consultation
-              </Link>
-            </div>
-          </article>
+        <div className="reviews-showcase__copy">
+          <span className="eyebrow">Community Trust</span>
+          <h2>Trusted by Couples and Families</h2>
+          <p>
+            {siteContent.reviews.note} If you are planning a wedding, share the
+            ceremony date, location, and whether you need a religious ceremony,
+            Ontario legal officiation, or both.
+          </p>
+          <div className="reviews-showcase__assurances">
+            <span><Icon name="check" /> Clear preparation</span>
+            <span><Icon name="heart" /> Personal care</span>
+            <span><Icon name="document" /> Religious and legal clarity</span>
+          </div>
+          <Link className="button button--cream" href="/contact">
+            Book a Nikah Consultation
+          </Link>
         </div>
       </section>
 

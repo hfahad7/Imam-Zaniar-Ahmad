@@ -88,39 +88,73 @@ export default function ContactPage() {
           </article>
         </div>
 
-        <div className="card card--soft visual-card contact-checklist">
-          <span className="card-icon"><Icon name="check" /></span>
-          <h3>What to Include</h3>
-          <ul className="service-list">
-            <li>Your name and best contact method.</li>
-            <li>The date, location, and service you need.</li>
-            <li>Any travel, virtual, or in-person details.</li>
-            <li>Any notes about languages, guests, or event format.</li>
-          </ul>
-          <div className="content-actions">
-            <Link className="button button--primary" href="/nikah-weddings">
-              Nikah booking details
-            </Link>
-            <Link className="button button--ghost" href="/lectures-speaking">
-              Speaking booking details
-            </Link>
+        <div className="contact-checklist">
+          <div className="contact-checklist__copy">
+            <span className="card-icon"><Icon name="check" /></span>
+            <h3>What to Include</h3>
+            <ul className="service-list">
+              <li>Your name and best contact method.</li>
+              <li>The date, location, and service you need.</li>
+              <li>Any travel, virtual, or in-person details.</li>
+              <li>Any notes about languages, guests, or event format.</li>
+            </ul>
+            <div className="content-actions">
+              <Link className="button button--primary" href="/nikah-weddings">
+                Nikah Booking Details
+              </Link>
+              <Link className="button button--ghost" href="/lectures-speaking">
+                Speaking Booking Details
+              </Link>
+            </div>
+          </div>
+
+          <div className="contact-checklist__visual" aria-hidden="true">
+            <div className="booking-note">
+              <div className="booking-note__top">
+                <Icon name="calendar" />
+                <span>Booking Brief</span>
+              </div>
+              <span className="booking-note__line booking-note__line--long" />
+              <span className="booking-note__line" />
+              <span className="booking-note__line booking-note__line--short" />
+              <div className="booking-note__chips">
+                <span>Date</span><span>City</span><span>Service</span>
+              </div>
+            </div>
+            <div className="contact-checklist__seal"><Icon name="message" /></div>
           </div>
         </div>
       </section>
 
-      <section className="section section--muted section--compact">
-        <div className="section-heading">
-          <div>
-            <span className="eyebrow">Booking Form</span>
-            <h2>Send Your Booking Details</h2>
-          </div>
-          <p className="section-lead">
+      <section className="booking-form-section">
+        <aside className="booking-form-section__intro">
+          <span className="booking-form-section__icon"><Icon name="document" /></span>
+          <span className="eyebrow">Booking Form</span>
+          <h2>Send Your Booking Details</h2>
+          <p>
             The form only asks for information needed to review availability and
-            understand the booking request.
+            understand your request.
           </p>
-        </div>
+          <div className="booking-form-section__guide">
+            <span><b>01</b> Choose the service</span>
+            <span><b>02</b> Share the date and place</span>
+            <span><b>03</b> Add ceremony or event details</span>
+          </div>
+          <figure className="booking-form-section__photo">
+            <Image
+              src={siteContent.photos.signingNikah}
+              alt=""
+              width={1365}
+              height={2048}
+              sizes="(max-width: 820px) 92vw, 32vw"
+            />
+            <figcaption>Clear details help every booking begin with confidence.</figcaption>
+          </figure>
+        </aside>
 
-        <ContactForm turnstileSiteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ''} />
+        <div className="booking-form-section__form">
+          <ContactForm turnstileSiteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ''} />
+        </div>
       </section>
     </div>
   );

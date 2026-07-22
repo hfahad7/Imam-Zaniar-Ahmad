@@ -146,11 +146,14 @@ export default function NikahGuidePage() {
           </div>
         </div>
 
-        <div className="guide-grid">
+        <div className="guide-grid guide-grid--references">
           {siteContent.guide.officialLinks.map((link) => (
             <article key={link.href} className="guide-card">
               <span className="card-icon"><Icon name="globe" /></span>
-              <h3>{link.label}</h3>
+              <div className="guide-card__copy">
+                <p className="card-meta">Ontario.ca</p>
+                <h3>{link.label}</h3>
+              </div>
               <a className="button button--ghost" href={link.href} target="_blank" rel="noreferrer noopener">
                 Open official source
               </a>

@@ -70,6 +70,53 @@ export default function LecturesSpeakingPage() {
         </figure>
       </section>
 
+      <section className="section section--compact booking-process booking-process--first">
+        <div className="section-heading">
+          <div>
+            <span className="eyebrow">Booking Process</span>
+            <h2>Three Simple Steps</h2>
+          </div>
+          <p className="section-lead">
+            A clear path from the first request to a prepared, confirmed event.
+          </p>
+        </div>
+
+        <div className="booking-step-grid">
+          <article className="card visual-card">
+            <span className="card-icon"><Icon name="message" /></span>
+            <h3>1. Send the Request</h3>
+            <p>
+              Include the event date, audience, location, topic, and whether the
+              event is in-person, virtual, or hybrid.
+            </p>
+          </article>
+          <article className="card visual-card">
+            <span className="card-icon"><Icon name="calendar" /></span>
+            <h3>2. Confirm Details and Availability</h3>
+            <p>
+              The booking is reviewed to confirm the fit, timing, and any travel
+              or technology requirements.
+            </p>
+          </article>
+          <article className="card visual-card">
+            <span className="card-icon"><Icon name="check" /></span>
+            <h3>3. Finalize the Engagement</h3>
+            <p>
+              Once the details are agreed, the event can be finalized and
+              prepared with the organizer.
+            </p>
+          </article>
+        </div>
+
+        <div className="booking-format-strip">
+          <span className="card-icon"><Icon name="video" /></span>
+          <div>
+            <strong>Flexible Event Formats</strong>
+            <p>In-person, virtual, and hybrid requests are welcome.</p>
+          </div>
+        </div>
+      </section>
+
       <section className="section section--compact">
         <div className="section-heading">
           <div>
@@ -106,50 +153,6 @@ export default function LecturesSpeakingPage() {
               <p>{topic}</p>
             </article>
           ))}
-        </div>
-      </section>
-
-      <section className="section section--compact">
-        <div className="section-heading">
-          <div>
-            <span className="eyebrow">Booking Process</span>
-            <h2>Three Simple Steps</h2>
-          </div>
-        </div>
-
-        <div className="booking-step-grid">
-          <article className="card visual-card">
-            <span className="card-icon"><Icon name="message" /></span>
-            <h3>1. Send the Request</h3>
-            <p>
-              Include the event date, audience, location, topic, and whether the
-              event is in-person, virtual, or hybrid.
-            </p>
-          </article>
-          <article className="card visual-card">
-            <span className="card-icon"><Icon name="calendar" /></span>
-            <h3>2. Confirm Details and Availability</h3>
-            <p>
-              The booking is reviewed to confirm the fit, timing, and any travel
-              or technology requirements.
-            </p>
-          </article>
-          <article className="card visual-card">
-            <span className="card-icon"><Icon name="check" /></span>
-            <h3>3. Finalize the Engagement</h3>
-            <p>
-              Once the details are agreed, the event can be finalized and
-              prepared with the organizer.
-            </p>
-          </article>
-          <article className="card visual-card booking-format-card">
-            <span className="card-icon"><Icon name="video" /></span>
-            <h3>Formats</h3>
-            <p>
-              In-person, virtual, and hybrid requests are welcome, depending on
-              the audience, location, and event needs.
-            </p>
-          </article>
         </div>
       </section>
 
