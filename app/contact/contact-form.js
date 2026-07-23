@@ -82,11 +82,22 @@ export default function ContactForm({ turnstileSiteKey }) {
       setForm((current) => ({ ...current, turnstileToken: '' }));
     };
 
+    window.onTurnstileError = () => {
+      setForm((current) => ({ ...current, turnstileToken: '' }));
+    };
+
     return () => {
       delete window.onTurnstileSuccess;
       delete window.onTurnstileExpired;
+      delete window.onTurnstileError;
     };
   }, [turnstileSiteKey]);
+
+  function resetTurnstile() {
+    if (typeof window !== 'undefined' && window.turnstile) {
+      window.turnstile.reset();
+    }
+  }
 
   function handleChange(event) {
     const { checked, name, type, value } = event.target;
@@ -241,7 +252,13 @@ export default function ContactForm({ turnstileSiteKey }) {
 
       setStatus({ kind: 'success', message: payload.message });
       setForm(createInitialFields());
+      resetTurnstile();
     } catch (error) {
+      if (turnstileSiteKey) {
+        resetTurnstile();
+        setForm((current) => ({ ...current, turnstileToken: '' }));
+      }
+
       setStatus({
         kind: 'error',
         message:
@@ -362,15 +379,22 @@ export default function ContactForm({ turnstileSiteKey }) {
         onChange={handleChange}
       />
       <input type="hidden" name="startedAt" value={form.startedAt} />
-      <input type="hidden" name="turnstileToken" value={form.turnstileToken} />
+      <input
+        type="hidden"
+        name="cf-turnstile-response"
+        value={form.turnstileToken}
+        readOnly
+      />
 
       <div className="turnstile-box" aria-live="polite">
         {turnstileSiteKey ? (
           <div
             className="cf-turnstile"
             data-sitekey={turnstileSiteKey}
+            data-action="turnstile-spin-v2"
             data-callback="onTurnstileSuccess"
             data-expired-callback="onTurnstileExpired"
+            data-error-callback="onTurnstileError"
           />
         ) : (
           <span>A quick security check will appear here when needed.</span>

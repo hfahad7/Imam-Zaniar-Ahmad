@@ -72,7 +72,7 @@ Required environment variables for production:
 - `EMAIL_FROM_ADDRESS`
 - `RESEND_API_KEY`
 - `NEXT_PUBLIC_TURNSTILE_SITE_KEY`
-- `TURNSTILE_SECRET_KEY`
+- `TURNSTILE_SECRET`
 
 The route also supports a local development fallback when those credentials are missing.
 Production submissions intentionally fail with a clear message until email and

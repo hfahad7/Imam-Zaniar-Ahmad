@@ -30,24 +30,32 @@ function escapeHtml(value) {
 }
 
 async function verifyTurnstile(token, request) {
-  const secret = process.env.TURNSTILE_SECRET_KEY;
+  const secret = process.env.TURNSTILE_SECRET || process.env.TURNSTILE_SECRET_KEY;
 
   if (!secret) {
-    return { ok: process.env.NODE_ENV !== 'production', skipped: true };
+    if (process.env.NODE_ENV !== 'production') {
+      return { ok: true, skipped: true };
+    }
+
+    return {
+      ok: false,
+      skipped: true,
+      message: 'Security verification is not configured yet.',
+    };
   }
 
   if (!token) {
     return { ok: false, skipped: false, message: 'Please complete the verification check.' };
   }
 
-  const formData = new FormData();
-  formData.set('secret', secret);
-  formData.set('response', token);
-  formData.set('remoteip', getIp(request));
-
   const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
     method: 'POST',
-    body: formData,
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      secret,
+      response: token,
+      remoteip: getIp(request),
+    }),
   });
 
   const result = await response.json();
@@ -121,7 +129,9 @@ export async function POST(request) {
     const consent = body.consent === true;
     const website = basicTrim(body.website);
     const startedAt = Number(body.startedAt);
-    const turnstileToken = basicTrim(body.turnstileToken);
+    const turnstileToken = basicTrim(
+      body.turnstileToken || body['cf-turnstile-response'],
+    );
 
     if (website) {
       return json({ message: 'Thanks. Your inquiry has been received.' });
