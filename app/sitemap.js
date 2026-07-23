@@ -16,7 +16,7 @@ export default function sitemap() {
 
   const staticUrls = routes.map((route) => ({
     url: `${siteContent.siteUrl}${route}`,
-    lastModified: new Date('2026-07-20'),
+    lastModified: new Date('2026-07-23'),
   }));
 
   const blogUrls = siteContent.blogPosts.map((post) => ({
