@@ -240,6 +240,15 @@ export default function NikahWeddingsPage() {
             <span><Icon name="heart" /> Personal care</span>
             <span><Icon name="document" /> Religious and legal clarity</span>
           </div>
+          <div className="reviews-showcase__embed" aria-label="Google Business Profile map for Imam Zaniar Ahmad">
+            <iframe
+              src={siteContent.reviews.googleMapsEmbedUrl}
+              title="Imam Zaniar Ahmad Google Business Profile"
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+          </div>
           <Link className="button button--cream" href="/contact">
             Book a Nikah Consultation
           </Link>
