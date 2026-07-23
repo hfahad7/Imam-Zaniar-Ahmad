@@ -40,7 +40,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const ga4Id = process.env.NEXT_PUBLIC_GA4_ID;
+  const ga4Id = process.env.NEXT_PUBLIC_GA4_ID || 'G-KLS3Q0KPD9';
   const personJsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
