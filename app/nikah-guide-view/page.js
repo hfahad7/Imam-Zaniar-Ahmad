@@ -168,7 +168,7 @@ function WoodPanel() {
       />
       <div className="digital-guide__brand-mark">
         <Image
-          src="/images/projects/meezan-logo.webp"
+          src="/images/projects/meezan-logo-transparent.png"
           alt=""
           width={384}
           height={121}
@@ -218,7 +218,7 @@ export default function NikahPlanningGuidePage() {
           <a href="#trusted-support">Trusted Support</a>
         </nav>
         <a
-          className="button button--primary"
+          className="button button--primary digital-guide__toolbar-download"
           href={siteContent.guide.downloadPath}
           download="nikah-guide.pdf"
         >
