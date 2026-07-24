@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="784" height="248" viewBox="0 0 784 248" role="img" aria-labelledby="title">
+  <title id="title">Meezan logo</title>
+  <defs>
+    <mask id="mark-cutout" maskUnits="userSpaceOnUse">
+      <rect width="784" height="248" fill="black"/>
+      <rect x="50" y="78" width="190" height="140" rx="12" fill="white"/>
+      <polygon points="88,118 126,118 145,158 164,118 202,118 202,218 158,218 158,176 145,202 132,176 132,218 88,218" fill="black"/>
+    </mask>
+  </defs>
+  <rect x="50" y="30" width="42" height="42" rx="10" fill="#a8d7e0"/>
+  <rect x="197" y="30" width="42" height="42" rx="10" fill="#a8d7e0"/>
+  <rect x="50" y="78" width="190" height="140" rx="12" fill="#00516b" mask="url(#mark-cutout)"/>
+  <text
+    x="284"
+    y="155"
+    fill="#00516b"
+    font-family="Montserrat, Avenir Next, Arial Black, Arial, sans-serif"
+    font-size="80"
+    font-weight="900"
+    letter-spacing="5"
+  >MEEZAN</text>
+</svg>

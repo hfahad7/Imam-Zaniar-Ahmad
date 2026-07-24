@@ -168,7 +168,7 @@ function WoodPanel() {
       />
       <div className="digital-guide__brand-mark">
         <Image
-          src="/images/projects/meezan-logo-transparent.png"
+          src="/images/projects/meezan-logo-clean.svg"
           alt=""
           width={384}
           height={121}
