@@ -75,8 +75,8 @@ export default function NikahWeddingsPage() {
           <Link className="button button--primary" href="/contact">
             Book a Nikah Consultation
           </Link>
-          <Link className="button button--ghost" href={siteContent.guide.onlinePath}>
-            View Nikah Guide
+          <Link className="button button--ghost" href="/nikah-guide">
+            Explore the Free Nikkah Guide
           </Link>
         </div>
       </section>

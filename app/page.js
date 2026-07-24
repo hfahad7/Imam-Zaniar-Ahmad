@@ -63,8 +63,8 @@ export default function Home() {
           </div>
 
           <div className="hero__secondary-actions">
-            <Link href={siteContent.guide.onlinePath}>
-              View the Free Nikkah Guide <span aria-hidden="true">&rarr;</span>
+            <Link href="/nikah-guide">
+              Get the Free Nikkah Guide <span aria-hidden="true">&rarr;</span>
             </Link>
             <a href={siteContent.contact.phoneHref}>
               Call {siteContent.contact.phoneDisplay}
@@ -230,11 +230,11 @@ export default function Home() {
             and the details worth confirming before your wedding day.
           </p>
           <div className="content-actions">
-            <Link className="button button--primary" href={siteContent.guide.onlinePath}>
-              View Nikah Guide
+            <Link className="button button--primary" href="/nikah-guide">
+              Explore the Free Guide
             </Link>
             <Link className="text-link" href="/nikah-guide">
-              Explore Guide Details <span aria-hidden="true">&rarr;</span>
+              See What It Covers <span aria-hidden="true">&rarr;</span>
             </Link>
           </div>
         </article>

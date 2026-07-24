@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 import Icon from '../components/ui-icon';
@@ -158,12 +159,21 @@ function PageNumber({ current }) {
 function WoodPanel() {
   return (
     <aside className="digital-guide__wood-panel" aria-hidden="true">
+      <Image
+        className="digital-guide__wood-image"
+        src="/images/nikah-guide/wood-sidebar.jpg"
+        alt=""
+        fill
+        sizes="(max-width: 760px) 100vw, 22vw"
+      />
       <div className="digital-guide__brand-mark">
-        <strong>M</strong>
-        <span>
-          Meezan
-          <small>can connect you.</small>
-        </span>
+        <Image
+          src="/images/projects/meezan-logo.webp"
+          alt=""
+          width={384}
+          height={121}
+        />
+        <small>can connect you.</small>
       </div>
     </aside>
   );

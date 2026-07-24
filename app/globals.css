@@ -125,12 +125,13 @@
   position: relative;
   min-height: 100%;
   overflow: hidden;
-  background:
-    radial-gradient(ellipse at 0 18%, transparent 0 8%, rgba(255, 255, 255, 0.1) 8.5% 10%, transparent 10.5% 18%, rgba(52, 31, 20, 0.24) 19% 22%, transparent 23%),
-    radial-gradient(ellipse at 100% 60%, transparent 0 11%, rgba(231, 203, 169, 0.2) 12% 15%, transparent 16% 23%, rgba(50, 29, 18, 0.3) 24% 27%, transparent 28%),
-    repeating-radial-gradient(ellipse at 50% 25%, #b98e68 0 8px, #8c6145 11px 16px, #d0aa83 20px 27px, #72503a 31px 37px);
-  background-size: 150% 120%, 170% 140%, 170% 65%;
+  background: #9a7356;
   box-shadow: inset -18px 0 35px rgba(59, 34, 22, 0.2);
+}
+
+.digital-guide__wood-image {
+  object-fit: cover;
+  object-position: center;
 }
 
 .digital-guide__wood-panel::after {
@@ -149,35 +150,29 @@
   right: clamp(1rem, 2vw, 2rem);
   bottom: clamp(1.25rem, 3vw, 2.5rem);
   left: clamp(1rem, 2vw, 2rem);
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: #fffaf2;
+  display: grid;
+  justify-items: start;
+  gap: 0.25rem;
+  padding: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.54);
+  border-radius: 12px;
+  background: rgba(255, 250, 242, 0.9);
+  box-shadow: 0 12px 30px rgba(54, 31, 20, 0.2);
+  color: var(--guide-ink);
+  backdrop-filter: blur(7px);
 }
 
-.digital-guide__brand-mark > strong {
-  display: grid;
-  width: 3rem;
-  height: 3rem;
-  place-items: center;
-  border: 3px solid currentColor;
-  font-family: var(--serif);
-  font-size: 1.55rem;
-  line-height: 1;
-}
-
-.digital-guide__brand-mark > span {
-  display: grid;
-  font-size: 1rem;
-  font-weight: 800;
-  line-height: 1.1;
+.digital-guide__brand-mark img {
+  width: min(100%, 10rem);
+  height: auto;
 }
 
 .digital-guide__brand-mark small {
-  margin-top: 0.25rem;
-  font-size: 0.72rem;
+  margin-left: 3.2rem;
+  color: #765d4f;
+  font-size: 0.68rem;
   font-style: italic;
-  font-weight: 500;
+  font-weight: 650;
 }
 
 .digital-guide__page-content {
@@ -874,12 +869,7 @@
   .digital-guide__brand-mark {
     right: 0.75rem;
     left: 0.75rem;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .digital-guide__brand-mark > span {
-    font-size: 0.8rem;
+    padding: 0.65rem;
   }
 
   .digital-guide__overview-grid {
@@ -957,19 +947,29 @@
 
   .digital-guide__wood-panel {
     min-height: 7.5rem;
-    background-size: 120% 180%, 140% 190%, 120% 130%;
+  }
+
+  .digital-guide__wood-image {
+    object-position: center 42%;
   }
 
   .digital-guide__brand-mark {
-    inset: auto 1.2rem 1rem;
-    flex-direction: row;
-    text-align: left;
+    inset: auto auto 0.75rem 0.8rem;
+    grid-template-columns: minmax(0, 7.5rem) auto;
+    align-items: center;
+    gap: 0.55rem;
+    width: max-content;
+    max-width: calc(100% - 1.6rem);
+    padding: 0.55rem 0.65rem;
   }
 
-  .digital-guide__brand-mark > strong {
-    width: 2.4rem;
-    height: 2.4rem;
-    font-size: 1.2rem;
+  .digital-guide__brand-mark img {
+    width: 7.5rem;
+  }
+
+  .digital-guide__brand-mark small {
+    margin: 0;
+    white-space: nowrap;
   }
 
   .digital-guide__page-content,

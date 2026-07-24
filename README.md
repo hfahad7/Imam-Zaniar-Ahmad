@@ -85,8 +85,8 @@ Add the verified Google Business Profile URL and Place ID to the environment or 
 
 ## Nikah guide setup
 
-The resource overview lives at `/nikah-guide`, and the complete coded guide is
-available at `/nikah-planning-guide`.
+The resource overview lives at `/nikah-guide`, and its `View Nikah Guide`
+button opens the complete coded guide at `/nikah-guide-view`.
 
 The download button serves the original PDF from `/downloads/nikah-guide.pdf`.
 The legacy `/nikah-guide/download` endpoint redirects to the original file.
