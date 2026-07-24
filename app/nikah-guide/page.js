@@ -34,9 +34,9 @@ export default function NikahGuidePage() {
             prepare with confidence, and keep important details in one place.
           </p>
           <div className="content-actions">
-            <a className="button button--primary" href={siteContent.guide.downloadPath}>
-              Download the Free PDF
-            </a>
+            <Link className="button button--primary" href={siteContent.guide.onlinePath}>
+              View Nikah Guide
+            </Link>
             <Link className="button button--ghost" href="/nikah-weddings">
               View Nikah Services
             </Link>

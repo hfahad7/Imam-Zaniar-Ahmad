@@ -21,6 +21,1091 @@
   --sans: var(--font-body), 'Trebuchet MS', sans-serif;
 }
 
+/* Coded, responsive edition of the four-page Nikah planning guide. */
+.digital-guide {
+  --guide-paper: #fbf6ed;
+  --guide-paper-deep: #f5eadb;
+  --guide-ink: #5b4032;
+  --guide-gold: #cda87b;
+  --guide-gold-soft: #ead7bd;
+  width: min(1440px, calc(100% - 2rem));
+  margin: 2rem auto 5rem;
+  color: var(--guide-ink);
+}
+
+.digital-guide__toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 1.25rem 2rem;
+  margin-bottom: 1.5rem;
+  padding: clamp(1.35rem, 3vw, 2.25rem);
+  border: 1px solid rgba(91, 64, 50, 0.14);
+  border-radius: 26px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(245, 234, 219, 0.88)),
+    var(--guide-paper);
+  box-shadow: 0 20px 55px rgba(70, 47, 35, 0.09);
+}
+
+.digital-guide__toolbar h1 {
+  margin-top: 0.25rem;
+  color: var(--guide-ink);
+  font-size: clamp(2.1rem, 4vw, 4rem);
+}
+
+.digital-guide__toolbar p {
+  max-width: 44rem;
+  margin-top: 0.65rem;
+  color: #765f52;
+  line-height: 1.55;
+}
+
+.digital-guide__jump-links {
+  display: flex;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.digital-guide__jump-links a {
+  padding: 0.55rem 0.8rem;
+  border: 1px solid rgba(91, 64, 50, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.56);
+  color: #6c5142;
+  font-size: 0.78rem;
+  font-weight: 750;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.digital-guide__jump-links a:hover,
+.digital-guide__jump-links a:focus-visible {
+  border-color: var(--guide-gold);
+  background: #fffaf2;
+  transform: translateY(-2px);
+}
+
+.digital-guide__page {
+  position: relative;
+  scroll-margin-top: 7rem;
+  overflow: hidden;
+  margin-top: 1.5rem;
+  border: 1px solid rgba(91, 64, 50, 0.14);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 85% 12%, rgba(205, 168, 123, 0.11), transparent 18rem),
+    var(--guide-paper);
+  box-shadow: 0 30px 70px rgba(70, 47, 35, 0.12);
+  animation: guide-page-reveal 0.65s both;
+}
+
+.digital-guide__page:nth-of-type(3) {
+  animation-delay: 0.08s;
+}
+
+.digital-guide__page:nth-of-type(4) {
+  animation-delay: 0.16s;
+}
+
+.digital-guide__page:nth-of-type(5) {
+  animation-delay: 0.24s;
+}
+
+.digital-guide__page--with-wood {
+  display: grid;
+  grid-template-columns: minmax(180px, 22%) minmax(0, 1fr);
+}
+
+.digital-guide__wood-panel {
+  position: relative;
+  min-height: 100%;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 0 18%, transparent 0 8%, rgba(255, 255, 255, 0.1) 8.5% 10%, transparent 10.5% 18%, rgba(52, 31, 20, 0.24) 19% 22%, transparent 23%),
+    radial-gradient(ellipse at 100% 60%, transparent 0 11%, rgba(231, 203, 169, 0.2) 12% 15%, transparent 16% 23%, rgba(50, 29, 18, 0.3) 24% 27%, transparent 28%),
+    repeating-radial-gradient(ellipse at 50% 25%, #b98e68 0 8px, #8c6145 11px 16px, #d0aa83 20px 27px, #72503a 31px 37px);
+  background-size: 150% 120%, 170% 140%, 170% 65%;
+  box-shadow: inset -18px 0 35px rgba(59, 34, 22, 0.2);
+}
+
+.digital-guide__wood-panel::after {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(49, 27, 17, 0.18), transparent 28%, rgba(255, 255, 255, 0.08) 58%, rgba(45, 25, 16, 0.2)),
+    linear-gradient(155deg, transparent 45%, rgba(50, 30, 20, 0.18));
+  content: '';
+  mix-blend-mode: multiply;
+}
+
+.digital-guide__brand-mark {
+  position: absolute;
+  z-index: 1;
+  right: clamp(1rem, 2vw, 2rem);
+  bottom: clamp(1.25rem, 3vw, 2.5rem);
+  left: clamp(1rem, 2vw, 2rem);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #fffaf2;
+}
+
+.digital-guide__brand-mark > strong {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border: 3px solid currentColor;
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  line-height: 1;
+}
+
+.digital-guide__brand-mark > span {
+  display: grid;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.digital-guide__brand-mark small {
+  margin-top: 0.25rem;
+  font-size: 0.72rem;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.digital-guide__page-content {
+  position: relative;
+  min-width: 0;
+  padding: clamp(2.25rem, 5vw, 5.5rem);
+}
+
+.digital-guide__page-content--full {
+  padding-inline: clamp(2.25rem, 7vw, 7.5rem);
+}
+
+.digital-guide__page-number {
+  position: absolute;
+  right: clamp(1.5rem, 3vw, 3rem);
+  bottom: clamp(1.2rem, 2vw, 2rem);
+  color: #95785f;
+  font-family: var(--serif);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.digital-guide__floral {
+  position: absolute;
+  top: -1.2rem;
+  right: -1.6rem;
+  width: 12rem;
+  height: 11rem;
+  opacity: 0.58;
+  pointer-events: none;
+}
+
+.digital-guide__floral::before,
+.digital-guide__floral::after {
+  position: absolute;
+  right: 4.5rem;
+  bottom: -1rem;
+  width: 1px;
+  height: 11rem;
+  background: #a98763;
+  content: '';
+  transform: rotate(-32deg);
+  transform-origin: bottom;
+}
+
+.digital-guide__floral::after {
+  right: 3rem;
+  height: 9.5rem;
+  transform: rotate(-18deg);
+}
+
+.digital-guide__floral i {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50% 15% 50% 15%;
+  background: #d8b991;
+  box-shadow: 0 0 0 0.3rem rgba(216, 185, 145, 0.18);
+}
+
+.digital-guide__floral i:nth-child(1) {
+  top: 1rem;
+  right: 1rem;
+}
+
+.digital-guide__floral i:nth-child(2) {
+  top: 3.1rem;
+  right: 3.4rem;
+}
+
+.digital-guide__floral i:nth-child(3) {
+  top: 4.5rem;
+  right: 0.5rem;
+}
+
+.digital-guide__floral i:nth-child(4) {
+  top: 6.4rem;
+  right: 5.8rem;
+}
+
+.digital-guide__floral i:nth-child(5) {
+  top: 7.6rem;
+  right: 2.5rem;
+}
+
+.digital-guide__page-heading {
+  position: relative;
+  z-index: 1;
+  max-width: 52rem;
+  margin: 0 auto clamp(2rem, 4vw, 3.5rem);
+  padding-bottom: 1.5rem;
+  text-align: center;
+}
+
+.digital-guide__page-heading::after,
+.digital-guide__rule {
+  display: block;
+  width: min(100%, 42rem);
+  height: 1px;
+  margin: 1.45rem auto 0;
+  background:
+    linear-gradient(90deg, var(--guide-gold) 0 49%, transparent 49% 51%, var(--guide-gold) 51%);
+  content: '';
+}
+
+.digital-guide__page-heading::before,
+.digital-guide__rule::after {
+  position: absolute;
+  bottom: -0.27rem;
+  left: 50%;
+  width: 0.55rem;
+  height: 0.55rem;
+  background: var(--guide-gold);
+  content: '';
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.digital-guide__page-heading > span {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 2vw, 1.4rem);
+  font-weight: 700;
+}
+
+.digital-guide__page-heading h2 {
+  color: var(--guide-ink);
+  font-size: clamp(2.25rem, 5vw, 5rem);
+  line-height: 0.96;
+}
+
+.digital-guide__page-heading > p {
+  margin-top: 1rem;
+  color: #735a4c;
+  font-size: clamp(0.94rem, 1.5vw, 1.12rem);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.digital-guide__page-heading--step {
+  max-width: 56rem;
+  margin-inline: 0;
+  text-align: left;
+}
+
+.digital-guide__page-heading--step::after {
+  margin-left: 0;
+}
+
+.digital-guide__page-heading--step::before {
+  left: min(50%, 21rem);
+}
+
+.digital-guide__page-heading--step h2 {
+  font-size: clamp(2.1rem, 4.5vw, 4.6rem);
+}
+
+.digital-guide__overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+}
+
+.digital-guide__overview-card {
+  padding: 0 clamp(1rem, 2.5vw, 2.4rem);
+}
+
+.digital-guide__overview-card + .digital-guide__overview-card {
+  border-left: 1px solid var(--guide-gold);
+}
+
+.digital-guide__round-icon {
+  display: grid;
+  width: 4.8rem;
+  height: 4.8rem;
+  margin: 0 auto 1.4rem;
+  place-items: center;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 28%, #fffdf9, transparent 38%),
+    var(--guide-paper-deep);
+  color: var(--guide-ink);
+  box-shadow:
+    inset 0 0 0 1px rgba(205, 168, 123, 0.18),
+    0 10px 22px rgba(91, 64, 50, 0.08);
+}
+
+.digital-guide__round-icon .icon {
+  width: 2.55rem;
+  height: 2.55rem;
+}
+
+.digital-guide__numbered-title {
+  display: grid;
+  grid-template-columns: 2.55rem 1fr;
+  align-items: center;
+  gap: 0.85rem;
+  min-height: 4.2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--guide-gold);
+}
+
+.digital-guide__numbered-title > span,
+.digital-guide__requirement-number,
+.digital-guide__timeline > li > span {
+  display: grid;
+  width: 2.55rem;
+  height: 2.55rem;
+  place-items: center;
+  border: 1px solid var(--guide-gold);
+  border-radius: 50%;
+  background: var(--guide-gold-soft);
+  font-family: var(--serif);
+  font-weight: 800;
+}
+
+.digital-guide__numbered-title h3,
+.digital-guide__requirement-card h3,
+.digital-guide__timeline h3,
+.digital-guide__vendor-card h3,
+.digital-guide__urgent-card h3,
+.digital-guide__checklist h3 {
+  color: var(--guide-ink);
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  line-height: 1.12;
+}
+
+.digital-guide__overview-card ul {
+  margin-top: 1.35rem;
+  padding-left: 1.1rem;
+  color: #6b5447;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.digital-guide__overview-card li + li {
+  margin-top: 0.65rem;
+}
+
+.digital-guide__notice {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin-top: clamp(2rem, 4vw, 3.75rem);
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--guide-gold);
+  border-radius: 14px;
+  background: rgba(255, 250, 242, 0.72);
+}
+
+.digital-guide__notice > span {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.digital-guide__notice p {
+  color: #674c3d;
+  line-height: 1.5;
+}
+
+.digital-guide__tip {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 1.2rem 0 0;
+  color: #6d5344;
+  font-size: 0.9rem;
+}
+
+.digital-guide__tip .icon {
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 auto;
+}
+
+.digital-guide__licence-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.8fr);
+  gap: clamp(2rem, 5vw, 5.5rem);
+  align-items: start;
+}
+
+.digital-guide__timeline {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.digital-guide__timeline::before {
+  position: absolute;
+  top: 1.3rem;
+  bottom: 1.3rem;
+  left: 1.28rem;
+  width: 2px;
+  background: var(--guide-gold);
+  content: '';
+}
+
+.digital-guide__timeline > li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.6rem 1fr;
+  gap: 1.25rem;
+  margin: 0;
+}
+
+.digital-guide__timeline > li > span {
+  position: relative;
+  z-index: 1;
+}
+
+.digital-guide__timeline > li > div {
+  padding: 0.2rem 0 1.2rem;
+  border-bottom: 1px solid rgba(205, 168, 123, 0.34);
+}
+
+.digital-guide__timeline > li + li {
+  padding-top: 1.2rem;
+}
+
+.digital-guide__timeline p {
+  margin-top: 0.35rem;
+  color: #735d50;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.digital-guide__urgent-card,
+.digital-guide__checklist {
+  padding: clamp(1.4rem, 3vw, 2.3rem);
+  border: 1px solid var(--guide-gold);
+  border-radius: 28px;
+  background: rgba(255, 250, 242, 0.75);
+}
+
+.digital-guide__urgent-card .digital-guide__round-icon,
+.digital-guide__checklist .digital-guide__round-icon {
+  margin: 0 0 1.15rem;
+}
+
+.digital-guide__urgent-card > ul {
+  margin-top: 1.2rem;
+  padding-left: 1.1rem;
+  color: #71574a;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.digital-guide__phone-note {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.6rem;
+  padding-top: 1.3rem;
+  border-top: 1px solid var(--guide-gold);
+}
+
+.digital-guide__phone-note .icon {
+  width: 2.6rem;
+  height: 2.6rem;
+  flex: 0 0 auto;
+}
+
+.digital-guide__phone-note p,
+.digital-guide__phone-note a {
+  display: block;
+}
+
+.digital-guide__phone-note span {
+  color: #967c6b;
+  font-size: 0.75rem;
+}
+
+.digital-guide__phone-note a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.digital-guide__resource-links {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 2.5rem;
+  padding: 1.2rem 1.35rem;
+  border: 1px solid var(--guide-gold);
+  border-radius: 14px;
+  background: rgba(255, 250, 242, 0.68);
+  font-size: 0.83rem;
+}
+
+.digital-guide__resource-links p {
+  min-width: 0;
+}
+
+.digital-guide__resource-links a {
+  margin-left: 0.45rem;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  overflow-wrap: anywhere;
+}
+
+.digital-guide__requirements-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(250px, 0.75fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: start;
+}
+
+.digital-guide__requirement-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.digital-guide__requirement-card {
+  display: grid;
+  grid-template-columns: 2.55rem 4.2rem 1fr;
+  align-items: start;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 1px solid var(--guide-gold);
+  border-radius: 22px;
+  background: rgba(255, 250, 242, 0.7);
+}
+
+.digital-guide__requirement-card .digital-guide__round-icon {
+  width: 4.2rem;
+  height: 4.2rem;
+  margin: -0.25rem 0 0;
+}
+
+.digital-guide__requirement-card .digital-guide__round-icon .icon {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.digital-guide__requirement-card p {
+  margin-top: 0.4rem;
+  color: #725a4c;
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.digital-guide__mahr-details {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.digital-guide__mahr-details span {
+  padding: 0.65rem;
+  border: 1px solid rgba(205, 168, 123, 0.58);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.42);
+  color: #765e50;
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.digital-guide__mahr-details strong {
+  display: block;
+}
+
+.digital-guide__checklist {
+  position: sticky;
+  top: 6.5rem;
+}
+
+.digital-guide__checklist .digital-guide__rule {
+  position: relative;
+  margin: 1.3rem 0 0;
+}
+
+.digital-guide__checklist ul {
+  margin-top: 1.1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.digital-guide__checklist li {
+  display: grid;
+  grid-template-columns: 1.75rem 1fr;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0.75rem 0;
+  border-bottom: 1px dashed rgba(205, 168, 123, 0.5);
+  color: #6d5345;
+  font-size: 0.84rem;
+}
+
+.digital-guide__checklist li .icon {
+  width: 1.55rem;
+  height: 1.55rem;
+  padding: 0.25rem;
+  border: 1px solid var(--guide-gold);
+  border-radius: 50%;
+}
+
+.digital-guide__notice--small {
+  max-width: 35rem;
+  margin-left: auto;
+}
+
+.digital-guide__vendor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.digital-guide__vendor-card {
+  position: relative;
+  min-height: 15rem;
+  padding: 1.5rem;
+  border: 1px solid var(--guide-gold);
+  border-radius: 22px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.58), transparent),
+    rgba(255, 250, 242, 0.6);
+  text-align: center;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.digital-guide__vendor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 30px rgba(91, 64, 50, 0.09);
+}
+
+.digital-guide__vendor-card .digital-guide__round-icon {
+  width: 4.3rem;
+  height: 4.3rem;
+  margin-bottom: 0.9rem;
+}
+
+.digital-guide__vendor-card .digital-guide__round-icon .icon {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.digital-guide__vendor-number {
+  position: absolute;
+  top: 1.1rem;
+  left: 1.15rem;
+  display: grid;
+  width: 1.75rem;
+  height: 1.75rem;
+  place-items: center;
+  border: 1px solid var(--guide-gold);
+  border-radius: 50%;
+  background: var(--guide-gold-soft);
+  font-family: var(--serif);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.digital-guide__vendor-card h3 {
+  min-height: 2.5rem;
+}
+
+.digital-guide__vendor-card .digital-guide__rule {
+  position: relative;
+  width: 65%;
+  margin-top: 0.9rem;
+}
+
+.digital-guide__vendor-card p {
+  margin-top: 1rem;
+  color: #725b4d;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.digital-guide__vendor-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  width: min(52rem, 100%);
+  margin: 2rem auto 0;
+}
+
+.digital-guide__vendor-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  min-height: 4rem;
+  padding: 0.8rem 1.25rem;
+  border: 1px solid var(--guide-gold);
+  border-radius: 999px;
+  background: var(--guide-gold-soft);
+  color: var(--guide-ink);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.digital-guide__vendor-button--solid {
+  background: #a87f57;
+  color: #fffaf2;
+  text-decoration: none;
+}
+
+.digital-guide__vendor-button:hover,
+.digital-guide__vendor-button:focus-visible {
+  filter: brightness(1.04);
+  transform: translateY(-3px);
+}
+
+.digital-guide__vendor-button .icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.digital-guide__notice--wide {
+  justify-content: center;
+  text-align: center;
+}
+
+.digital-guide__notice--wide > .icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 auto;
+  padding: 0.3rem;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.digital-guide__closing {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  padding: clamp(2rem, 5vw, 4rem);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 90% 20%, rgba(197, 161, 90, 0.2), transparent 18rem),
+    var(--forest);
+  color: var(--paper);
+}
+
+.digital-guide__closing h2 {
+  margin-top: 0.35rem;
+  color: var(--paper);
+  font-size: clamp(2rem, 4vw, 3.7rem);
+}
+
+.digital-guide__closing p {
+  max-width: 45rem;
+  margin-top: 0.65rem;
+  color: rgba(255, 253, 248, 0.76);
+}
+
+.digital-guide__closing .eyebrow {
+  color: var(--brass);
+}
+
+.digital-guide__closing .button--ghost {
+  border-color: rgba(255, 253, 248, 0.36);
+  color: var(--paper);
+}
+
+@keyframes guide-page-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1020px) {
+  .digital-guide__page--with-wood {
+    grid-template-columns: 9rem minmax(0, 1fr);
+  }
+
+  .digital-guide__brand-mark {
+    right: 0.75rem;
+    left: 0.75rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .digital-guide__brand-mark > span {
+    font-size: 0.8rem;
+  }
+
+  .digital-guide__overview-grid {
+    gap: 1rem;
+  }
+
+  .digital-guide__overview-card {
+    padding: 1rem;
+    border: 1px solid rgba(205, 168, 123, 0.55);
+    border-radius: 18px;
+  }
+
+  .digital-guide__overview-card + .digital-guide__overview-card {
+    border-left: 1px solid rgba(205, 168, 123, 0.55);
+  }
+
+  .digital-guide__licence-layout,
+  .digital-guide__requirements-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .digital-guide__urgent-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0 1rem;
+  }
+
+  .digital-guide__urgent-card > ul,
+  .digital-guide__phone-note {
+    grid-column: 1 / -1;
+  }
+
+  .digital-guide__checklist {
+    position: static;
+  }
+}
+
+@media (max-width: 760px) {
+  .digital-guide {
+    width: min(100% - 1rem, 44rem);
+    margin-top: 0.75rem;
+  }
+
+  .digital-guide__toolbar {
+    grid-template-columns: 1fr;
+    align-items: start;
+    border-radius: 18px;
+  }
+
+  .digital-guide__toolbar > .button {
+    width: 100%;
+  }
+
+  .digital-guide__jump-links {
+    grid-column: auto;
+    grid-row: auto;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 0.35rem;
+    scrollbar-width: thin;
+  }
+
+  .digital-guide__jump-links a {
+    flex: 0 0 auto;
+  }
+
+  .digital-guide__page {
+    border-radius: 6px;
+  }
+
+  .digital-guide__page--with-wood {
+    grid-template-columns: 1fr;
+  }
+
+  .digital-guide__wood-panel {
+    min-height: 7.5rem;
+    background-size: 120% 180%, 140% 190%, 120% 130%;
+  }
+
+  .digital-guide__brand-mark {
+    inset: auto 1.2rem 1rem;
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .digital-guide__brand-mark > strong {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 1.2rem;
+  }
+
+  .digital-guide__page-content,
+  .digital-guide__page-content--full {
+    padding: 2.25rem 1.15rem 3.5rem;
+  }
+
+  .digital-guide__floral {
+    width: 7rem;
+    height: 7rem;
+    opacity: 0.4;
+  }
+
+  .digital-guide__page-heading {
+    padding-inline: 0.4rem;
+    text-align: left;
+  }
+
+  .digital-guide__page-heading::after {
+    margin-left: 0;
+  }
+
+  .digital-guide__page-heading::before {
+    left: min(50%, 21rem);
+  }
+
+  .digital-guide__page-heading h2,
+  .digital-guide__page-heading--step h2 {
+    font-size: clamp(2rem, 11vw, 3.3rem);
+  }
+
+  .digital-guide__overview-grid,
+  .digital-guide__vendor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .digital-guide__overview-card {
+    display: grid;
+    grid-template-columns: 3.8rem 1fr;
+    gap: 0 0.85rem;
+  }
+
+  .digital-guide__overview-card .digital-guide__round-icon {
+    grid-row: 1;
+    width: 3.8rem;
+    height: 3.8rem;
+    margin: 0;
+  }
+
+  .digital-guide__overview-card .digital-guide__round-icon .icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .digital-guide__overview-card ul {
+    grid-column: 1 / -1;
+  }
+
+  .digital-guide__numbered-title {
+    grid-template-columns: 2rem 1fr;
+  }
+
+  .digital-guide__numbered-title > span,
+  .digital-guide__requirement-number {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .digital-guide__notice {
+    align-items: flex-start;
+  }
+
+  .digital-guide__notice > span {
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .digital-guide__urgent-card {
+    display: block;
+  }
+
+  .digital-guide__resource-links {
+    font-size: 0.76rem;
+  }
+
+  .digital-guide__resource-links a {
+    display: block;
+    margin: 0.15rem 0 0;
+  }
+
+  .digital-guide__requirement-card {
+    grid-template-columns: 2rem 3.4rem 1fr;
+    gap: 0.7rem;
+    padding: 1rem;
+  }
+
+  .digital-guide__requirement-card .digital-guide__round-icon {
+    width: 3.4rem;
+    height: 3.4rem;
+  }
+
+  .digital-guide__requirement-card .digital-guide__round-icon .icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .digital-guide__mahr-details {
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr;
+  }
+
+  .digital-guide__vendor-card {
+    min-height: 0;
+  }
+
+  .digital-guide__vendor-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .digital-guide__closing {
+    grid-template-columns: 1fr;
+    border-radius: 18px;
+  }
+
+  .digital-guide__closing .content-actions,
+  .digital-guide__closing .button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .digital-guide__page {
+    animation: none;
+  }
+}
+
 * {
   box-sizing: border-box;
 }

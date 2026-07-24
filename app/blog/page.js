@@ -65,17 +65,17 @@ export default function BlogIndexPage() {
         <div className="section-heading">
           <div>
             <span className="eyebrow">Featured Resource</span>
-            <h2>Download the Free Nikkah Guide</h2>
+            <h2>View the Free Nikkah Guide</h2>
           </div>
         </div>
 
         <div className="content-actions">
-          <Link className="button button--primary" href="/nikah-guide">
-            Read the Free Guide
+          <Link className="button button--primary" href={siteContent.guide.onlinePath}>
+            View Nikah Guide
           </Link>
-          <a className="button button--ghost" href={siteContent.guide.downloadPath}>
-            Download the Free PDF
-          </a>
+          <Link className="button button--ghost" href="/nikah-guide">
+            Explore Guide Details
+          </Link>
         </div>
       </section>
     </div>

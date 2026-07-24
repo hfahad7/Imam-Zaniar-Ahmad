@@ -102,6 +102,54 @@ const icons = {
       <path d="m15.5 8.5-2.1 4.9-4.9 2.1 2.1-4.9z" />
     </>
   ),
+  mosque: (
+    <>
+      <path d="M4 21V11h16v10M2 21h20M8 21v-5h8v5" />
+      <path d="M6 11a6 6 0 0 1 12 0M12 2v3M10 3h4M4 11V8M20 11V8" />
+    </>
+  ),
+  handshake: (
+    <>
+      <path d="m8 12 3 3a2 2 0 0 0 3 0l5-5" />
+      <path d="m2 9 4-4 4 3 2-1 3 1 3-3 4 4-3 3M5 12l5 5a2 2 0 0 0 3 0M3 10l-1 1 4 4" />
+    </>
+  ),
+  gift: (
+    <>
+      <rect x="3" y="8" width="18" height="13" rx="1" />
+      <path d="M12 8v13M3 12h18M7.5 8C5 8 4 6.8 4 5.5S5 3 6.5 3C9 3 12 8 12 8M16.5 8C19 8 20 6.8 20 5.5S19 3 17.5 3C15 3 12 8 12 8" />
+    </>
+  ),
+  clipboard: (
+    <>
+      <rect x="5" y="4" width="14" height="17" rx="2" />
+      <path d="M9 4V2h6v2M9 11l2 2 4-4M9 17h6" />
+    </>
+  ),
+  clock: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 2" />
+    </>
+  ),
+  person: (
+    <>
+      <circle cx="12" cy="8" r="4" />
+      <path d="M5 21a7 7 0 0 1 14 0" />
+    </>
+  ),
+  camera: (
+    <>
+      <path d="M4 7h4l2-3h4l2 3h4a2 2 0 0 1 2 2v10H2V9a2 2 0 0 1 2-2Z" />
+      <circle cx="12" cy="13" r="4" />
+    </>
+  ),
+  servingDish: (
+    <>
+      <path d="M3 17h18M5 17a7 7 0 0 1 14 0M12 7v3M9 21h6" />
+      <circle cx="12" cy="5" r="1" />
+    </>
+  ),
 };
 
 export default function Icon({ name, className = '' }) {

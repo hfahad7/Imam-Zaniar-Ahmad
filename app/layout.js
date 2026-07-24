@@ -17,7 +17,7 @@ const primaryLinks = [
   { href: '/lectures-speaking', label: 'Speaking' },
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Blog' },
-  { href: '/nikah-guide', label: 'Free Nikkah Guide', featured: true },
+  { href: '/nikah-planning-guide', label: 'Free Nikkah Guide', featured: true },
 ];
 
 export const metadata = {

@@ -7,6 +7,7 @@ export default function sitemap() {
     '/nikah-weddings',
     '/lectures-speaking',
     '/nikah-guide',
+    '/nikah-planning-guide',
     '/projects',
     '/blog',
     '/contact',
