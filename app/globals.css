@@ -4870,19 +4870,17 @@ body {
 }
 
 .planning-guide__reading-layout {
-  display: grid;
-  grid-template-columns: minmax(220px, 0.28fr) minmax(0, 1fr);
-  gap: clamp(2rem, 5vw, 5.5rem);
-  align-items: start;
   margin-top: clamp(3rem, 7vw, 7rem);
 }
 
 .planning-guide__contents {
-  position: sticky;
-  top: 6.5rem;
+  margin-bottom: clamp(4rem, 8vw, 7rem);
 }
 
 .planning-guide__contents > div {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: stretch;
   overflow: hidden;
   border: 1px solid rgba(255, 253, 248, 0.16);
   border-radius: var(--radius-lg);
@@ -4894,14 +4892,22 @@ body {
 }
 
 .planning-guide__contents > div > .card-meta {
-  padding: 1.4rem 1.35rem 0.9rem;
+  display: grid;
+  width: auto;
+  min-width: 9.5rem;
+  margin: 0;
+  padding: 1.25rem;
+  place-items: center;
+  border-radius: 0;
   background: #e2c77f;
   color: #17362c;
+  text-align: center;
 }
 
 .planning-guide__contents nav {
   display: grid;
-  padding: 0 0.75rem 1rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  padding: 0;
 }
 
 .planning-guide__contents nav a {
@@ -4909,8 +4915,8 @@ body {
   grid-template-columns: 2rem minmax(0, 1fr);
   gap: 0.65rem;
   align-items: center;
-  padding: 0.9rem 0.6rem;
-  border-bottom: 1px solid rgba(255, 253, 248, 0.13);
+  padding: 1rem 0.75rem;
+  border-right: 1px solid rgba(255, 253, 248, 0.13);
   color: rgba(255, 253, 248, 0.86);
   font-size: 0.78rem;
   font-weight: 720;
@@ -4932,8 +4938,8 @@ body {
   grid-template-columns: auto minmax(0, 1fr);
   gap: 0.75rem;
   align-items: center;
-  margin: 0.4rem;
-  padding: 1rem;
+  margin: 0.5rem;
+  padding: 0.85rem 1rem;
   border-radius: 16px;
   background: #e2c77f;
   color: #17362c;
@@ -4997,10 +5003,14 @@ body {
 
 .planning-guide__opening {
   max-width: 820px;
-  margin: 2rem 0 2.5rem;
+  margin: 2.35rem 0 2.75rem;
   color: #435149;
   font-size: clamp(1.05rem, 1.4vw, 1.24rem);
   line-height: 1.8;
+}
+
+.planning-guide__chapter-heading + :not(.planning-guide__opening) {
+  margin-top: 2.35rem;
 }
 
 .planning-guide__commitment-split {
@@ -5132,7 +5142,7 @@ body {
 
 .planning-guide__foundation-list p {
   max-width: 760px;
-  margin-top: 0.4rem;
+  margin-top: 0.65rem;
   color: #536158;
   line-height: 1.7;
 }
@@ -5177,6 +5187,7 @@ body {
 }
 
 .planning-guide__photo-break .eyebrow {
+  margin-bottom: 0.7rem;
   color: #e5c881;
 }
 
@@ -5226,7 +5237,7 @@ body {
 }
 
 .planning-guide__ontario-path p {
-  margin-top: 0.35rem;
+  margin-top: 0.55rem;
   color: #536158;
   font-size: 0.88rem;
   line-height: 1.6;
@@ -5273,7 +5284,7 @@ body {
 
 .planning-guide__urgent p {
   max-width: 800px;
-  margin-top: 0.65rem;
+  margin-top: 0.8rem;
   color: rgba(255, 253, 248, 0.8);
   line-height: 1.65;
 }
@@ -5382,7 +5393,7 @@ body {
 }
 
 .planning-guide__partner-list p {
-  margin-top: 0.25rem;
+  margin-top: 0.45rem;
   color: #536158;
   font-size: 0.84rem;
   line-height: 1.55;
@@ -5406,7 +5417,7 @@ body {
 }
 
 .planning-guide__meezan p:last-child {
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;
   color: #4d5c53;
 }
 
@@ -5456,7 +5467,7 @@ body {
 
 .planning-guide__sources > p {
   max-width: 760px;
-  margin: 1rem 0 1.5rem 4.5rem;
+  margin: 1.35rem 0 1.75rem 4.5rem;
   color: #4d5c53;
 }
 
@@ -5606,12 +5617,35 @@ body {
     margin-top: 3rem;
   }
 
+  .planning-guide__contents {
+    margin-bottom: 4rem;
+  }
+
+  .planning-guide__contents > div {
+    grid-template-columns: 1fr;
+  }
+
+  .planning-guide__contents > div > .card-meta {
+    min-width: 0;
+    place-items: start;
+    text-align: left;
+  }
+
   .planning-guide__contents nav {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .planning-guide__contents nav a {
     grid-template-columns: 1.6rem minmax(0, 1fr);
+    border-bottom: 1px solid rgba(255, 253, 248, 0.13);
+  }
+
+  .planning-guide__contents nav a:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .planning-guide__contents nav a:last-child {
+    border-bottom: 0;
   }
 
   .planning-guide__download {
