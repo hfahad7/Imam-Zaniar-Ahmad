@@ -5,7 +5,7 @@ import { buildMetadata } from '../../lib/metadata';
 export const metadata = buildMetadata({
   title: 'Projects and Community Initiatives',
   description:
-    'Explore Meezan, Zakah.com, and AutoAjr, three community initiatives co-founded by Imam Zaniar Ahmad.',
+    'Explore Meezan, Zakah.com, and AutoAjr, community initiatives co-founded by Imam Zaniar Ahmad for Islamic services, Zakah, and charitable giving.',
   path: '/projects',
 });
 

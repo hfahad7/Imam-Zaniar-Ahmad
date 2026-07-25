@@ -4204,6 +4204,521 @@ body {
   text-transform: uppercase;
 }
 
+/* Search-readable Nikah guide */
+.guide-topic-nav {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin: 1.5rem 0;
+  padding: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 253, 248, 0.92);
+  box-shadow: var(--shadow-soft);
+}
+
+.guide-topic-nav a {
+  display: flex;
+  min-height: 3.25rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.7rem;
+  border-radius: var(--radius-sm);
+  color: var(--forest);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-align: center;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.guide-topic-nav a:hover,
+.guide-topic-nav a:focus-visible {
+  background: var(--forest);
+  color: var(--paper);
+  transform: translateY(-2px);
+}
+
+.guide-topic-nav .icon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--brass);
+}
+
+.guide-seo-article > section[id] {
+  scroll-margin-top: 7rem;
+}
+
+.guide-intro-copy {
+  max-width: 850px;
+  margin-bottom: 1.5rem;
+}
+
+.guide-distinction-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.guide-distinction-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1.15rem;
+  align-items: start;
+  min-height: 100%;
+  padding: clamp(1.35rem, 2.5vw, 2rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 100% 0, rgba(197, 161, 90, 0.16), transparent 11rem),
+    var(--paper);
+}
+
+.guide-distinction-card--legal {
+  background:
+    radial-gradient(circle at 100% 0, rgba(255, 253, 248, 0.14), transparent 11rem),
+    var(--forest);
+  color: var(--paper);
+}
+
+.guide-distinction-card h3 {
+  margin-top: 0.25rem;
+  font-size: clamp(1.45rem, 2.2vw, 2rem);
+}
+
+.guide-distinction-card--legal h3 {
+  color: var(--paper);
+}
+
+.guide-distinction-card p:last-child {
+  margin-top: 0.6rem;
+  color: var(--muted);
+}
+
+.guide-distinction-card--legal p:last-child,
+.guide-distinction-card--legal .card-meta {
+  color: rgba(255, 253, 248, 0.72);
+}
+
+.guide-important-note {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 1.15rem 1.35rem;
+  border-left: 4px solid var(--brass);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background: var(--parchment-light);
+}
+
+.guide-important-note > span {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--forest);
+  color: var(--brass);
+}
+
+.guide-important-note .icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.guide-important-note strong {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+}
+
+.guide-important-note p {
+  margin-top: 0.2rem;
+  color: var(--muted);
+}
+
+.guide-requirement-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.guide-requirement-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  min-height: 12rem;
+  overflow: hidden;
+  padding: 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 253, 248, 0.88);
+}
+
+.guide-requirement-card__number {
+  position: absolute;
+  right: 0.85rem;
+  bottom: -0.7rem;
+  color: rgba(21, 56, 45, 0.07);
+  font-family: var(--serif);
+  font-size: 6rem;
+  line-height: 1;
+}
+
+.guide-requirement-card h3 {
+  padding-right: 2rem;
+  font-size: 1.35rem;
+}
+
+.guide-requirement-card p {
+  position: relative;
+  z-index: 1;
+  margin-top: 0.45rem;
+  color: var(--muted);
+}
+
+.guide-legal-steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.guide-legal-steps li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.9rem;
+  padding: 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+}
+
+.guide-legal-steps li:last-child {
+  grid-column: 1 / -1;
+}
+
+.guide-legal-steps li > span {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--forest);
+  color: var(--brass);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.guide-legal-steps h3 {
+  font-size: 1.15rem;
+}
+
+.guide-legal-steps p {
+  margin-top: 0.35rem;
+  color: var(--muted);
+}
+
+.guide-processing-note {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1.15rem;
+  margin-top: 1rem;
+  padding: clamp(1.4rem, 3vw, 2.25rem);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 100% 0, rgba(197, 161, 90, 0.2), transparent 16rem),
+    var(--forest);
+  color: var(--paper);
+}
+
+.guide-processing-note h3 {
+  margin-top: 0.3rem;
+  color: var(--paper);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+}
+
+.guide-processing-note p {
+  max-width: 900px;
+  margin-top: 0.65rem;
+  color: rgba(255, 253, 248, 0.75);
+}
+
+.guide-processing-note a {
+  color: var(--brass-light);
+  font-weight: 800;
+}
+
+.guide-planning-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+  gap: 1rem;
+}
+
+.guide-day-checklist {
+  padding: clamp(1.4rem, 3vw, 2rem);
+  border-radius: var(--radius-lg);
+  background: var(--forest);
+  color: var(--paper);
+}
+
+.guide-day-checklist h3 {
+  margin-top: 0.25rem;
+  color: var(--paper);
+  font-size: 1.7rem;
+}
+
+.guide-day-checklist ul {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 1.1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.guide-day-checklist li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.65rem;
+  align-items: start;
+  color: rgba(255, 253, 248, 0.8);
+}
+
+.guide-day-checklist li .icon {
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.25rem;
+  color: var(--brass);
+}
+
+.guide-support-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.guide-support-list section {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid rgba(21, 56, 45, 0.13);
+  border-radius: var(--radius-md);
+  background: rgba(255, 253, 248, 0.72);
+}
+
+.guide-support-list section:last-child {
+  grid-column: 1 / -1;
+}
+
+.guide-support-list section > span {
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--sage);
+  color: var(--forest);
+}
+
+.guide-support-list .icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.guide-support-list h3 {
+  font-size: 1rem;
+}
+
+.guide-support-list p {
+  margin-top: 0.3rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.guide-meezan-callout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding: 1.15rem 1.35rem;
+  border: 1px solid rgba(21, 56, 45, 0.14);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+}
+
+.guide-meezan-callout h3 {
+  font-size: 1.25rem;
+}
+
+.guide-meezan-callout p:last-child {
+  margin-top: 0.25rem;
+  color: var(--muted);
+}
+
+.guide-meezan-callout .button {
+  flex: 0 0 auto;
+}
+
+.guide-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.guide-faq-grid details {
+  align-self: start;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+}
+
+.guide-faq-grid summary {
+  position: relative;
+  padding: 1.15rem 3.2rem 1.15rem 1.2rem;
+  color: var(--forest);
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 650;
+  cursor: pointer;
+  list-style: none;
+}
+
+.guide-faq-grid summary::-webkit-details-marker {
+  display: none;
+}
+
+.guide-faq-grid summary::after {
+  position: absolute;
+  top: 50%;
+  right: 1.2rem;
+  color: var(--brass);
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  content: '+';
+  transform: translateY(-50%);
+}
+
+.guide-faq-grid details[open] summary::after {
+  content: '-';
+}
+
+.guide-faq-grid details p {
+  padding: 0 1.2rem 1.2rem;
+  color: var(--muted);
+}
+
+.guide-final-cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2rem;
+  align-items: end;
+  margin: 1.5rem 0 0;
+  padding: clamp(2rem, 5vw, 4rem);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(circle at 90% 0, rgba(197, 161, 90, 0.22), transparent 20rem),
+    var(--forest);
+  color: var(--paper);
+}
+
+.guide-final-cta h2 {
+  max-width: 760px;
+  margin-top: 0.45rem;
+  color: var(--paper);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.guide-final-cta p {
+  max-width: 760px;
+  margin-top: 0.7rem;
+  color: rgba(255, 253, 248, 0.72);
+}
+
+.guide-final-cta .content-actions {
+  justify-content: flex-end;
+  margin: 0;
+}
+
+.guide-final-cta .button--ghost {
+  border-color: rgba(255, 253, 248, 0.35);
+  color: var(--paper);
+}
+
+@media (max-width: 980px) {
+  .guide-topic-nav {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .guide-planning-layout,
+  .guide-final-cta {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-final-cta {
+    align-items: start;
+  }
+
+  .guide-final-cta .content-actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 700px) {
+  .guide-topic-nav,
+  .guide-distinction-grid,
+  .guide-requirement-grid,
+  .guide-legal-steps,
+  .guide-support-list,
+  .guide-faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-topic-nav {
+    gap: 0.35rem;
+  }
+
+  .guide-topic-nav a {
+    justify-content: flex-start;
+    min-height: 2.75rem;
+    padding-inline: 0.9rem;
+  }
+
+  .guide-legal-steps li:last-child,
+  .guide-support-list section:last-child {
+    grid-column: auto;
+  }
+
+  .guide-distinction-card,
+  .guide-requirement-card,
+  .guide-processing-note {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-requirement-card {
+    min-height: 0;
+  }
+
+  .guide-meezan-callout {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .guide-meezan-callout .button {
+    width: 100%;
+  }
+
+  .guide-final-cta {
+    padding: 1.5rem;
+  }
+}
+
 /* Blog and article layouts */
 .blog-hero .page-hero__media img,
 .article-hero .page-hero__media img,

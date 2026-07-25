@@ -144,7 +144,7 @@ const bringOnTheDay = [
 export const metadata = buildMetadata({
   title: 'The Simple Nikah Guide',
   description:
-    'View the complete Nikah planning guide for Islamic ceremony requirements, Ontario marriage licence steps, trusted officiants, and wedding vendors.',
+    'Read the visual Nikah guide for Islamic marriage requirements, Ontario marriage licence steps, Muslim wedding officiants, checklists, and trusted vendors.',
   path: siteContent.guide.onlinePath,
 });
 
@@ -161,7 +161,7 @@ function WoodPanel() {
     <aside className="digital-guide__wood-panel" aria-hidden="true">
       <Image
         className="digital-guide__wood-image"
-        src="/images/nikah-guide/wood-sidebar.jpg"
+        src="/images/nikah-guide/wood-sidebar.webp"
         alt=""
         fill
         sizes="(max-width: 760px) 100vw, 22vw"

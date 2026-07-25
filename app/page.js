@@ -10,7 +10,7 @@ import { siteContent } from '../lib/site-content';
 export const metadata = buildMetadata({
   title: 'Nikah Ceremonies and Islamic Speaking Services in Ontario',
   description:
-    'Book Imam Zaniar Ahmad for a religious Nikah ceremony, Ontario legal marriage officiation, or an Islamic speaking engagement.',
+    'Book Imam Zaniar Ahmad for a religious Nikah, Ontario legal marriage officiation, or both, with Muslim wedding guidance across Southern Ontario.',
   path: '/',
 });
 

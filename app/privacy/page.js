@@ -4,7 +4,7 @@ import { siteContent } from '../../lib/site-content';
 export const metadata = buildMetadata({
   title: 'Privacy Policy',
   description:
-    'Read how information submitted through the contact form is collected, used, and protected.',
+    'Read how imamzaniarahmad.com collects, uses, stores, and protects information submitted through Nikah, wedding, and speaking inquiry forms.',
   path: '/privacy',
 });
 

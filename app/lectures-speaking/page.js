@@ -23,7 +23,7 @@ const serviceJsonLd = {
 export const metadata = buildMetadata({
   title: 'Lectures, Khutbahs, Talks, and Speaking Engagements',
   description:
-    'Book Imam Zaniar Ahmad for lectures, khutbahs, talks, workshops, and speaking engagements for mosques, schools, universities, and community organizations.',
+    'Invite Imam Zaniar Ahmad for an Islamic lecture, khutbah, workshop, or talk at a mosque, school, university, charity, or community event.',
   path: '/lectures-speaking',
 });
 

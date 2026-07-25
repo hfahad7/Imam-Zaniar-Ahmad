@@ -8,7 +8,7 @@ import { siteContent } from '../../lib/site-content';
 export const metadata = buildMetadata({
   title: 'About Imam Zaniar Ahmad',
   description:
-    'Learn about Imam Zaniar Ahmad, his mission, his work as an Ontario marriage officiant and speaker, and the community projects he has helped build.',
+    'Meet Imam Zaniar Ahmad, an Ontario Nikah officiant, Islamic speaker, and community builder helping Muslim couples and organizations with clarity and care.',
   path: '/about',
 });
 

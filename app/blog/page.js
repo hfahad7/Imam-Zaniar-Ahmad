@@ -8,7 +8,7 @@ import { siteContent } from '../../lib/site-content';
 export const metadata = buildMetadata({
   title: 'Blog and Resources',
   description:
-    'Read practical articles about Nikah preparation, speaking invitations, and community service.',
+    'Read practical guidance about Nikah preparation, Muslim wedding planning in Ontario, marriage officiation, Islamic talks, and community service.',
   path: '/blog',
 });
 

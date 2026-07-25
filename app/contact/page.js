@@ -9,7 +9,7 @@ import { siteContent } from '../../lib/site-content';
 export const metadata = buildMetadata({
   title: 'Contact and Booking',
   description:
-    'Contact Imam Zaniar Ahmad to book a Nikah ceremony, Ontario legal marriage officiation, or speaking engagement.',
+    'Contact Imam Zaniar Ahmad to book a Nikah consultation, Muslim wedding officiant, Ontario legal marriage service, or Islamic speaking engagement.',
   path: '/contact',
 });
 

@@ -24,7 +24,7 @@ const serviceJsonLd = {
 export const metadata = buildMetadata({
   title: 'Nikah Weddings and Marriage Officiation',
   description:
-    'Book a religious Nikah ceremony, Ontario legal marriage officiation, or both, with clear preparation and service-area information.',
+    'Book a religious Nikah ceremony, Ontario legal marriage officiation, or both with Imam Zaniar Ahmad, serving Muslim weddings across Ontario.',
   path: '/nikah-weddings',
 });
 
