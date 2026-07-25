@@ -81,6 +81,12 @@ const icons = {
     </>
   ),
   check: <path d="m4 12 5 5L20 6" />,
+  arrow: (
+    <>
+      <path d="M5 12h14" />
+      <path d="m14 7 5 5-5 5" />
+    </>
+  ),
   globe: (
     <>
       <circle cx="12" cy="12" r="9" />

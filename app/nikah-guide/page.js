@@ -5,109 +5,109 @@ import Icon from '../components/ui-icon';
 import { buildBreadcrumbJsonLd, buildMetadata } from '../../lib/metadata';
 import { siteContent } from '../../lib/site-content';
 
-const religiousRequirements = [
+const religiousFoundations = [
   {
     icon: 'handshake',
-    title: 'Consent of the Bride and Groom',
+    title: 'A Marriage Chosen Freely',
     description:
-      'A Nikah begins with the willing consent of both the bride and groom. Neither person should be pressured into the marriage.',
+      'The bride and groom must both willingly agree to the marriage. Consent is the beginning of a valid and meaningful Nikah.',
   },
   {
     icon: 'community',
-    title: "The Bride's Wali",
+    title: 'The Bride Is Supported by Her Wali',
     description:
-      "The wali is the bride's guardian, such as her father, brother, uncle, or grandfather. He may attend in person or online, and he may authorize a representative when needed. In certain circumstances, an Imam may act as wali.",
+      "The wali is the bride's guardian, often her father, brother, uncle, or grandfather. He may attend in person or online and may authorize a representative when needed. In certain circumstances, an Imam may act as wali.",
   },
   {
     icon: 'gift',
-    title: 'An Agreed Mahr',
+    title: 'The Couple Agrees on the Mahr',
     description:
-      'The mahr is a gift agreed upon by the groom and bride. It may be cash, gold, jewellery, Umrah, memorizing a surah, or another reasonable gift. It can be given on the wedding day, later, or divided between both times.',
+      'The mahr is a reasonable gift from the groom to the bride. It may be cash, gold, jewellery, Umrah, memorizing a surah, or another agreed gift. It can be given on the wedding day, later, or in two parts.',
   },
   {
     icon: 'person',
-    title: 'Islamic Witnesses',
+    title: 'Witnesses Are Confirmed in Advance',
     description:
-      'The ceremony requires either two Muslim men, or one Muslim man and two Muslim women, as witnesses. If anyone needs to participate online, confirm the arrangement with the Imam before the Nikah.',
+      'The ceremony requires either two Muslim men, or one Muslim man and two Muslim women, as witnesses. Discuss online participation with the Imam before the ceremony.',
   },
 ];
 
-const legalSteps = [
+const ontarioPath = [
   {
-    title: 'Apply for an Ontario Marriage Licence',
+    title: 'Start the Licence Application',
     description:
-      'Apply online where the service is available, or begin the process through the city or municipality that will issue the licence.',
+      'Apply online where available, or begin through the Ontario city or municipality that will issue the marriage licence.',
   },
   {
-    title: 'Pick Up the Licence in Person',
+    title: 'Collect the Licence',
     description:
-      'Visit the issuing municipality with the required identification and documents. Check that all names and details are correct.',
+      'Pick it up in person with the required identification and documents. Review every name and detail before leaving.',
   },
   {
-    title: 'Confirm the Ceremony Details',
+    title: 'Align the Ceremony Plan',
     description:
-      'Review the date, time, location, arrival time, witnesses, wali, and mahr with your Imam or marriage officiant.',
+      'Confirm the date, location, arrival time, wali, mahr, witnesses, and legal service with the Imam or officiant.',
   },
   {
-    title: 'Bring the Licence to the Wedding',
+    title: 'Keep the Original with Your Wedding File',
     description:
-      'Keep the original Ontario marriage licence with the documents you will bring on the day of the Nikah ceremony.',
+      'Bring the original Ontario marriage licence to the ceremony if legal marriage officiation is part of the booking.',
   },
   {
-    title: 'Use a Registered Marriage Officiant',
+    title: 'Confirm the Officiant Is Registered',
     description:
-      'A religious Nikah does not automatically register a legal marriage in Ontario. For both services together, confirm that the officiant is authorized in Ontario.',
+      'A religious ceremony alone does not register an Ontario marriage. One ceremony can cover both when the officiant is legally authorized.',
   },
   {
-    title: 'Complete and Submit the Paperwork',
+    title: 'Sign and Submit the Legal Forms',
     description:
-      'After the ceremony, the registered officiant completes the required legal paperwork and sends it for provincial registration.',
+      'After the ceremony, the registered officiant completes the paperwork and sends it for provincial registration.',
   },
   {
     title: 'Order the Marriage Certificate',
     description:
-      'The couple applies for the Ontario marriage certificate after the marriage has been registered. This commonly takes about three to four months and is not ordered by the Imam.',
+      'After registration, the couple orders the Ontario marriage certificate. This commonly takes three to four months and is not ordered by the Imam.',
   },
 ];
 
-const weddingSupport = [
+const planningPartners = [
   {
     icon: 'person',
-    title: 'Imam or Muslim Wedding Officiant',
+    title: 'Imam and Officiant',
     description:
-      'Choose someone who can explain the Islamic requirements and, when requested, complete Ontario legal marriage officiation.',
+      'Choose someone who can explain the Islamic ceremony and, if requested, complete Ontario legal marriage officiation.',
   },
   {
     icon: 'mosque',
-    title: 'Mosque or Islamic Centre',
+    title: 'Ceremony Space',
     description:
-      'Ask about ceremony space, scheduling, accessibility, guest capacity, and any community guidelines.',
+      'Confirm the mosque, venue, or home setting, including timing, accessibility, guest capacity, and any community guidelines.',
   },
   {
     icon: 'camera',
-    title: 'Photography and Venue',
+    title: 'Photography',
     description:
-      "Choose a setting and photographer that respect the couple's preferences and the religious character of the ceremony.",
+      "Discuss privacy, family preferences, and the religious character of the wedding before the photographer's arrival.",
   },
   {
     icon: 'servingDish',
     title: 'Halal Catering',
     description:
-      'Confirm the menu, halal sourcing, guest count, serving plan, and any dietary requirements.',
+      'Confirm halal sourcing, the menu, guest count, serving schedule, and dietary requirements.',
   },
   {
     icon: 'heart',
     title: 'Marriage Preparation',
     description:
-      'Premarital counselling can help a couple discuss expectations, communication, faith, family, and shared responsibilities.',
+      'Premarital counselling creates space to discuss faith, communication, family, expectations, and shared responsibilities.',
   },
 ];
 
-const dayOfChecklist = [
-  'Full names of the bride and groom',
+const weddingFile = [
+  'The full names of the bride and groom',
   'Wali contact details or authorized representation',
   'The agreed mahr and when it will be given',
-  'Names and attendance plan for the Islamic witnesses',
+  'Names and attendance plans for the Islamic witnesses',
   'The original Ontario marriage licence for legal officiation',
   'Any identification or forms requested by the officiant',
 ];
@@ -156,9 +156,9 @@ const guideJsonLd = {
     {
       '@type': 'Article',
       '@id': `${siteContent.siteUrl}/nikah-guide#article`,
-      headline: 'Free Nikah Guide for Ontario Muslim Weddings',
+      headline: 'Planning a Muslim Wedding in Ontario',
       description:
-        'A practical guide to Islamic Nikah requirements, Ontario marriage licences, wedding-day preparation, and choosing a Muslim wedding officiant.',
+        'A practical resource for Islamic Nikah requirements, Ontario marriage licences, wedding-day preparation, and choosing a Muslim wedding officiant.',
       url: `${siteContent.siteUrl}/nikah-guide`,
       dateModified: '2026-07-25',
       author: {
@@ -189,7 +189,7 @@ const guideJsonLd = {
 };
 
 export const metadata = buildMetadata({
-  title: 'Free Nikah Guide for Ontario Muslim Weddings',
+  title: 'Muslim Wedding Planning in Ontario: Free Nikah Guide',
   description:
     'Plan a Nikah in Ontario with this free guide to Islamic marriage requirements, marriage licences, Muslim wedding officiants, checklists, and vendors.',
   path: '/nikah-guide',
@@ -200,7 +200,7 @@ export default function NikahGuidePage() {
     'https://meezanapp.com/search?level1Service=6826aad535473d1156c63f2b';
 
   return (
-    <div className="page-shell">
+    <div className="page-shell planning-guide">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
@@ -210,223 +210,147 @@ export default function NikahGuidePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(guideJsonLd) }}
       />
 
-      <section className="page-hero page-hero--with-media page-hero--guide">
-        <div className="page-hero__copy">
-          <span className="eyebrow">Free Muslim Wedding Resource</span>
-          <h1>Free Nikah Guide for Ontario Couples</h1>
-          <p className="section-lead">
-            Understand the Islamic ceremony, Ontario marriage process, and
-            practical decisions that help a Muslim wedding feel organized,
-            meaningful, and calm.
+      <section className="planning-guide__hero">
+        <div className="planning-guide__hero-copy">
+          <span className="eyebrow">Ontario Muslim Wedding Planning</span>
+          <h1>Planning a Muslim Wedding in Ontario</h1>
+          <p>
+            A practical resource for couples bringing together the meaning of
+            the Nikah ceremony, the Ontario legal marriage process, and the
+            details that shape a thoughtful wedding day.
           </p>
           <div className="content-actions">
             <Link className="button button--primary" href={siteContent.guide.onlinePath}>
-              View Nikah Guide
+              View the Visual Nikah Guide
             </Link>
-            <a
-              className="button button--ghost"
-              href={siteContent.guide.downloadPath}
-              download="nikah-guide.pdf"
-            >
-              Download the PDF
-            </a>
+            <Link className="button button--ghost" href="/contact">
+              Book a Nikah Consultation
+            </Link>
           </div>
-          <p className="small-copy">Reviewed and updated {siteContent.guide.lastUpdated}.</p>
+          <div className="planning-guide__hero-notes" aria-label="Guide topics">
+            <span><Icon name="ring" />Religious Ceremony</span>
+            <span><Icon name="document" />Ontario Registration</span>
+            <span><Icon name="clipboard" />Wedding-Day Checklist</span>
+          </div>
         </div>
-        <figure className="guide-cover">
-          <div className="guide-cover__paper">
-            <span className="guide-cover__mark"><Icon name="ring" /></span>
-            <small>Complimentary Ontario Edition</small>
-            <strong>The Nikah Guide</strong>
-            <p>A clear path from preparation to ceremony day.</p>
-            <span className="guide-cover__author">Imam Zaniar Ahmad</span>
-          </div>
+
+        <figure className="planning-guide__hero-media">
+          <Image
+            src={siteContent.photos.withGroom}
+            alt="Imam Zaniar Ahmad greeting a groom at a Muslim wedding"
+            width={1206}
+            height={1494}
+            priority
+            sizes="(max-width: 820px) 94vw, 44vw"
+          />
+          <figcaption>
+            <span>Free Planning Resource</span>
+            <strong>Clear Steps for a Meaningful Nikah</strong>
+          </figcaption>
         </figure>
       </section>
 
-      <nav className="guide-topic-nav" aria-label="Nikah guide topics">
-        <a href="#nikah-basics"><Icon name="ring" />Nikah Basics</a>
-        <a href="#islamic-requirements"><Icon name="mosque" />Islamic Requirements</a>
-        <a href="#ontario-marriage"><Icon name="document" />Ontario Marriage</a>
-        <a href="#wedding-planning"><Icon name="calendar" />Wedding Planning</a>
-        <a href="#nikah-faq"><Icon name="book" />Common Questions</a>
-      </nav>
-
-      <article className="guide-seo-article">
-        <section className="section section--compact" id="nikah-basics">
-          <div className="section-heading">
-            <div>
-              <span className="eyebrow">Start with the Difference</span>
-              <h2>Religious Nikah and Ontario Legal Marriage</h2>
-            </div>
+      <div className="planning-guide__reading-layout">
+        <aside className="planning-guide__contents">
+          <div>
+            <p className="card-meta">In This Resource</p>
+            <nav aria-label="Wedding planning topics">
+              <a href="#two-commitments"><span>01</span>Religious and Legal</a>
+              <a href="#marriage-foundations"><span>02</span>Nikah Foundations</a>
+              <a href="#ontario-path"><span>03</span>Ontario Process</a>
+              <a href="#wedding-day"><span>04</span>Wedding-Day Plan</a>
+              <a href="#planning-questions"><span>05</span>Questions</a>
+            </nav>
+            <a
+              className="planning-guide__download"
+              href={siteContent.guide.downloadPath}
+              download="nikah-guide.pdf"
+            >
+              <Icon name="document" />
+              <span>
+                <small>Keep a Copy</small>
+                Download the PDF
+              </span>
+            </a>
           </div>
+        </aside>
 
-          <p className="prose guide-intro-copy">
-            A Nikah is the Islamic marriage ceremony that brings a couple
-            together through mutual consent, a wali, an agreed mahr, and
-            witnesses. Ontario legal marriage officiation is a separate
-            government process involving a marriage licence, an authorized
-            officiant, signed documents, and provincial registration.
-          </p>
-
-          <div className="guide-distinction-grid">
-            <section className="guide-distinction-card">
-              <span className="card-icon"><Icon name="mosque" /></span>
+        <article className="planning-guide__article">
+          <section className="planning-guide__chapter" id="two-commitments">
+            <header className="planning-guide__chapter-heading">
+              <span>01</span>
               <div>
-                <p className="card-meta">Religious Service</p>
-                <h3>Islamic Nikah Ceremony</h3>
-                <p>
-                  Covers the Islamic requirements, the marriage contract, and
-                  the ceremony led by an Imam or knowledgeable officiant.
-                </p>
+                <p className="eyebrow">Begin with Clarity</p>
+                <h2>Two Commitments, One Wedding Day</h2>
               </div>
-            </section>
-            <section className="guide-distinction-card guide-distinction-card--legal">
-              <span className="card-icon"><Icon name="document" /></span>
-              <div>
-                <p className="card-meta">Government Service</p>
-                <h3>Ontario Marriage Registration</h3>
-                <p>
-                  Requires a valid marriage licence and a registered Ontario
-                  marriage officiant who completes and submits the legal forms.
-                </p>
-              </div>
-            </section>
-          </div>
+            </header>
 
-          <aside className="guide-important-note">
-            <span><Icon name="sparkle" /></span>
-            <div>
-              <strong>Planning one ceremony for both?</strong>
-              <p>
-                Ask whether your Imam is also a registered marriage officiant
-                in Ontario, and confirm both services before the wedding day.
-              </p>
-            </div>
-          </aside>
-        </section>
-
-        <section className="section section--muted section--compact" id="islamic-requirements">
-          <div className="section-heading">
-            <div>
-              <span className="eyebrow">The Religious Ceremony</span>
-              <h2>Islamic Requirements for a Nikah</h2>
-            </div>
-          </div>
-
-          <p className="prose guide-intro-copy">
-            Every couple&apos;s situation deserves careful guidance. These are the
-            main requirements covered in the Nikkah guide; speak with an
-            experienced Imam when a wali, mahr, witness, or family circumstance
-            needs individual attention.
-          </p>
-
-          <div className="guide-requirement-grid">
-            {religiousRequirements.map((requirement, index) => (
-              <section className="guide-requirement-card" key={requirement.title}>
-                <span className="guide-requirement-card__number">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <span className="card-icon"><Icon name={requirement.icon} /></span>
-                <div>
-                  <h3>{requirement.title}</h3>
-                  <p>{requirement.description}</p>
-                </div>
-              </section>
-            ))}
-          </div>
-        </section>
-
-        <section className="guide-photo-callout">
-          <Image
-            src={siteContent.photos.signingNikah}
-            alt="Imam Zaniar Ahmad reviewing documents for a Nikah ceremony"
-            width={1365}
-            height={2048}
-            sizes="(max-width: 820px) 92vw, 44vw"
-          />
-          <blockquote>
-            <Icon name="document" />
-            <p>
-              Clear preparation protects the meaning of the ceremony and keeps
-              the legal details from becoming a last-minute concern.
+            <p className="planning-guide__opening">
+              A Muslim wedding may include two connected but distinct
+              commitments. The religious Nikah establishes the Islamic marriage.
+              Ontario marriage officiation completes the government process.
+              Couples can arrange either service or bring both together in one
+              ceremony.
             </p>
-            <cite>Ontario Nikah Planning Guide</cite>
-          </blockquote>
-        </section>
 
-        <section className="section section--compact" id="ontario-marriage">
-          <div className="section-heading">
-            <div>
-              <span className="eyebrow">Legal Marriage Checklist</span>
-              <h2>How to Register a Marriage in Ontario</h2>
+            <div className="planning-guide__commitment-split">
+              <section>
+                <span><Icon name="mosque" /></span>
+                <p className="card-meta">The Religious Commitment</p>
+                <h3>The Islamic Marriage Contract</h3>
+                <p>
+                  The Nikah centres on willing consent, the bride&apos;s wali, an
+                  agreed mahr, witnesses, and the marriage contract led by an
+                  Imam or knowledgeable officiant.
+                </p>
+              </section>
+              <section>
+                <span><Icon name="document" /></span>
+                <p className="card-meta">The Legal Commitment</p>
+                <h3>The Ontario Marriage Record</h3>
+                <p>
+                  Legal registration requires a valid marriage licence and an
+                  authorized Ontario officiant who signs and submits the
+                  required provincial forms.
+                </p>
+              </section>
             </div>
-          </div>
 
-          <p className="prose guide-intro-copy">
-            Couples who want their Muslim wedding to create a legal marriage in
-            Ontario should complete these steps in addition to the religious
-            Nikah ceremony.
-          </p>
-
-          <ol className="guide-legal-steps">
-            {legalSteps.map((step, index) => (
-              <li key={step.title}>
-                <span>{index + 1}</span>
-                <div>
-                  <h3>{step.title}</h3>
-                  <p>{step.description}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-
-          <div className="guide-processing-note">
-            <span className="card-icon"><Icon name="clock" /></span>
-            <div>
-              <p className="card-meta">If a Certificate Is Needed Urgently</p>
-              <h3>Begin the Standard Application, Then Request Urgent Processing</h3>
+            <aside className="planning-guide__clarity-note">
+              <Icon name="sparkle" />
               <p>
-                After the officiant sends the completed marriage licence, wait
-                about one week, submit the normal marriage certificate
-                application, and then send an urgent request to the Office of
-                the Registrar General. Keep the marriage licence number,
-                marriage date, application reference, and tracking details
-                available.
+                <strong>Want both completed together?</strong> Confirm that the
+                Imam is registered to solemnize marriages in Ontario and include
+                both services in the booking.
               </p>
-              <p>
-                For current urgent-processing guidance, call{' '}
-                <a href="tel:18004612156">800-461-2156</a> or{' '}
-                <a href="tel:14163258305">416-325-8305</a>.
-              </p>
-            </div>
-          </div>
-        </section>
+            </aside>
+          </section>
 
-        <section className="section section--accent section--compact" id="wedding-planning">
-          <div className="section-heading">
-            <div>
-              <span className="eyebrow">Prepare with Confidence</span>
-              <h2>What to Arrange Before the Nikah Ceremony</h2>
-            </div>
-          </div>
+          <section className="planning-guide__chapter" id="marriage-foundations">
+            <header className="planning-guide__chapter-heading">
+              <span>02</span>
+              <div>
+                <p className="eyebrow">The Heart of the Ceremony</p>
+                <h2>Four Foundations of the Islamic Marriage</h2>
+              </div>
+            </header>
 
-          <div className="guide-planning-layout">
-            <section className="guide-day-checklist">
-              <span className="card-icon"><Icon name="clipboard" /></span>
-              <p className="card-meta">Wedding Day File</p>
-              <h3>Bring These Details with You</h3>
-              <ul>
-                {dayOfChecklist.map((item) => (
-                  <li key={item}><Icon name="check" /><span>{item}</span></li>
-                ))}
-              </ul>
-            </section>
+            <p className="planning-guide__opening">
+              These foundations help an Imam understand whether the ceremony is
+              ready to proceed. The free Nikkah guide summarizes the general
+              requirements, while personal or complex circumstances should be
+              discussed privately with an experienced Imam.
+            </p>
 
-            <div className="guide-support-list">
-              {weddingSupport.map((item) => (
+            <div className="planning-guide__foundation-list">
+              {religiousFoundations.map((item, index) => (
                 <section key={item.title}>
-                  <span><Icon name={item.icon} /></span>
+                  <span className="planning-guide__foundation-number">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span className="planning-guide__foundation-icon">
+                    <Icon name={item.icon} />
+                  </span>
                   <div>
                     <h3>{item.title}</h3>
                     <p>{item.description}</p>
@@ -434,112 +358,193 @@ export default function NikahGuidePage() {
                 </section>
               ))}
             </div>
-          </div>
+          </section>
 
-          <aside className="guide-meezan-callout">
-            <div>
-              <p className="card-meta">Finding Trusted Support</p>
-              <h3>Search for Imams and Islamic Wedding Services</h3>
+          <figure className="planning-guide__photo-break">
+            <Image
+              src={siteContent.photos.signingNikah}
+              alt="Imam Zaniar Ahmad completing Nikah and marriage documents"
+              width={1365}
+              height={2048}
+              sizes="(max-width: 820px) 94vw, 58vw"
+            />
+            <figcaption>
+              <span className="eyebrow">Preparation Creates Calm</span>
               <p>
-                Meezan can help couples explore Muslim service providers for
-                their ceremony and wedding plans.
+                Settle the religious requirements and legal paperwork before
+                the wedding day, so the ceremony can remain the focus.
               </p>
+            </figcaption>
+          </figure>
+
+          <section className="planning-guide__chapter" id="ontario-path">
+            <header className="planning-guide__chapter-heading">
+              <span>03</span>
+              <div>
+                <p className="eyebrow">From Licence to Certificate</p>
+                <h2>The Couple&apos;s Path Through Ontario Registration</h2>
+              </div>
+            </header>
+
+            <p className="planning-guide__opening">
+              If your ceremony will also create a legal marriage in Ontario,
+              use this path to keep the government steps moving alongside your
+              Nikah plans.
+            </p>
+
+            <ol className="planning-guide__ontario-path">
+              {ontarioPath.map((item, index) => (
+                <li key={item.title}>
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+
+            <aside className="planning-guide__urgent">
+              <span className="planning-guide__urgent-icon"><Icon name="clock" /></span>
+              <div>
+                <p className="card-meta">When a Certificate Is Time-Sensitive</p>
+                <h3>Apply Normally, Then Request Urgent Processing</h3>
+                <p>
+                  After the officiant sends the completed marriage licence,
+                  wait about one week, submit the standard marriage certificate
+                  application, and then send an urgent request to the Office of
+                  the Registrar General. Keep the licence number, marriage date,
+                  application reference, and tracking details available.
+                </p>
+                <p>
+                  For current guidance, call{' '}
+                  <a href="tel:18004612156">800-461-2156</a> or{' '}
+                  <a href="tel:14163258305">416-325-8305</a>.
+                </p>
+              </div>
+            </aside>
+          </section>
+
+          <section className="planning-guide__chapter" id="wedding-day">
+            <header className="planning-guide__chapter-heading">
+              <span>04</span>
+              <div>
+                <p className="eyebrow">Bring the Plan Together</p>
+                <h2>Build a Wedding-Day File Everyone Can Follow</h2>
+              </div>
+            </header>
+
+            <div className="planning-guide__day-layout">
+              <section className="planning-guide__wedding-file">
+                <span className="planning-guide__file-icon"><Icon name="clipboard" /></span>
+                <p className="card-meta">The Final Check</p>
+                <h3>Keep These Details Together</h3>
+                <ul>
+                  {weddingFile.map((item) => (
+                    <li key={item}><Icon name="check" /><span>{item}</span></li>
+                  ))}
+                </ul>
+              </section>
+
+              <div className="planning-guide__partner-list">
+                {planningPartners.map((item) => (
+                  <section key={item.title}>
+                    <span><Icon name={item.icon} /></span>
+                    <div>
+                      <h3>{item.title}</h3>
+                      <p>{item.description}</p>
+                    </div>
+                  </section>
+                ))}
+              </div>
             </div>
-            <a
-              className="button button--primary"
-              href={meezanSearchUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Search on Meezan
-            </a>
-          </aside>
-        </section>
 
-        <section className="section section--compact">
-          <div className="section-heading">
-            <div>
-              <span className="eyebrow">Official Ontario Information</span>
-              <h2>Marriage Licence and Certificate Resources</h2>
-            </div>
-          </div>
-
-          <p className="prose guide-intro-copy">
-            Government requirements and processing times can change. Use these
-            official Ontario sources to confirm the latest information before
-            your wedding.
-          </p>
-
-          <div className="guide-grid guide-grid--references">
-            {siteContent.guide.officialLinks.map((link) => (
-              <article key={link.href} className="guide-card">
-                <span className="card-icon"><Icon name="globe" /></span>
-                <div className="guide-card__copy">
-                  <p className="card-meta">Ontario.ca</p>
-                  <h3>{link.label}</h3>
-                </div>
-                <a
-                  className="button button--ghost"
-                  href={link.href}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
-                  Open Official Source
-                </a>
-              </article>
-            ))}
-            <article className="guide-card">
-              <span className="card-icon"><Icon name="clock" /></span>
-              <div className="guide-card__copy">
-                <p className="card-meta">Ontario.ca</p>
-                <h3>Send an Urgent Request to the Registrar General</h3>
+            <div className="planning-guide__meezan">
+              <div>
+                <p className="card-meta">Need Trusted Wedding Support?</p>
+                <h3>Explore Imams and Islamic Service Providers</h3>
+                <p>
+                  Meezan can help couples find Muslim service providers for
+                  their ceremony and wedding plans.
+                </p>
               </div>
               <a
-                className="button button--ghost"
+                className="button button--primary"
+                href={meezanSearchUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Search on Meezan
+              </a>
+            </div>
+          </section>
+
+          <section className="planning-guide__sources">
+            <header>
+              <span><Icon name="globe" /></span>
+              <div>
+                <p className="eyebrow">Check the Current Rules</p>
+                <h2>Official Ontario Marriage Resources</h2>
+              </div>
+            </header>
+            <p>
+              Government requirements and processing times can change. Confirm
+              the latest information directly with Ontario before the wedding.
+            </p>
+            <div>
+              {siteContent.guide.officialLinks.map((link) => (
+                <a key={link.href} href={link.href} target="_blank" rel="noreferrer noopener">
+                  <span>{link.label}</span>
+                  <Icon name="arrow" />
+                </a>
+              ))}
+              <a
                 href="https://www.ontario.ca/page/send-request-office-registrar-general"
                 target="_blank"
                 rel="noreferrer noopener"
               >
-                Open Official Source
+                <span>Send an Urgent Request to the Registrar General</span>
+                <Icon name="arrow" />
               </a>
-            </article>
-          </div>
-        </section>
-
-        <section className="section section--muted section--compact" id="nikah-faq">
-          <div className="section-heading">
-            <div>
-              <span className="eyebrow">Common Planning Questions</span>
-              <h2>Nikah and Muslim Wedding FAQs</h2>
             </div>
-          </div>
+          </section>
 
-          <div className="guide-faq-grid">
-            {faqItems.map((item) => (
-              <details key={item.question}>
-                <summary>{item.question}</summary>
-                <p>{item.answer}</p>
-              </details>
-            ))}
-          </div>
-        </section>
-      </article>
+          <section className="planning-guide__chapter" id="planning-questions">
+            <header className="planning-guide__chapter-heading">
+              <span>05</span>
+              <div>
+                <p className="eyebrow">Before You Confirm the Date</p>
+                <h2>Questions Couples Often Ask About the Nikah</h2>
+              </div>
+            </header>
 
-      <section className="guide-final-cta">
+            <div className="guide-faq-grid">
+              {faqItems.map((item) => (
+                <details key={item.question}>
+                  <summary>{item.question}</summary>
+                  <p>{item.answer}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+        </article>
+      </div>
+
+      <section className="planning-guide__final">
         <div>
-          <span className="eyebrow">Ready to Plan the Ceremony?</span>
-          <h2>Book a Nikah Consultation with Imam Zaniar Ahmad</h2>
+          <span className="eyebrow">Plan the Ceremony with Confidence</span>
+          <h2>Discuss Your Nikah with Imam Zaniar Ahmad</h2>
           <p>
-            Ask about a religious Nikah, Ontario legal marriage officiation, or
-            both services together. Travel outside Ontario is available by
+            Ask about a religious ceremony, Ontario legal marriage officiation,
+            or both services together. Travel outside Ontario is available by
             request with additional fees.
           </p>
         </div>
         <div className="content-actions">
-          <Link className="button button--primary" href="/contact">
+          <Link className="button button--cream" href="/contact">
             Book a Nikah Consultation
           </Link>
-          <Link className="button button--ghost" href="/nikah-weddings">
+          <Link className="button button--outline-light" href="/nikah-weddings">
             View Nikah Services
           </Link>
         </div>
