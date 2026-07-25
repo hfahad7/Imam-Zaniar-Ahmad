@@ -360,23 +360,6 @@ export default function NikahGuidePage() {
             </div>
           </section>
 
-          <figure className="planning-guide__photo-break">
-            <Image
-              src={siteContent.photos.signingNikah}
-              alt="Imam Zaniar Ahmad completing Nikah and marriage documents"
-              width={1365}
-              height={2048}
-              sizes="(max-width: 820px) 94vw, 58vw"
-            />
-            <figcaption>
-              <span className="eyebrow">Preparation Creates Calm</span>
-              <p>
-                Settle the religious requirements and legal paperwork before
-                the wedding day, so the ceremony can remain the focus.
-              </p>
-            </figcaption>
-          </figure>
-
           <section className="planning-guide__chapter" id="ontario-path">
             <header className="planning-guide__chapter-heading">
               <span>03</span>
