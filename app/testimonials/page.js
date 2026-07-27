@@ -126,9 +126,7 @@ export default function TestimonialsPage() {
                 />
                 <div>
                   <strong>{review.name}</strong>
-                  <span>Google Review</span>
                 </div>
-                <span className="review-quote__google" aria-hidden="true">G</span>
               </header>
               <div className="review-quote__rating" aria-label="5 out of 5 stars">
                 {[0, 1, 2, 3, 4].map((star) => (
