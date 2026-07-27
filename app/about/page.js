@@ -19,11 +19,26 @@ export default function AboutPage() {
         <div className="page-hero__copy">
           <span className="eyebrow">About</span>
           <h1>About Imam Zaniar Ahmad</h1>
-          <p className="section-lead">
-            An Ontario marriage officiant, community speaker, and technology
-            entrepreneur focused on serving Muslim families with clarity, care,
-            and practical support.
-          </p>
+          <div className="about-hero__bio">
+            <p>
+              Born and raised in Canada, Zaniar studied Arabic and Islamic
+              Studies at the University of Madinah, and Quran and Chaplaincy at
+              the College of Masjid Nabawi. He also holds an MBA in
+              Entrepreneurship. He delivers Friday khutbahs and lectures, serves
+              as a marriage officiant, runs Zakah.com, and leads fundraisers with
+              a style that is both insightful and light-hearted.
+            </p>
+            <p>
+              Imam Zaniar is a registered Ontario marriage officiant who performs
+              Islamic marriage and Nikkah ceremonies across the Greater Toronto
+              Area, Niagara, Hamilton, and beyond. With experience officiating
+              hundreds of weddings, he offers heartfelt ceremonies in English
+              and Arabic that blend tradition with a modern, light-hearted touch.
+              Whether in a mosque, banquet hall, or home, he guides couples
+              through every step, from paperwork to personalized reminders and
+              premarital support.
+            </p>
+          </div>
         </div>
         <figure className="page-hero__media page-hero__media--portrait">
           <Image
@@ -49,34 +64,25 @@ export default function AboutPage() {
           />
         </figure>
         <div className="about-story__copy">
-          <span className="eyebrow">Background and Education</span>
-          <h2>Knowledge Grounded in Service</h2>
+          <span className="eyebrow">His Mission</span>
+          <h2>Making Faith-Centred Service Easier to Access</h2>
           <p>
-            Born and raised in Canada, Zaniar studied Arabic and Islamic Studies
-            at the University of Madinah and studied Quran and Chaplaincy at the
-            College of Masjid Nabawi. He also holds an MBA in Entrepreneurship.
-            Today, he delivers Friday khutbahs and lectures, serves as a marriage
-            officiant, leads fundraising engagements, and helps run Zakah.com
-            with a style that is insightful and light-hearted.
+            Imam Zaniar&apos;s work begins with a simple idea: important religious
+            moments should feel clear, dignified, and personal. As a registered
+            marriage officiant in Ontario, he helps couples understand what they
+            are booking and prepare for their Nikah with confidence.
           </p>
           <p>
-            Imam Zaniar is a registered Ontario marriage officiant who performs
-            Islamic marriage and Nikkah ceremonies across the Greater Toronto
-            Area, Niagara, Hamilton, and beyond. Having officiated hundreds of
-            weddings, he offers heartfelt ceremonies in English and Arabic,
-            blending tradition with a modern, light-hearted touch.
+            His community work extends beyond weddings. He speaks with students,
+            families, mosques, and organizations about faith, family life,
+            responsible ambition, financial well-being, and serving the Muslim
+            community with intention.
           </p>
           <p>
-            Whether the celebration is in a mosque, banquet hall, or home, he
-            guides couples through every step, from paperwork to personalized
-            reminders and premarital support.
+            His background in software and technology also informs the projects
+            he has co-founded: Meezan, Zakah.com, and AutoAjr. Each project turns
+            a community need into a practical tool people can use.
           </p>
-          <div className="about-story__credentials" aria-label="Education and ceremony experience">
-            <span><Icon name="book" />University of Madinah</span>
-            <span><Icon name="mosque" />Quran and Chaplaincy</span>
-            <span><Icon name="sparkle" />MBA in Entrepreneurship</span>
-            <span><Icon name="message" />English and Arabic Ceremonies</span>
-          </div>
           <Link className="button button--primary" href="/contact">
             Contact Imam Zaniar
           </Link>

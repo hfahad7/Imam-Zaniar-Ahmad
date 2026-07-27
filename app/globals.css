@@ -2439,6 +2439,18 @@ li + li {
   gap: 1.5rem;
 }
 
+.about-hero__bio {
+  display: grid;
+  max-width: 760px;
+  gap: 0.9rem;
+}
+
+.about-hero__bio p {
+  color: var(--muted);
+  font-size: clamp(0.88rem, 1.15vw, 1rem);
+  line-height: 1.7;
+}
+
 .page-hero__media,
 .ceremony-gallery figure {
   position: relative;
@@ -8330,6 +8342,36 @@ body {
   margin-top: 0.3rem;
   color: rgba(255, 253, 248, 0.66);
   font-size: 0.78rem;
+}
+
+/* Keep interface icon badges in one calm, high-contrast brand treatment. */
+.digital-guide__round-icon,
+.card-icon,
+.booking-format-strip .card-icon,
+.fundraising-service-grid .card-icon,
+.feature-icon,
+.feature-icon--light,
+.closing-cta__seal,
+.speaking-service-index__icon,
+.special-engagement-grid__icon,
+.testimonial-metrics__icon,
+.service-map__action-icon,
+.planning-guide__foundation-icon,
+.planning-guide__urgent-icon,
+.planning-guide__file-icon,
+.nikah-path-switcher__icon,
+.contact-checklist__seal,
+.booking-form-section__icon,
+.principle__icon,
+.service-choice-switcher__icon,
+.contact-route__icon,
+.contact-route--nikah .contact-route__icon,
+.project-story__orbit,
+.visual-steps li > span,
+.contact-prep__items article > span {
+  border: 1px solid rgba(21, 56, 45, 0.12);
+  background: var(--sage);
+  color: var(--forest) !important;
 }
 
 @media (max-width: 1050px) {
