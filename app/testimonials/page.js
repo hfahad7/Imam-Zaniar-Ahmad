@@ -17,6 +17,45 @@ const trustMetrics = [
   { icon: 'microphone', value: '1,000+', label: 'Featured Event Appearances' },
 ];
 
+const featuredReviews = [
+  {
+    name: 'Lucas Sahipaul',
+    date: 'A month ago',
+    quote:
+      'Had a great experience with Imam Zaniar, my non-arab friends who had never been to an Islamic ceremony said he was excellent and masterfully demonstrated the beauty of our faith. He was funny, supportive, encouraging and his timing was great. Highly recommend!',
+  },
+  {
+    name: 'Muhammad Razaq',
+    date: 'A month ago',
+    quote:
+      'Imam Zaniar did an amazing job with the nikkah we were very blessed to have him complete the ceremony! He made the ceremony so engaging and everyone was talking about how personable he was and how he set the tone for the whole evening. We are very grateful.',
+  },
+  {
+    name: 'Ziad Ismail',
+    date: '2 months ago',
+    quote:
+      'Imam was spectacular. We had a small group of people - some of which were non-muslim - and he explained everything wonderfully. He had a good balance of intentional practice and humour. The ceremony was given importance while being light hearted. Would recommend 100%.',
+  },
+  {
+    name: 'Sam Balika',
+    date: '9 months ago',
+    quote:
+      'The speech was absolutely perfect the timing was excellent and over all a great experience, if you are getting married you need to hire this imam he\'s sure to have your audiences full attention with his interactive style! 10/10!',
+  },
+  {
+    name: 'Mohamed Ibrahim',
+    date: '7 months ago',
+    quote:
+      'Great experience with Imam Zaniar. He was punctual, organized, and made sure both the Islamic and legal requirements were done correctly. Highly recommended. Thank you Imam Zaniar!',
+  },
+  {
+    name: 'Rayan Abdulwahab',
+    date: '7 months ago',
+    quote:
+      'I\'m very thankful to Imam Zaniar for doing such a great job at my nikkah. He made everything easy, meaningful, and well organized. Imam Zaniar kept our crowd engaged, entertained, and made the ceremony fun while still being professional. May Allah reward him.',
+  },
+];
+
 export const metadata = buildMetadata({
   title: 'Testimonials, Nikah Experience and Google Reviews',
   description:
@@ -53,6 +92,45 @@ export default function TestimonialsPage() {
           />
           <figcaption>Serving couples and communities since 2017.</figcaption>
         </figure>
+      </section>
+
+      <section className="review-wall" aria-labelledby="featured-reviews-title">
+        <div className="review-wall__heading">
+          <div>
+            <span className="eyebrow">In Their Words</span>
+            <h2 id="featured-reviews-title">Guidance People Remember</h2>
+          </div>
+          <p>
+            First-hand reflections from couples, families, and guests who
+            experienced Imam Zaniar&apos;s care, clarity, and engaging approach.
+          </p>
+        </div>
+
+        <div className="review-wall__grid">
+          {featuredReviews.map((review, index) => (
+            <article className="review-quote" key={review.name}>
+              <div className="review-quote__topline">
+                <span className="review-quote__number">0{index + 1}</span>
+                <span className="review-quote__rating" aria-label="5 out of 5 stars">
+                  {[0, 1, 2, 3, 4].map((star) => (
+                    <Icon name="star" key={star} />
+                  ))}
+                </span>
+              </div>
+              <blockquote>
+                <span className="review-quote__mark" aria-hidden="true">&ldquo;</span>
+                <p>{review.quote}</p>
+              </blockquote>
+              <footer>
+                <div>
+                  <strong>{review.name}</strong>
+                  <span>Google Review</span>
+                </div>
+                <time>{review.date}</time>
+              </footer>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="testimonial-metrics" aria-label="Community experience">
