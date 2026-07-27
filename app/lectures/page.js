@@ -17,11 +17,11 @@ const serviceJsonLd = {
       '@type': 'Service',
       '@id': `${siteContent.siteUrl}/lectures#lecture-service`,
       name: 'Islamic lectures, khutbahs, workshops, and community talks',
-      serviceType: 'Islamic lectures and community speaking',
+      serviceType: 'Islamic lectures, conference speaking, and community talks',
       url: `${siteContent.siteUrl}/lectures`,
       provider: { '@id': `${siteContent.siteUrl}/#person` },
       areaServed: 'Ontario, Canada',
-      audience: 'Mosques, schools, universities, charities, and Muslim communities',
+      audience: 'Mosques, schools, universities, conferences, charities, and Muslim communities',
     },
     {
       '@type': 'Service',
@@ -33,8 +33,93 @@ const serviceJsonLd = {
       areaServed: 'Ontario, Canada',
       audience: 'Mosques, Islamic schools, charities, and nonprofit organizations',
     },
+    {
+      '@type': 'Service',
+      '@id': `${siteContent.siteUrl}/lectures#media-service`,
+      name: 'Islamic media interviews, podcast appearances, and webinars',
+      serviceType: 'Media and podcast appearances',
+      url: `${siteContent.siteUrl}/lectures#media-appearances`,
+      provider: { '@id': `${siteContent.siteUrl}/#person` },
+      areaServed: 'Canada and online',
+      audience: 'Podcasts, media platforms, webinars, and online communities',
+    },
+    {
+      '@type': 'Service',
+      '@id': `${siteContent.siteUrl}/lectures#technology-service`,
+      name: 'Technology, AI, Islamic fintech, and innovation talks',
+      serviceType: 'Technology and innovation speaking',
+      url: `${siteContent.siteUrl}/lectures#technology-talks`,
+      provider: { '@id': `${siteContent.siteUrl}/#person` },
+      areaServed: 'Canada and online',
+      audience: 'Conferences, universities, startups, charities, and Muslim organizations',
+    },
   ],
 };
+
+const speakingServices = [
+  {
+    href: '#lectures',
+    icon: 'microphone',
+    title: 'Islamic Lectures',
+    description:
+      'Inspiring talks for masjids, schools, universities, and community events.',
+  },
+  {
+    href: '#conference-speaking',
+    icon: 'podium',
+    title: 'Conference Speaking',
+    description:
+      'Keynote presentations and sessions for Islamic conferences.',
+  },
+  {
+    href: '#fundraising',
+    icon: 'gift',
+    title: 'Fundraising Events',
+    description:
+      'Charity fundraising dinners, appeals, and campaign launches.',
+  },
+  {
+    href: '#media-appearances',
+    icon: 'headphones',
+    title: 'Media and Podcast Appearances',
+    description:
+      'Guest interviews, podcasts, webinars, and online discussions.',
+  },
+  {
+    href: '#technology-talks',
+    icon: 'technology',
+    title: 'Technology and Innovation Talks',
+    description:
+      'Technology, AI, digital products, Islamic fintech, Zakah, charitable innovation, and impactful startups in the Islamic space.',
+  },
+];
+
+const specialEngagements = [
+  {
+    id: 'conference-speaking',
+    icon: 'podium',
+    label: 'On Stage',
+    title: 'Conference Speaking',
+    description:
+      'Keynotes and conference sessions shaped around the audience, event theme, and practical takeaway.',
+  },
+  {
+    id: 'media-appearances',
+    icon: 'headphones',
+    label: 'On Air',
+    title: 'Media and Podcast Appearances',
+    description:
+      'Thoughtful guest interviews, webinars, podcasts, and online conversations for broad audiences.',
+  },
+  {
+    id: 'technology-talks',
+    icon: 'technology',
+    label: 'Forward Looking',
+    title: 'Technology and Innovation Talks',
+    description:
+      'Insight at the intersection of faith, AI, entrepreneurship, Islamic fintech, Zakah, and charitable innovation.',
+  },
+];
 
 const fundraisingServices = [
   {
@@ -64,9 +149,9 @@ const fundraisingServices = [
 ];
 
 export const metadata = buildMetadata({
-  title: 'Islamic Lectures and Fundraising for Mosques and Charities',
+  title: 'Islamic Lectures, Conference Speaking, Media and Fundraising',
   description:
-    'Invite Imam Zaniar Ahmad for Islamic lectures, khutbahs, workshops, mosque fundraising, charity appeals, and Muslim community events in Ontario.',
+    'Invite Imam Zaniar Ahmad for Islamic lectures, conference keynotes, podcasts, technology talks, mosque fundraising, and Muslim community events.',
   path: '/lectures',
 });
 
@@ -84,12 +169,12 @@ export default function LecturesPage() {
 
       <section className="page-hero page-hero--with-media lectures-page__hero">
         <div className="page-hero__copy">
-          <span className="eyebrow">Lectures and Fundraising</span>
-          <h1>Islamic Lectures and Fundraising for Communities</h1>
+          <span className="eyebrow">Lectures, Media, Technology, and Fundraising</span>
+          <h1>Islamic Lectures and Speaking for Communities</h1>
           <p className="section-lead">
-            Invite Imam Zaniar Ahmad for a khutbah, lecture, workshop, community
-            talk, or fundraising appeal for a mosque, school, charity, or Muslim
-            organization.
+            Invite Imam Zaniar Ahmad for a khutbah, keynote, podcast, technology
+            talk, workshop, or fundraising appeal for a mosque, school,
+            conference, charity, or Muslim organization.
           </p>
           <div className="content-actions">
             <a className="button button--primary" href={siteContent.contact.phoneHref}>
@@ -104,42 +189,44 @@ export default function LecturesPage() {
             {siteContent.contact.phoneOnlyNote}
           </p>
         </div>
-        <figure className="page-hero__media page-hero__media--landscape">
+        <figure className="page-hero__media page-hero__media--portrait lectures-page__portrait">
           <Image
-            src={siteContent.photos.communityEvent}
-            alt="Imam Zaniar Ahmad at a Muslim community gathering in Ontario"
-            width={1448}
-            height={1086}
+            src={siteContent.photos.outdoorLecture}
+            alt="Imam Zaniar Ahmad delivering an outdoor Islamic talk"
+            width={1365}
+            height={2048}
             priority
-            sizes="(max-width: 820px) 92vw, 42vw"
+            sizes="(max-width: 820px) 92vw, 38vw"
           />
           <figcaption>Available for in-person, virtual, and hybrid events.</figcaption>
         </figure>
       </section>
 
-      <nav
-        className="service-choice-switcher"
-        aria-label="Choose lectures or fundraising services"
-      >
-        <a href="#lectures">
-          <span className="service-choice-switcher__icon"><Icon name="microphone" /></span>
-          <span>
-            <small>Teach and Inspire</small>
-            <strong>Lectures and Khutbahs</strong>
-            <em>Talks, workshops, panels, and youth sessions</em>
-          </span>
-          <Icon name="arrow" />
-        </a>
-        <a href="#fundraising">
-          <span className="service-choice-switcher__icon"><Icon name="gift" /></span>
-          <span>
-            <small>Support the Mission</small>
-            <strong>Fundraising Services</strong>
-            <em>Mosque, charity, school, and community appeals</em>
-          </span>
-          <Icon name="arrow" />
-        </a>
-      </nav>
+      <section className="speaking-service-index" aria-labelledby="speaking-services-title">
+        <div className="speaking-service-index__intro">
+          <span className="eyebrow eyebrow--light">Ways to Invite Imam Zaniar</span>
+          <h2 id="speaking-services-title">Speaking for Every Kind of Gathering</h2>
+          <p>
+            Select a format to see how a lecture, keynote, media appearance,
+            technology talk, or fundraising engagement can serve your audience.
+          </p>
+        </div>
+        <nav className="speaking-service-index__grid" aria-label="Speaking services">
+          {speakingServices.map((service, index) => (
+            <a href={service.href} key={service.title}>
+              <span className="speaking-service-index__topline">
+                <span className="speaking-service-index__icon"><Icon name={service.icon} /></span>
+                <small>0{index + 1}</small>
+              </span>
+              <strong>{service.title}</strong>
+              <p>{service.description}</p>
+              <span className="speaking-service-index__link">
+                Explore <Icon name="arrow" />
+              </span>
+            </a>
+          ))}
+        </nav>
+      </section>
 
       <section className="section section--compact booking-process booking-process--first">
         <div className="section-heading">
@@ -159,7 +246,8 @@ export default function LecturesPage() {
             <h3>1. Call or Send an SMS</h3>
             <p>
               Share the event date, organization, city, and whether you need a
-              lecture, khutbah, workshop, or fundraising appeal.
+              lecture, keynote, media appearance, technology talk, or
+              fundraising appeal.
             </p>
           </article>
           <article className="card visual-card">
@@ -192,7 +280,7 @@ export default function LecturesPage() {
       <section className="section section--compact" id="lectures">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">Lectures and Khutbahs</span>
+            <span className="eyebrow">Lectures and Speaking</span>
             <h2>Thoughtful Talks for Communities of Every Size</h2>
           </div>
           <p className="section-lead">
@@ -213,9 +301,32 @@ export default function LecturesPage() {
           {siteContent.speakingTopics.map((topic, index) => (
             <article key={topic} className="card card--soft visual-card">
               <span className="card-icon">
-                <Icon name={['heart', 'ring', 'school', 'community', 'microphone', 'book'][index]} />
+                <Icon name={['heart', 'ring', 'school', 'community', 'microphone', 'book', 'technology', 'globe'][index]} />
               </span>
               <p>{topic}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section section--compact special-engagements">
+        <div className="section-heading">
+          <div>
+            <span className="eyebrow">Special Engagements</span>
+            <h2>Insight Beyond the Lecture Hall</h2>
+          </div>
+          <p className="section-lead">
+            Conference, media, and technology conversations can be tailored to
+            the theme, platform, and people you want to reach.
+          </p>
+        </div>
+        <div className="special-engagement-grid">
+          {specialEngagements.map((engagement) => (
+            <article id={engagement.id} key={engagement.title}>
+              <span className="special-engagement-grid__icon"><Icon name={engagement.icon} /></span>
+              <small>{engagement.label}</small>
+              <h3>{engagement.title}</h3>
+              <p>{engagement.description}</p>
             </article>
           ))}
         </div>
@@ -251,10 +362,10 @@ export default function LecturesPage() {
       <section className="speaking-cta">
         <div className="speaking-cta__copy">
           <span className="eyebrow eyebrow--light">Direct Booking</span>
-          <h2>Book a Lecture or Fundraising Engagement</h2>
+          <h2>Book a Speaking or Fundraising Engagement</h2>
           <p>
-            Call or send an SMS with the date, location, audience, event type,
-            and the goal of your program or campaign.
+            Call or send an SMS with the date, location, audience, format, and
+            the goal of your program, interview, or campaign.
           </p>
           <div className="content-actions">
             <a className="button button--cream" href={siteContent.contact.phoneHref}>

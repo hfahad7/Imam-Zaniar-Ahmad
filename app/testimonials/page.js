@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 import Icon from '../components/ui-icon';
@@ -9,10 +10,17 @@ const breadcrumbJsonLd = buildBreadcrumbJsonLd([
   { name: 'Testimonials', item: `${siteContent.siteUrl}/testimonials` },
 ]);
 
+const trustMetrics = [
+  { icon: 'ring', value: '300+', label: 'Nikkahs Officiated' },
+  { icon: 'star', value: '110', label: 'Google Reviews' },
+  { icon: 'calendar', value: 'Since 2017', label: 'Serving the Community' },
+  { icon: 'microphone', value: '1,000+', label: 'Featured Event Appearances' },
+];
+
 export const metadata = buildMetadata({
-  title: 'Testimonials and Google Reviews',
+  title: 'Testimonials, Nikah Experience and Google Reviews',
   description:
-    'Read Google reviews and community feedback about Imam Zaniar Ahmad from couples, families, and Muslim community organizers.',
+    'Explore 110 Google reviews and community feedback for Imam Zaniar Ahmad, with 300+ Nikkahs and appearances at 1,000+ events since 2017.',
   path: '/testimonials',
 });
 
@@ -24,14 +32,39 @@ export default function TestimonialsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
-      <section className="page-hero testimonials-page__hero">
-        <span className="eyebrow">Testimonials</span>
-        <h1>Trusted by Couples, Families, and Communities</h1>
-        <p className="section-lead">
-          People remember calm guidance, clear communication, and personal care
-          on important days. Explore Imam Zaniar Ahmad&apos;s Google Business
-          Profile and community feedback below.
-        </p>
+      <section className="page-hero page-hero--with-media testimonials-page__hero">
+        <div className="page-hero__copy">
+          <span className="eyebrow">Testimonials</span>
+          <h1>Trusted by Couples, Families, and Communities</h1>
+          <p className="section-lead">
+            People remember calm guidance, clear communication, and personal care
+            on important days. Explore Imam Zaniar Ahmad&apos;s Google Business
+            Profile and community feedback below.
+          </p>
+        </div>
+        <figure className="page-hero__media page-hero__media--portrait testimonials-page__portrait">
+          <Image
+            src={siteContent.photos.gardenCeremony}
+            alt="Imam Zaniar Ahmad at an outdoor wedding ceremony"
+            width={1128}
+            height={1394}
+            priority
+            sizes="(max-width: 820px) 92vw, 38vw"
+          />
+          <figcaption>Serving couples and communities since 2017.</figcaption>
+        </figure>
+      </section>
+
+      <section className="testimonial-metrics" aria-label="Community experience">
+        {trustMetrics.map((metric) => (
+          <article key={metric.label}>
+            <span className="testimonial-metrics__icon"><Icon name={metric.icon} /></span>
+            <div>
+              <strong>{metric.value}</strong>
+              <p>{metric.label}</p>
+            </div>
+          </article>
+        ))}
       </section>
 
       <section className="reviews-showcase">

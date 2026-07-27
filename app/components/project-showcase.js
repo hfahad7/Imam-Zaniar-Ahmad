@@ -32,7 +32,7 @@ export default function ProjectShowcase({ compact = false }) {
             <h3>{project.name}</h3>
             <p>{project.description}</p>
             <a href={project.href} target="_blank" rel="noreferrer noopener">
-              {project.linkText} <span aria-hidden="true">&nearr;</span>
+              {project.linkText} <Icon name="arrow" />
             </a>
           </div>
         </article>

@@ -16,6 +16,7 @@ const primaryLinks = [
   { href: '/nikah', label: 'Nikah' },
   { href: '/lectures', label: 'Lectures' },
   { href: '/about', label: 'About' },
+  { href: '/projects', label: 'Projects' },
   { href: '/testimonials', label: 'Testimonials' },
   { href: '/blog', label: 'Blog' },
 ];
@@ -61,6 +62,10 @@ export default function RootLayout({ children }) {
           'Ontario marriage officiation',
           'Lectures and khutbahs',
           'Community speaking',
+          'Conference speaking',
+          'Media and podcast appearances',
+          'Technology and AI talks',
+          'Islamic fintech and charitable innovation',
           'Mosque fundraising',
           'Islamic charity fundraising',
           'Meezan',
@@ -131,6 +136,12 @@ gtag('config', ${JSON.stringify(ga4Id)}, { anonymize_ip: true });`}
             </nav>
 
             <div className="header-actions">
+              <Link
+                className="button button--header button--header-contact"
+                href="/contact"
+              >
+                Contact
+              </Link>
               <a
                 className="button button--primary button--header"
                 href={siteContent.contact.nikahBookingForm}

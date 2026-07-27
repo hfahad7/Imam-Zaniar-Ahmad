@@ -8,7 +8,7 @@ import { siteContent } from '../../lib/site-content';
 export const metadata = buildMetadata({
   title: 'About Imam Zaniar Ahmad',
   description:
-    'Meet Imam Zaniar Ahmad, an Ontario Nikah officiant, Islamic speaker, and community builder helping Muslim couples and organizations with clarity and care.',
+    'Meet Imam Zaniar Ahmad, a University of Madinah-educated Ontario Nikah officiant, Islamic speaker, fundraiser, and community technology entrepreneur.',
   path: '/about',
 });
 
@@ -49,25 +49,34 @@ export default function AboutPage() {
           />
         </figure>
         <div className="about-story__copy">
-          <span className="eyebrow">His Mission</span>
-          <h2>Making Faith-Centred Service Easier to Access</h2>
+          <span className="eyebrow">Background and Education</span>
+          <h2>Knowledge Grounded in Service</h2>
           <p>
-            Imam Zaniar&apos;s work begins with a simple idea: important religious
-            moments should feel clear, dignified, and personal. As a registered
-            marriage officiant in Ontario, he helps couples understand what they
-            are booking and prepare for their Nikah with confidence.
+            Born and raised in Canada, Zaniar studied Arabic and Islamic Studies
+            at the University of Madinah and studied Quran and Chaplaincy at the
+            College of Masjid Nabawi. He also holds an MBA in Entrepreneurship.
+            Today, he delivers Friday khutbahs and lectures, serves as a marriage
+            officiant, leads fundraising engagements, and helps run Zakah.com
+            with a style that is insightful and light-hearted.
           </p>
           <p>
-            His community work extends beyond weddings. He speaks with students,
-            families, mosques, and organizations about faith, family life,
-            responsible ambition, financial well-being, and serving the Muslim
-            community with intention.
+            Imam Zaniar is a registered Ontario marriage officiant who performs
+            Islamic marriage and Nikkah ceremonies across the Greater Toronto
+            Area, Niagara, Hamilton, and beyond. Having officiated hundreds of
+            weddings, he offers heartfelt ceremonies in English and Arabic,
+            blending tradition with a modern, light-hearted touch.
           </p>
           <p>
-            His background in software and technology also informs the projects
-            he has co-founded: Meezan, Zakah.com, and AutoAjr. Each project turns
-            a community need into a practical tool people can use.
+            Whether the celebration is in a mosque, banquet hall, or home, he
+            guides couples through every step, from paperwork to personalized
+            reminders and premarital support.
           </p>
+          <div className="about-story__credentials" aria-label="Education and ceremony experience">
+            <span><Icon name="book" />University of Madinah</span>
+            <span><Icon name="mosque" />Quran and Chaplaincy</span>
+            <span><Icon name="sparkle" />MBA in Entrepreneurship</span>
+            <span><Icon name="message" />English and Arabic Ceremonies</span>
+          </div>
           <Link className="button button--primary" href="/contact">
             Contact Imam Zaniar
           </Link>

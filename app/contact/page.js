@@ -27,10 +27,10 @@ export default function ContactPage() {
         </div>
         <figure className="page-hero__media page-hero__media--landscape">
           <Image
-            src={siteContent.photos.weddingOfficiant}
-            alt="Imam Zaniar Ahmad ready to officiate an outdoor Muslim wedding"
+            src={siteContent.photos.nikahSigningMoment}
+            alt="Imam Zaniar Ahmad guiding a groom through Nikah documents"
             width={1206}
-            height={1478}
+            height={1491}
             priority
             sizes="(max-width: 820px) 92vw, 40vw"
           />
@@ -41,7 +41,7 @@ export default function ContactPage() {
       <section className="contact-route-grid" aria-label="Ways to contact Imam Zaniar Ahmad">
         <article className="contact-route contact-route--nikah">
           <div className="contact-route__top">
-            <span className="contact-route__icon"><Icon name="ring" /></span>
+            <span className="contact-route__icon"><Icon name="form" /></span>
             <span className="contact-route__number">01</span>
           </div>
           <p className="card-meta">Nikah and Marriage Officiation</p>
@@ -63,13 +63,13 @@ export default function ContactPage() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Open the Nikah Booking Form
+            <Icon name="form" /> Open the Nikah Booking Form
           </a>
         </article>
 
         <article className="contact-route contact-route--lectures">
           <div className="contact-route__top">
-            <span className="contact-route__icon"><Icon name="microphone" /></span>
+            <span className="contact-route__icon"><Icon name="phoneMessage" /></span>
             <span className="contact-route__number">02</span>
           </div>
           <p className="card-meta">Lectures and Fundraising</p>
@@ -83,10 +83,10 @@ export default function ContactPage() {
           </a>
           <div className="content-actions">
             <a className="button button--primary" href={siteContent.contact.phoneHref}>
-              Call Now
+              <Icon name="phone" /> Call Now
             </a>
             <a className="button button--ghost" href={siteContent.contact.smsHref}>
-              Send an SMS
+              <Icon name="message" /> Send an SMS
             </a>
           </div>
           <p className="phone-channel-note">
@@ -97,7 +97,7 @@ export default function ContactPage() {
 
         <article className="contact-route contact-route--general">
           <div className="contact-route__top">
-            <span className="contact-route__icon"><Icon name="message" /></span>
+            <span className="contact-route__icon"><Icon name="instagram" /></span>
             <span className="contact-route__number">03</span>
           </div>
           <p className="card-meta">General Questions</p>
@@ -112,7 +112,7 @@ export default function ContactPage() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Message @zanahmad
+            <Icon name="instagram" /> Message @zanahmad
           </a>
         </article>
       </section>
