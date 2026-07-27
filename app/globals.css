@@ -8374,6 +8374,16 @@ body {
   color: var(--forest) !important;
 }
 
+/* Increase separation when a sage badge sits on a similarly tinted surface. */
+.guide-feature .feature-icon,
+.service-map__action .service-map__action-icon,
+.contact-route--general .contact-route__icon,
+.project-story__visual .project-story__orbit {
+  border-color: rgba(21, 56, 45, 0.24);
+  background: var(--paper);
+  box-shadow: 0 10px 26px rgba(21, 56, 45, 0.1);
+}
+
 @media (max-width: 1050px) {
   .contact-route-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));

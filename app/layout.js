@@ -30,10 +30,11 @@ export const metadata = {
   description: siteContent.shortDescription,
   icons: {
     icon: [
+      { url: '/favicon.ico', sizes: 'any' },
       { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
       { url: '/favicon.svg', type: 'image/svg+xml' },
     ],
-    shortcut: '/favicon-96x96.png',
+    shortcut: '/favicon.ico',
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
@@ -85,6 +86,21 @@ export default function RootLayout({ children }) {
         url: siteContent.siteUrl,
         name: siteContent.name,
         description: siteContent.shortDescription,
+        publisher: {
+          '@id': `${siteContent.siteUrl}/#organization`,
+        },
+      },
+      {
+        '@type': 'Organization',
+        '@id': `${siteContent.siteUrl}/#organization`,
+        name: siteContent.name,
+        url: siteContent.siteUrl,
+        logo: {
+          '@type': 'ImageObject',
+          url: `${siteContent.siteUrl}/icon-512.png`,
+          width: 512,
+          height: 512,
+        },
       },
     ],
   };
