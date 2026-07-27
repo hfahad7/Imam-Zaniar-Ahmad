@@ -1,9 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Roboto } from 'next/font/google';
 
 import Icon from '../components/ui-icon';
 import { buildBreadcrumbJsonLd, buildMetadata } from '../../lib/metadata';
 import { siteContent } from '../../lib/site-content';
+
+const reviewFont = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  display: 'swap',
+});
 
 const breadcrumbJsonLd = buildBreadcrumbJsonLd([
   { name: 'Home', item: siteContent.siteUrl },
@@ -20,37 +27,37 @@ const trustMetrics = [
 const featuredReviews = [
   {
     name: 'Lucas Sahipaul',
-    date: 'A month ago',
+    avatar: '/images/testimonials/lucas-sahipaul.webp',
     quote:
       'Had a great experience with Imam Zaniar, my non-arab friends who had never been to an Islamic ceremony said he was excellent and masterfully demonstrated the beauty of our faith. He was funny, supportive, encouraging and his timing was great. Highly recommend!',
   },
   {
     name: 'Muhammad Razaq',
-    date: 'A month ago',
+    avatar: '/images/testimonials/muhammad-razaq.webp',
     quote:
       'Imam Zaniar did an amazing job with the nikkah we were very blessed to have him complete the ceremony! He made the ceremony so engaging and everyone was talking about how personable he was and how he set the tone for the whole evening. We are very grateful.',
   },
   {
     name: 'Ziad Ismail',
-    date: '2 months ago',
+    avatar: '/images/testimonials/ziad-ismail.webp',
     quote:
       'Imam was spectacular. We had a small group of people - some of which were non-muslim - and he explained everything wonderfully. He had a good balance of intentional practice and humour. The ceremony was given importance while being light hearted. Would recommend 100%.',
   },
   {
     name: 'Sam Balika',
-    date: '9 months ago',
+    avatar: '/images/testimonials/sam-balika.webp',
     quote:
       'The speech was absolutely perfect the timing was excellent and over all a great experience, if you are getting married you need to hire this imam he\'s sure to have your audiences full attention with his interactive style! 10/10!',
   },
   {
     name: 'Mohamed Ibrahim',
-    date: '7 months ago',
+    avatar: '/images/testimonials/mohamed-ibrahim.webp',
     quote:
       'Great experience with Imam Zaniar. He was punctual, organized, and made sure both the Islamic and legal requirements were done correctly. Highly recommended. Thank you Imam Zaniar!',
   },
   {
     name: 'Rayan Abdulwahab',
-    date: '7 months ago',
+    avatar: '/images/testimonials/rayan-abdulwahab.webp',
     quote:
       'I\'m very thankful to Imam Zaniar for doing such a great job at my nikkah. He made everything easy, meaningful, and well organized. Imam Zaniar kept our crowd engaged, entertained, and made the ceremony fun while still being professional. May Allah reward him.',
   },
@@ -106,28 +113,31 @@ export default function TestimonialsPage() {
           </p>
         </div>
 
-        <div className="review-wall__grid">
-          {featuredReviews.map((review, index) => (
+        <div className={`${reviewFont.className} review-wall__grid`}>
+          {featuredReviews.map((review) => (
             <article className="review-quote" key={review.name}>
-              <div className="review-quote__topline">
-                <span className="review-quote__number">0{index + 1}</span>
-                <span className="review-quote__rating" aria-label="5 out of 5 stars">
-                  {[0, 1, 2, 3, 4].map((star) => (
-                    <Icon name="star" key={star} />
-                  ))}
-                </span>
-              </div>
-              <blockquote>
-                <span className="review-quote__mark" aria-hidden="true">&ldquo;</span>
-                <p>{review.quote}</p>
-              </blockquote>
-              <footer>
+              <header className="review-quote__author">
+                <Image
+                  src={review.avatar}
+                  alt=""
+                  width={52}
+                  height={52}
+                  className="review-quote__avatar"
+                />
                 <div>
                   <strong>{review.name}</strong>
                   <span>Google Review</span>
                 </div>
-                <time>{review.date}</time>
-              </footer>
+                <span className="review-quote__google" aria-hidden="true">G</span>
+              </header>
+              <div className="review-quote__rating" aria-label="5 out of 5 stars">
+                {[0, 1, 2, 3, 4].map((star) => (
+                  <Icon name="star" key={star} />
+                ))}
+              </div>
+              <blockquote>
+                <p>{review.quote}</p>
+              </blockquote>
             </article>
           ))}
         </div>
