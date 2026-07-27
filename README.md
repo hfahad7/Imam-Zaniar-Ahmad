@@ -8,7 +8,6 @@ This repository contains the production website for Imam Zaniar Ahmad.
 - React
 - JavaScript
 - Custom responsive CSS
-- Server-side contact form handling
 - Responsive image delivery through `next/image`
 - Optional Google Analytics, Search Console, and Bing verification
 
@@ -30,11 +29,11 @@ npm run build
 - `app/layout.js` - shared header, footer, metadata, and structured data
 - `app/page.js` - homepage
 - `app/about/page.js` - biography and public identity
-- `app/nikah-weddings/page.js` - Nikkah and Nikah service page
-- `app/lectures-speaking/page.js` - lectures and speaking page
-- `app/nikah-guide/page.js` - crawlable guide page
+- `app/nikah/page.js` - Nikah services and the free Nikah guide
+- `app/lectures/page.js` - lectures, khutbahs, workshops, and fundraising
+- `app/testimonials/page.js` - Google reviews and testimonials
 - `app/projects/page.js` - Meezan, Zakah.com, and AutoAjr
-- `app/contact/page.js` - inquiry page and protected form
+- `app/contact/page.js` - service-specific booking and contact pathways
 - `app/blog/page.js` and `app/blog/[slug]/page.js` - approved blog posts
 - `lib/site-content.js` - centralized content and URLs
 - `lib/metadata.js` - reusable metadata helpers
@@ -62,22 +61,13 @@ entry needs a unique slug, title, publication date, excerpt, and reviewed
 sections. The blog index, article route, metadata, and sitemap are generated
 from that centralized content.
 
-## Contact form setup
+## Booking and contact setup
 
-The contact form posts to `app/api/contact/route.js`.
-
-Required environment variables for production:
-
-- `CONTACT_TO_EMAIL`
-- `EMAIL_FROM_ADDRESS`
-- `RESEND_API_KEY`
-- `NEXT_PUBLIC_TURNSTILE_SITE_KEY`
-- `TURNSTILE_SECRET`
-
-The route also supports a local development fallback when those credentials are missing.
-Production submissions intentionally fail with a clear message until email and
-Turnstile credentials are configured. The form includes server validation,
-rate limiting, a honeypot, a timing check, and explicit inquiry consent.
+- Nikah bookings open the confirmed Google Form.
+- Lecture and fundraising requests use a regular phone call or SMS text.
+- The booking number is not available on WhatsApp.
+- General questions are directed to Instagram.
+- Shared URLs and contact copy live in `lib/site-content.js`.
 
 ## Google Reviews setup
 
@@ -85,11 +75,10 @@ Add the verified Google Business Profile URL and Place ID to the environment or 
 
 ## Nikah guide setup
 
-The resource overview lives at `/nikah-guide`, and its `View Nikah Guide`
-button opens the complete coded guide at `/nikah-guide-view`.
-
-The download button serves the original PDF from `/downloads/nikah-guide.pdf`.
-The legacy `/nikah-guide/download` endpoint redirects to the original file.
+Nikah services, the coded guide, and the PDF preview are consolidated at
+`/nikah`. The download button serves the original PDF from
+`/downloads/nikah-guide.pdf`, while legacy Nikah routes redirect to the
+appropriate section of the consolidated page.
 
 ## SEO
 
@@ -114,16 +103,17 @@ npm run lint
 npm run build
 ```
 
-After deployment, also test every navigation link, the mobile menu, the contact
-form with real credentials, `/robots.txt`, `/sitemap.xml`, and the
-`/nikkah-weddings` redirect. Run Lighthouse on mobile and desktop against the
+After deployment, also test every navigation link, the mobile menu, the Google
+Form booking link, phone and SMS links, `/robots.txt`, `/sitemap.xml`, and the
+legacy route redirects. Run Lighthouse on mobile and desktop against the
 production URL.
 
 ## Vercel deployment
 
 Push the repository to GitHub, connect the project in Vercel, and deploy the main branch.
 
-Set the production environment variables in Vercel before enabling the contact form or review integrations.
+Set any analytics, webmaster verification, and review integration environment
+variables in Vercel before enabling those services.
 
 ## Image sources
 

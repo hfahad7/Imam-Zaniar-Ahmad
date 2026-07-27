@@ -29,8 +29,8 @@ export default function AccessibilityPage() {
 
         <h2>Keyboard Support</h2>
         <p>
-          Navigation, buttons, and forms are built to work with a keyboard from
-          the start. A skip link is available at the top of the page.
+          Navigation and buttons are built to work with a keyboard from the
+          start. A skip link is available at the top of the page.
         </p>
 
         <h2>Images and Text</h2>
@@ -40,10 +40,11 @@ export default function AccessibilityPage() {
           when they do not add information.
         </p>
 
-        <h2>Forms and Errors</h2>
+        <h2>External Booking and Contact Links</h2>
         <p>
-          The contact form uses visible labels, concise help text, and simple
-          error messaging.
+          Booking and contact links use clear labels. The Nikah booking form
+          opens on Google Forms, while phone and SMS links use the device&apos;s
+          native calling and messaging features.
         </p>
 
         <h2>Motion and Responsiveness</h2>

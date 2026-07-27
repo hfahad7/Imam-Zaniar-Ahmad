@@ -1,159 +1,170 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import ContactForm from './contact-form';
 import Icon from '../components/ui-icon';
 import { buildMetadata } from '../../lib/metadata';
 import { siteContent } from '../../lib/site-content';
 
 export const metadata = buildMetadata({
-  title: 'Contact and Booking',
+  title: 'Contact and Book Imam Zaniar Ahmad',
   description:
-    'Contact Imam Zaniar Ahmad to book a Nikah consultation, Muslim wedding officiant, Ontario legal marriage service, or Islamic speaking engagement.',
+    'Use the Nikah booking form, call or text for Islamic lectures and fundraising, or message Imam Zaniar Ahmad on Instagram with general questions.',
   path: '/contact',
 });
 
 export default function ContactPage() {
   return (
-    <div className="page-shell">
+    <div className="page-shell contact-page">
       <section className="page-hero page-hero--with-media contact-hero">
         <div className="page-hero__copy">
           <span className="eyebrow">Contact and Booking</span>
-          <h1>Book a Nikah or Speaking Engagement</h1>
+          <h1>Choose the Right Way to Reach Imam Zaniar</h1>
           <p className="section-lead">
-            Share the service, date, location, and details you already know. Call,
-            text, email, Instagram, or the booking form are all available.
+            Nikah bookings, lecture and fundraising requests, and general
+            questions each have a dedicated contact method so your message
+            reaches the right place.
           </p>
         </div>
         <figure className="page-hero__media page-hero__media--landscape">
           <Image
             src={siteContent.photos.weddingOfficiant}
-            alt="Imam Zaniar Ahmad ready to officiate an outdoor wedding"
+            alt="Imam Zaniar Ahmad ready to officiate an outdoor Muslim wedding"
             width={1206}
             height={1478}
             priority
             sizes="(max-width: 820px) 92vw, 40vw"
           />
-          <figcaption>Tell us what you are planning and where it will take place.</figcaption>
+          <figcaption>Choose your service below to use the correct booking method.</figcaption>
         </figure>
       </section>
 
-      <section className="section section--compact contact-grid">
-        <div className="contact-methods">
-          <article className="contact-method">
-            <span className="card-icon"><Icon name="phone" /></span>
-            <p className="card-meta">Fastest Option</p>
-            <h3>Call or Text</h3>
-            <p>
-              People may call or text {siteContent.contact.phoneDisplay} for direct
-              booking questions.
-            </p>
-            <div className="content-actions">
-              <a className="button button--primary" href={siteContent.contact.phoneHref}>
-                Call Imam Zaniar Ahmad
-              </a>
-              <a className="button button--ghost" href={siteContent.contact.smsHref}>
-                Text Imam Zaniar Ahmad
-              </a>
-              <a className="button button--ghost" href={siteContent.contact.emailHref}>
-                Email Imam Zaniar Ahmad
-              </a>
-            </div>
-          </article>
+      <section className="contact-route-grid" aria-label="Ways to contact Imam Zaniar Ahmad">
+        <article className="contact-route contact-route--nikah">
+          <div className="contact-route__top">
+            <span className="contact-route__icon"><Icon name="ring" /></span>
+            <span className="contact-route__number">01</span>
+          </div>
+          <p className="card-meta">Nikah and Marriage Officiation</p>
+          <h2>Book Through the Nikah Form</h2>
+          <p>
+            Use the Google Form for religious Nikah ceremonies, Ontario legal
+            marriage officiation, combined services, and travel requests.
+          </p>
+          <div className="response-time-badge">
+            <Icon name="clock" />
+            <span>
+              <small>Guaranteed</small>
+              {siteContent.contact.nikahResponseTime}
+            </span>
+          </div>
+          <a
+            className="button button--cream"
+            href={siteContent.contact.nikahBookingForm}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open the Nikah Booking Form
+          </a>
+        </article>
 
-          <article className="contact-method">
-            <span className="card-icon"><Icon name="message" /></span>
-            <p className="card-meta">Social Message</p>
-            <h3>Instagram</h3>
-            <p>Message Imam Zaniar Ahmad on Instagram for a quick follow-up.</p>
-            <a
-              className="button button--ghost"
-              href={siteContent.contact.instagram}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              Message Imam Zaniar Ahmad on Instagram
+        <article className="contact-route contact-route--lectures">
+          <div className="contact-route__top">
+            <span className="contact-route__icon"><Icon name="microphone" /></span>
+            <span className="contact-route__number">02</span>
+          </div>
+          <p className="card-meta">Lectures and Fundraising</p>
+          <h2>Call or Send an SMS Text</h2>
+          <p>
+            Use the booking number for khutbahs, lectures, workshops, mosque
+            fundraising, charity appeals, and community events.
+          </p>
+          <a className="contact-route__phone" href={siteContent.contact.phoneHref}>
+            {siteContent.contact.phoneDisplay}
+          </a>
+          <div className="content-actions">
+            <a className="button button--primary" href={siteContent.contact.phoneHref}>
+              Call Now
             </a>
-          </article>
+            <a className="button button--ghost" href={siteContent.contact.smsHref}>
+              Send an SMS
+            </a>
+          </div>
+          <p className="phone-channel-note">
+            <Icon name="phone" />
+            {siteContent.contact.phoneOnlyNote}
+          </p>
+        </article>
 
-          <article className="contact-method">
-            <span className="card-icon"><Icon name="document" /></span>
-            <p className="card-meta">Detailed Booking</p>
-            <h3>Booking Form</h3>
-            <p>
-              Use the form when you would like to share the full details of your
-              ceremony, event, or speaking request in one message.
-            </p>
-            <p className="small-copy">Your information is used only to respond to your inquiry.</p>
-          </article>
+        <article className="contact-route contact-route--general">
+          <div className="contact-route__top">
+            <span className="contact-route__icon"><Icon name="message" /></span>
+            <span className="contact-route__number">03</span>
+          </div>
+          <p className="card-meta">General Questions</p>
+          <h2>Message on Instagram</h2>
+          <p>
+            For general questions that are not Nikah bookings, lectures, or
+            fundraising requests, send Imam Zaniar a message on Instagram.
+          </p>
+          <a
+            className="button button--primary"
+            href={siteContent.contact.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Message @zanahmad
+          </a>
+        </article>
+      </section>
+
+      <section className="contact-prep">
+        <div className="contact-prep__heading">
+          <span className="eyebrow eyebrow--light">Before You Reach Out</span>
+          <h2>Have the Essential Details Ready</h2>
         </div>
-
-        <div className="contact-checklist">
-          <div className="contact-checklist__copy">
-            <span className="card-icon"><Icon name="check" /></span>
-            <h3>What to Include</h3>
-            <ul className="service-list">
-              <li>Your name and best contact method.</li>
-              <li>The date, location, and service you need.</li>
-              <li>Any travel, virtual, or in-person details.</li>
-              <li>Any notes about languages, guests, or event format.</li>
-            </ul>
-            <div className="content-actions">
-              <Link className="button button--primary" href="/nikah">
-                Nikah Booking Details
-              </Link>
-              <Link className="button button--ghost" href="/lectures-speaking">
-                Speaking Booking Details
-              </Link>
-            </div>
-          </div>
-
-          <div className="contact-checklist__visual" aria-hidden="true">
-            <div className="booking-note">
-              <div className="booking-note__top">
-                <Icon name="calendar" />
-                <span>Booking Brief</span>
-              </div>
-              <span className="booking-note__line booking-note__line--long" />
-              <span className="booking-note__line" />
-              <span className="booking-note__line booking-note__line--short" />
-              <div className="booking-note__chips">
-                <span>Date</span><span>City</span><span>Service</span>
-              </div>
-            </div>
-            <div className="contact-checklist__seal"><Icon name="message" /></div>
-          </div>
+        <div className="contact-prep__items">
+          <article>
+            <span><Icon name="ring" /></span>
+            <h3>For a Nikah</h3>
+            <p>
+              Have the date, city, venue, and whether you need a religious
+              ceremony, Ontario legal officiation, or both.
+            </p>
+          </article>
+          <article>
+            <span><Icon name="microphone" /></span>
+            <h3>For a Lecture</h3>
+            <p>
+              Share the organization, date, audience, location, format, and
+              preferred topic when you call or text.
+            </p>
+          </article>
+          <article>
+            <span><Icon name="gift" /></span>
+            <h3>For Fundraising</h3>
+            <p>
+              Include the organization, campaign purpose, event date, audience,
+              fundraising goal, and requested format.
+            </p>
+          </article>
         </div>
       </section>
 
-      <section className="booking-form-section">
-        <aside className="booking-form-section__intro">
-          <span className="booking-form-section__icon"><Icon name="document" /></span>
-          <span className="eyebrow">Booking Form</span>
-          <h2>Send Your Booking Details</h2>
-          <p>
-            The form only asks for information needed to review availability and
-            understand your request.
-          </p>
-          <div className="booking-form-section__guide">
-            <span><b>01</b> Choose the service</span>
-            <span><b>02</b> Share the date and place</span>
-            <span><b>03</b> Add ceremony or event details</span>
-          </div>
-          <figure className="booking-form-section__photo">
-            <Image
-              src={siteContent.photos.signingNikah}
-              alt=""
-              width={1365}
-              height={2048}
-              sizes="(max-width: 820px) 92vw, 32vw"
-            />
-            <figcaption>Clear details help every booking begin with confidence.</figcaption>
-          </figure>
-        </aside>
-
-        <div className="booking-form-section__form">
-          <ContactForm turnstileSiteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ''} />
+      <section className="closing-cta closing-cta--compact">
+        <span className="closing-cta__seal" aria-hidden="true"><Icon name="book" /></span>
+        <span className="eyebrow">Learn Before Booking</span>
+        <h2>Explore the Services First</h2>
+        <p>
+          Review the Nikah and lecture pages if you are still deciding which
+          service or contact method fits your plans.
+        </p>
+        <div className="content-actions content-actions--center">
+          <Link className="button button--primary" href="/nikah">
+            Explore Nikah Services
+          </Link>
+          <Link className="button button--quiet" href="/lectures">
+            Explore Lectures and Fundraising
+          </Link>
         </div>
       </section>
     </div>

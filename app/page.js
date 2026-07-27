@@ -58,20 +58,30 @@ export default function Home() {
           </p>
 
           <div className="hero-actions">
-            <Link className="button button--cream" href="/contact">
-              Book a Nikah Consultation
-            </Link>
-            <Link className="button button--outline-light" href="/lectures-speaking">
-              Invite Imam Zaniar to Speak
+            <a
+              className="button button--cream"
+              href={siteContent.contact.nikahBookingForm}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a Nikah
+            </a>
+            <Link className="button button--outline-light" href="/lectures">
+              Explore Lectures &amp; Fundraising
             </Link>
           </div>
+          <p className="hero-response-note">
+            <Icon name="clock" />
+            <strong>{siteContent.contact.nikahResponseTime}</strong>
+            <span>for Google Form bookings</span>
+          </p>
 
           <div className="hero__secondary-actions">
             <Link href="/nikah#guide-preview">
               Get the Free Nikkah Guide <span aria-hidden="true">&rarr;</span>
             </Link>
             <a href={siteContent.contact.phoneHref}>
-              Call {siteContent.contact.phoneDisplay}
+              Call for Lectures or Fundraising
             </a>
           </div>
         </div>
@@ -130,9 +140,14 @@ export default function Home() {
               </div>
               <h3>{option.title}</h3>
               <p>{option.description}</p>
-              <Link className="text-link" href="/contact">
+              <a
+                className="text-link"
+                href={siteContent.contact.nikahBookingForm}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {option.cta} <span aria-hidden="true">&rarr;</span>
-              </Link>
+              </a>
             </article>
           ))}
         </div>
@@ -181,8 +196,8 @@ export default function Home() {
             <Link className="button button--primary" href="/about">
               Learn About Imam Zaniar
             </Link>
-            <Link className="button button--ghost" href="/lectures-speaking">
-              Invite Him to Speak
+            <Link className="button button--ghost" href="/lectures">
+              Explore Lectures &amp; Fundraising
             </Link>
           </div>
         </div>
@@ -252,13 +267,23 @@ export default function Home() {
           Share your date, location, and whether you need a religious ceremony,
           Ontario legal officiation, or both.
         </p>
+        <p className="closing-response-note">
+          <Icon name="clock" />
+          <strong>{siteContent.contact.nikahResponseTime}</strong>
+          after submitting the Nikah booking form
+        </p>
         <div className="content-actions content-actions--center">
-          <Link className="button button--primary" href="/contact">
-            Book a Nikah Consultation
-          </Link>
-          <a className="button button--quiet" href={siteContent.contact.smsHref}>
-            Text {siteContent.contact.phoneDisplay}
+          <a
+            className="button button--primary"
+            href={siteContent.contact.nikahBookingForm}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open the Nikah Booking Form
           </a>
+          <Link className="button button--quiet" href="/nikah#guide-preview">
+            Read the Free Nikah Guide
+          </Link>
         </div>
       </section>
     </div>

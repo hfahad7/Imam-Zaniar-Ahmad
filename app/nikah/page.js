@@ -191,13 +191,23 @@ export default function NikahPage() {
           confidence.
         </p>
         <div className="content-actions">
-          <Link className="button button--primary" href="/contact">
-            Book a Nikah Consultation
-          </Link>
+          <a
+            className="button button--primary"
+            href={siteContent.contact.nikahBookingForm}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open the Nikah Booking Form
+          </a>
           <a className="button button--ghost" href="#guide-preview">
             Read the Free Nikah Guide
           </a>
         </div>
+        <p className="nikah-response-note">
+          <Icon name="clock" />
+          <strong>{siteContent.contact.nikahResponseTime}</strong>
+          after submitting the Google Form
+        </p>
       </section>
 
       <nav className="nikah-path-switcher" aria-label="Choose Nikah services or the guide">
@@ -276,9 +286,14 @@ export default function NikahPage() {
               </div>
               <h3>{option.title}</h3>
               <p>{option.description}</p>
-              <Link className="text-link" href="/contact">
+              <a
+                className="text-link"
+                href={siteContent.contact.nikahBookingForm}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Book This Service <span aria-hidden="true">&rarr;</span>
-              </Link>
+              </a>
             </article>
           ))}
         </div>
@@ -310,9 +325,14 @@ export default function NikahPage() {
             <span className="eyebrow">Booking Process</span>
             <h2>From Request to Ceremony</h2>
           </div>
-          <Link className="button button--primary" href="/contact">
+          <a
+            className="button button--primary"
+            href={siteContent.contact.nikahBookingForm}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Check Your Date
-          </Link>
+          </a>
         </div>
         <ol className="visual-steps">
           <li><span><Icon name="message" /></span><div><strong>Send the Request</strong><p>Share the date, city, and service you need.</p></div></li>
@@ -469,9 +489,14 @@ export default function NikahPage() {
           </p>
         </div>
         <div className="content-actions">
-          <Link className="button button--cream" href="/contact">
-            Book a Nikah Consultation
-          </Link>
+          <a
+            className="button button--cream"
+            href={siteContent.contact.nikahBookingForm}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open the Nikah Booking Form
+          </a>
           <Link className="button button--outline-light" href="/testimonials">
             View Testimonials
           </Link>

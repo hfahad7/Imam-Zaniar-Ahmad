@@ -14,7 +14,7 @@ const manrope = Manrope({
 
 const primaryLinks = [
   { href: '/nikah', label: 'Nikah' },
-  { href: '/lectures-speaking', label: 'Speaking' },
+  { href: '/lectures', label: 'Lectures' },
   { href: '/about', label: 'About' },
   { href: '/testimonials', label: 'Testimonials' },
   { href: '/blog', label: 'Blog' },
@@ -53,7 +53,6 @@ export default function RootLayout({ children }) {
         jobTitle: siteContent.title,
         description: siteContent.shortDescription,
         telephone: siteContent.contact.phoneHref.replace('tel:', ''),
-        email: siteContent.contact.email,
         sameAs: [siteContent.contact.instagram, siteContent.contact.linkedin],
         areaServed: siteContent.serviceAreas,
         knowsAbout: [
@@ -62,6 +61,8 @@ export default function RootLayout({ children }) {
           'Ontario marriage officiation',
           'Lectures and khutbahs',
           'Community speaking',
+          'Mosque fundraising',
+          'Islamic charity fundraising',
           'Meezan',
           'Zakah.com',
           'AutoAjr',
@@ -130,9 +131,14 @@ gtag('config', ${JSON.stringify(ga4Id)}, { anonymize_ip: true });`}
             </nav>
 
             <div className="header-actions">
-              <Link className="button button--primary button--header" href="/contact">
-                Book a Consultation
-              </Link>
+              <a
+                className="button button--primary button--header"
+                href={siteContent.contact.nikahBookingForm}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book a Nikah
+              </a>
               <details className="mobile-nav">
                 <summary aria-label="Open navigation">Menu</summary>
                 <nav className="mobile-nav__panel" aria-label="Mobile">
@@ -141,10 +147,24 @@ gtag('config', ${JSON.stringify(ga4Id)}, { anonymize_ip: true });`}
                       {link.label}
                     </Link>
                   ))}
-                  <a href={siteContent.contact.phoneHref}>
-                    Call {siteContent.contact.phoneDisplay}
+                  <a
+                    href={siteContent.contact.nikahBookingForm}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Book a Nikah
                   </a>
-                  <a href={siteContent.contact.emailHref}>Email Imam Zaniar Ahmad</a>
+                  <a href={siteContent.contact.phoneHref}>
+                    Call for Lectures or Fundraising
+                  </a>
+                  <a href={siteContent.contact.smsHref}>Send an SMS Text</a>
+                  <a
+                    href={siteContent.contact.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    General Questions on Instagram
+                  </a>
                 </nav>
               </details>
             </div>
@@ -180,13 +200,22 @@ gtag('config', ${JSON.stringify(ga4Id)}, { anonymize_ip: true });`}
               <p className="footer-heading">Contact</p>
               <ul className="footer-links">
                 <li>
-                  <a href={siteContent.contact.emailHref}>
-                    Email {siteContent.contact.email}
+                  <a
+                    href={siteContent.contact.nikahBookingForm}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Book a Nikah
                   </a>
                 </li>
                 <li>
                   <a href={siteContent.contact.phoneHref}>
-                    Call or text {siteContent.contact.phoneDisplay}
+                    Call for lectures or fundraising
+                  </a>
+                </li>
+                <li>
+                  <a href={siteContent.contact.smsHref}>
+                    Send an SMS text
                   </a>
                 </li>
                 <li>
@@ -194,22 +223,13 @@ gtag('config', ${JSON.stringify(ga4Id)}, { anonymize_ip: true });`}
                     href={siteContent.contact.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Follow Imam Zaniar Ahmad on Instagram"
+                    aria-label="Ask Imam Zaniar Ahmad a general question on Instagram"
                   >
-                    Instagram
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={siteContent.contact.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Connect with Imam Zaniar Ahmad on LinkedIn"
-                  >
-                    LinkedIn
+                    General questions on Instagram
                   </a>
                 </li>
               </ul>
+              <p className="footer-area">{siteContent.contact.phoneOnlyNote}</p>
               <p className="footer-area">
                 Serving Toronto, Peel–Halton, Hamilton–Waterloo, Niagara–Brant,
                 and nearby Ontario communities.

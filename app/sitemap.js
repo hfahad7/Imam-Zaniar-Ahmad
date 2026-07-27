@@ -5,7 +5,7 @@ export default function sitemap() {
     '/',
     '/about',
     '/nikah',
-    '/lectures-speaking',
+    '/lectures',
     '/testimonials',
     '/projects',
     '/blog',

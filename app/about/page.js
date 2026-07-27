@@ -105,8 +105,8 @@ export default function AboutPage() {
               Lectures, khutbahs, workshops, panels, and youth sessions for
               Muslim and inter-community audiences.
             </p>
-            <Link className="text-link" href="/lectures-speaking">
-              Book a Speaking Engagement <span aria-hidden="true">&rarr;</span>
+            <Link className="text-link" href="/lectures">
+              Explore Lectures and Fundraising <span aria-hidden="true">&rarr;</span>
             </Link>
           </article>
           <article className="card visual-card">
@@ -176,17 +176,17 @@ export default function AboutPage() {
 
       <section className="closing-cta closing-cta--compact">
         <span className="eyebrow">Work with Imam Zaniar</span>
-        <h2>Book a Nikah or Speaking Engagement</h2>
+        <h2>Book a Nikah, Lecture, or Fundraising Engagement</h2>
         <p>
           Share the service, date, location, and details of your ceremony or event.
         </p>
         <div className="content-actions content-actions--center">
-          <Link className="button button--primary" href="/contact">
-            Contact Imam Zaniar
+          <Link className="button button--primary" href="/nikah">
+            Explore Nikah Booking
           </Link>
-          <a className="button button--quiet" href={siteContent.contact.phoneHref}>
-            Call {siteContent.contact.phoneDisplay}
-          </a>
+          <Link className="button button--quiet" href="/lectures">
+            Explore Lectures and Fundraising
+          </Link>
         </div>
       </section>
     </div>

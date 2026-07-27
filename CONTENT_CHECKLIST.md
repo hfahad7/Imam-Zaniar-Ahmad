@@ -30,6 +30,10 @@ Use this list to finish the site with verified information only.
 - Imam Zaniar Ahmad is a registered marriage officiant in Ontario.
 - The confirmed Ontario service areas listed on the website.
 - The phone number `(289) 768-5151` and its call/text links.
+- The booking number uses regular phone calls and SMS only, not WhatsApp.
+- The Google Form used for Nikah bookings.
+- The 1-24 hour guaranteed response time for Google Form bookings.
+- Lecture and fundraising requests are arranged by phone or SMS.
 - Instagram: `https://instagram.com/zanahmad`
 - LinkedIn: `https://www.linkedin.com/in/zaniarahmad/`
 - Co-founder roles for Meezan, Zakah.com, and AutoAjr.
@@ -39,8 +43,6 @@ Use this list to finish the site with verified information only.
 
 ## Technical setup still required
 
-- Configure Resend and Cloudflare Turnstile in Vercel before relying on the
-  production inquiry form.
 - Add the verified Google Business Profile URL and Place ID before linking or
   displaying live Google review content.
 - Add real webmaster and analytics values only for services the owner chooses

@@ -4,7 +4,7 @@ import { siteContent } from '../../lib/site-content';
 export const metadata = buildMetadata({
   title: 'Privacy Policy',
   description:
-    'Read how imamzaniarahmad.com collects, uses, stores, and protects information submitted through Nikah, wedding, and speaking inquiry forms.',
+    'Read how imamzaniarahmad.com handles website analytics and links to Google Forms, phone, SMS, and Instagram for bookings and questions.',
   path: '/privacy',
 });
 
@@ -15,45 +15,52 @@ export default function PrivacyPage() {
         <span className="eyebrow">Privacy</span>
         <h1>Privacy Policy</h1>
         <p className="section-lead">
-          This policy explains how information you choose to share through the
-          inquiry form or direct contact methods is handled.
+          This policy explains how this website uses analytics and how external
+          booking and contact services handle the information you choose to share.
         </p>
       </section>
 
       <section className="section prose">
-        <h2>What We Collect</h2>
+        <h2>No Native Contact Form</h2>
         <p>
-          We only collect information you choose to submit, such as your name,
-          email, phone number, booking details, and message.
+          This website does not collect booking details through its own contact
+          form. Visitors are directed to the appropriate external service or
+          communication channel.
         </p>
 
-        <h2>How We Use It</h2>
+        <h2>Nikah Booking Form</h2>
         <p>
-          Submitted details are used to respond to booking requests, review
-          availability, and follow up on the service requested.
+          Nikah booking requests are submitted through Google Forms. Information
+          entered there is handled according to Google&apos;s terms and privacy
+          practices and is used to review availability and respond to the request.
         </p>
 
-        <h2>How Inquiries Are Delivered</h2>
+        <h2>Phone and SMS</h2>
         <p>
-          Contact-form requests are delivered privately to the email address used
-          to review and respond to inquiries.
+          Lecture and fundraising inquiries are arranged through a regular phone
+          call or SMS text to {siteContent.contact.phoneDisplay}. Your telephone
+          provider&apos;s normal privacy and messaging terms apply.
         </p>
 
-        <h2>Spam Protection</h2>
+        <h2>Instagram</h2>
         <p>
-          A security check may be used to reduce automated or unwanted messages.
+          General questions may be sent through Instagram. Messages sent there
+          are handled according to Instagram&apos;s terms and privacy practices.
         </p>
 
         <h2>Analytics</h2>
         <p>
-          If analytics is enabled, privacy-conscious usage data may be collected
-          to understand how people find and use the website.
+          Google Analytics may collect usage information to help understand how
+          visitors find and use the website. It is not used to collect the
+          contents of Nikah booking requests, phone calls, SMS messages, or
+          Instagram conversations.
         </p>
 
-        <h2>Direct Contact</h2>
+        <h2>Choose the Correct Contact Method</h2>
         <p>
-          People may also call or text {siteContent.contact.phoneDisplay} or send
-          a message on Instagram at @zanahmad.
+          Use the Google Form for Nikah bookings, call or send a regular SMS for
+          lectures and fundraising, and use Instagram for general questions.
+          {` ${siteContent.contact.phoneOnlyNote}`}
         </p>
       </section>
     </div>

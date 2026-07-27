@@ -44,6 +44,11 @@ const nextConfig = {
         destination: '/nikah#guide-preview',
         permanent: true,
       },
+      {
+        source: '/lectures-speaking',
+        destination: '/lectures',
+        permanent: true,
+      },
     ];
   },
 };
