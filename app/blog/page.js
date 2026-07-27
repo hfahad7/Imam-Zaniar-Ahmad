@@ -70,10 +70,10 @@ export default function BlogIndexPage() {
         </div>
 
         <div className="content-actions">
-          <Link className="button button--primary" href="/nikah-guide">
+          <Link className="button button--primary" href="/nikah#guide-preview">
             Explore the Free Guide
           </Link>
-          <Link className="button button--ghost" href="/nikah-guide">
+          <Link className="button button--ghost" href="/nikah#guide">
             Explore Guide Details
           </Link>
         </div>

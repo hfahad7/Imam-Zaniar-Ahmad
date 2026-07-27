@@ -26,7 +26,22 @@ const nextConfig = {
     return [
       {
         source: '/nikkah-weddings',
-        destination: '/nikah-weddings',
+        destination: '/nikah',
+        permanent: true,
+      },
+      {
+        source: '/nikah-weddings',
+        destination: '/nikah',
+        permanent: true,
+      },
+      {
+        source: '/nikah-guide',
+        destination: '/nikah#guide',
+        permanent: true,
+      },
+      {
+        source: '/nikah-guide-view',
+        destination: '/nikah#guide-preview',
         permanent: true,
       },
     ];

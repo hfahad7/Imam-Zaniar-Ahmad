@@ -13,11 +13,11 @@ const manrope = Manrope({
 });
 
 const primaryLinks = [
-  { href: '/nikah-weddings', label: 'Nikah Services' },
+  { href: '/nikah', label: 'Nikah' },
   { href: '/lectures-speaking', label: 'Speaking' },
   { href: '/about', label: 'About' },
+  { href: '/testimonials', label: 'Testimonials' },
   { href: '/blog', label: 'Blog' },
-  { href: '/nikah-guide', label: 'Free Nikkah Guide', featured: true },
 ];
 
 export const metadata = {

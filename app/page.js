@@ -8,9 +8,9 @@ import { buildMetadata } from '../lib/metadata';
 import { siteContent } from '../lib/site-content';
 
 export const metadata = buildMetadata({
-  title: 'Nikah Ceremonies and Islamic Speaking Services in Ontario',
+  title: 'Nikah Imam and Islamic Marriage Officiant in Ontario',
   description:
-    'Book Imam Zaniar Ahmad for a religious Nikah, Ontario legal marriage officiation, or both, with Muslim wedding guidance across Southern Ontario.',
+    'Book Imam Zaniar Ahmad for a religious Nikah, Ontario legal marriage officiation, or both across Toronto, the GTA, and Southern Ontario.',
   path: '/',
 });
 
@@ -47,7 +47,11 @@ export default function Home() {
       <section className="hero hero--home">
         <div className="hero__copy">
           <span className="eyebrow eyebrow--light">Imam Zaniar Ahmad</span>
-          <h1>A Meaningful Beginning, Held with Care</h1>
+          <h1>
+            Nikah Imam in Ontario | Islamic Marriage Officiant for Toronto, GTA
+            &amp; Southern Ontario
+          </h1>
+          <p className="hero__tagline">A Meaningful Beginning, Held with Care</p>
           <p className="hero__lead">
             Religious Nikah ceremonies, Ontario legal marriage officiation, and
             thoughtful speaking engagements for Muslim communities.
@@ -63,7 +67,7 @@ export default function Home() {
           </div>
 
           <div className="hero__secondary-actions">
-            <Link href="/nikah-guide">
+            <Link href="/nikah#guide-preview">
               Get the Free Nikkah Guide <span aria-hidden="true">&rarr;</span>
             </Link>
             <a href={siteContent.contact.phoneHref}>
@@ -220,7 +224,7 @@ export default function Home() {
         <OntarioServiceMap compact />
       </section>
 
-      <section className="home-resource-grid">
+      <section className="home-resource-grid home-resource-grid--single">
         <article className="guide-feature guide-feature--compact">
           <span className="feature-icon"><Icon name="book" /></span>
           <span className="eyebrow">Free Wedding Resource</span>
@@ -230,30 +234,13 @@ export default function Home() {
             and the details worth confirming before your wedding day.
           </p>
           <div className="content-actions">
-            <Link className="button button--primary" href="/nikah-guide">
-              Explore the Free Guide
+            <Link className="button button--primary" href="/nikah#guide-preview">
+              Read the Free Nikah Guide
             </Link>
-            <Link className="text-link" href="/nikah-guide">
-              See What It Covers <span aria-hidden="true">&rarr;</span>
+            <Link className="text-link" href="/nikah">
+              Explore Nikah Services <span aria-hidden="true">&rarr;</span>
             </Link>
           </div>
-        </article>
-
-        <article className="review-feature">
-          <span className="feature-icon feature-icon--light"><Icon name="star" /></span>
-          <span className="eyebrow eyebrow--light">Community Trust</span>
-          <div className="review-feature__metric">
-            <strong>{siteContent.reviews.reportedCount}</strong>
-            <span>Google Reviews</span>
-          </div>
-          <h2>Care People Remember</h2>
-          <p>
-            Couples and organizers value a calm process, clear communication,
-            and a personal presence on important days.
-          </p>
-          <Link className="button button--outline-light" href="/contact">
-            Contact Imam Zaniar
-          </Link>
         </article>
       </section>
 

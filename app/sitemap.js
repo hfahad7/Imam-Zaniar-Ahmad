@@ -4,10 +4,9 @@ export default function sitemap() {
   const routes = [
     '/',
     '/about',
-    '/nikah-weddings',
+    '/nikah',
     '/lectures-speaking',
-    '/nikah-guide',
-    '/nikah-guide-view',
+    '/testimonials',
     '/projects',
     '/blog',
     '/contact',
@@ -17,7 +16,7 @@ export default function sitemap() {
 
   const staticUrls = routes.map((route) => ({
     url: `${siteContent.siteUrl}${route}`,
-    lastModified: new Date('2026-07-25'),
+    lastModified: new Date('2026-07-27'),
   }));
 
   const blogUrls = siteContent.blogPosts.map((post) => ({

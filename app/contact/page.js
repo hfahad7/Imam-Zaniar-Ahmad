@@ -99,7 +99,7 @@ export default function ContactPage() {
               <li>Any notes about languages, guests, or event format.</li>
             </ul>
             <div className="content-actions">
-              <Link className="button button--primary" href="/nikah-weddings">
+              <Link className="button button--primary" href="/nikah">
                 Nikah Booking Details
               </Link>
               <Link className="button button--ghost" href="/lectures-speaking">

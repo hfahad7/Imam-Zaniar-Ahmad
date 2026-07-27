@@ -78,7 +78,7 @@ export default function BlogArticlePage({ params }) {
           <span className="card-icon"><Icon name={isNikahArticle ? 'book' : 'microphone'} /></span>
           <h2>{isNikahArticle ? 'Plan Your Nikah with Confidence' : 'Planning a Community Event?'}</h2>
           <p>{isNikahArticle ? 'Use the complimentary Ontario Nikkah Guide alongside this article.' : 'Share your audience, date, venue, and topic to request a speaking engagement.'}</p>
-          <Link className="button button--primary" href={isNikahArticle ? '/nikah-guide' : '/contact'}>
+          <Link className="button button--primary" href={isNikahArticle ? '/nikah#guide' : '/contact'}>
             {isNikahArticle ? 'Explore the Free Guide' : 'Invite Imam Zaniar'}
           </Link>
         </aside>

@@ -94,7 +94,7 @@ export default function AboutPage() {
               Religious Nikah ceremonies, Ontario legal marriage officiation,
               and clear preparation for couples and families.
             </p>
-            <Link className="text-link" href="/nikah-weddings">
+            <Link className="text-link" href="/nikah">
               View Nikah Services <span aria-hidden="true">&rarr;</span>
             </Link>
           </article>
