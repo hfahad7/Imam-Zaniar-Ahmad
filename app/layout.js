@@ -159,34 +159,25 @@ gtag('config', ${JSON.stringify(ga4Id)}, { anonymize_ip: true });`}
 
             <div className="header-actions">
               <Link
-                className="button button--header button--header-contact"
+                className="button button--primary button--header"
                 href="/contact"
               >
-                Contact
-              </Link>
-              <a
-                className="button button--primary button--header"
-                href={siteContent.contact.nikahBookingForm}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
                 Book a Nikah
-              </a>
+              </Link>
               <details className="mobile-nav">
                 <summary aria-label="Open navigation">Menu</summary>
                 <nav className="mobile-nav__panel" aria-label="Mobile">
-                  {sitePathLinks.slice(1).map((link) => (
+                  {sitePathLinks
+                    .slice(1)
+                    .filter((link) => link.href !== '/contact')
+                    .map((link) => (
                     <Link key={link.href} href={link.href}>
                       {link.label}
                     </Link>
                   ))}
-                  <a
-                    href={siteContent.contact.nikahBookingForm}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <Link href="/contact">
                     Book a Nikah
-                  </a>
+                  </Link>
                   <a href={siteContent.contact.phoneHref}>
                     Call for Lectures or Fundraising
                   </a>
@@ -233,13 +224,9 @@ gtag('config', ${JSON.stringify(ga4Id)}, { anonymize_ip: true });`}
               <p className="footer-heading">Contact</p>
               <ul className="footer-links">
                 <li>
-                  <a
-                    href={siteContent.contact.nikahBookingForm}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <Link href="/contact">
                     Book a Nikah
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href={siteContent.contact.phoneHref}>

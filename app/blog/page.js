@@ -78,6 +78,21 @@ export default function BlogIndexPage() {
           </Link>
         </div>
       </section>
+
+      <section className="closing-cta closing-cta--compact">
+        <span className="closing-cta__seal" aria-hidden="true"><Icon name="message" /></span>
+        <span className="eyebrow">Speak with Imam Zaniar</span>
+        <h2>Ready to Discuss a Nikah or Community Event?</h2>
+        <p>
+          Choose the correct contact method for Nikah bookings, lectures,
+          fundraising engagements, or general questions.
+        </p>
+        <div className="content-actions content-actions--center">
+          <Link className="button button--primary" href="/contact">
+            Contact Imam Zaniar
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

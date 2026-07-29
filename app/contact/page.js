@@ -63,7 +63,7 @@ export default function ContactPage() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Icon name="form" /> Open the Nikah Booking Form
+            <Icon name="form" /> Book a Nikah
           </a>
         </article>
 

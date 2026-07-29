@@ -58,14 +58,12 @@ export default function Home() {
           </p>
 
           <div className="hero-actions">
-            <a
+            <Link
               className="button button--cream"
-              href={siteContent.contact.nikahBookingForm}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/contact"
             >
               Book a Nikah
-            </a>
+            </Link>
             <Link className="button button--outline-light" href="/lectures">
               Explore Lectures &amp; Fundraising
             </Link>
@@ -73,7 +71,7 @@ export default function Home() {
           <p className="hero-response-note">
             <Icon name="clock" />
             <strong>{siteContent.contact.nikahResponseTime}</strong>
-            <span>for Google Form bookings</span>
+            <span>after using the Nikah form on the Contact page</span>
           </p>
 
           <div className="hero__secondary-actions">
@@ -140,14 +138,9 @@ export default function Home() {
               </div>
               <h3>{option.title}</h3>
               <p>{option.description}</p>
-              <a
-                className="text-link"
-                href={siteContent.contact.nikahBookingForm}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link className="text-link" href="/contact">
                 {option.cta} <span aria-hidden="true">&rarr;</span>
-              </a>
+              </Link>
             </article>
           ))}
         </div>
@@ -273,16 +266,17 @@ export default function Home() {
           after submitting the Nikah booking form
         </p>
         <div className="content-actions content-actions--center">
-          <a
+          <Link
             className="button button--primary"
-            href={siteContent.contact.nikahBookingForm}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
           >
-            Open the Nikah Booking Form
-          </a>
+            Book a Nikah
+          </Link>
           <Link className="button button--quiet" href="/nikah#guide-preview">
             Read the Free Nikah Guide
+          </Link>
+          <Link className="button button--quiet" href="/contact">
+            Contact Imam Zaniar
           </Link>
         </div>
       </section>

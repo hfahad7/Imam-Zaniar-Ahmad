@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import ProjectShowcase from '../components/project-showcase';
 import Icon from '../components/ui-icon';
 import { buildMetadata } from '../../lib/metadata';
@@ -41,6 +43,21 @@ export default function ProjectsPage() {
           <p><span><Icon name="community" />Access</span> Connecting people with trusted religious services.</p>
           <p><span><Icon name="book" />Clarity</span> Making important Islamic knowledge easier to use.</p>
           <p><span><Icon name="heart" />Generosity</span> Helping charitable giving happen with intention.</p>
+        </div>
+      </section>
+
+      <section className="closing-cta closing-cta--compact">
+        <span className="closing-cta__seal" aria-hidden="true"><Icon name="message" /></span>
+        <span className="eyebrow">Connect with Imam Zaniar</span>
+        <h2>Have a Service or Community Question?</h2>
+        <p>
+          Use the Contact page to book a Nikah, request a lecture or
+          fundraising engagement, or ask a general question.
+        </p>
+        <div className="content-actions content-actions--center">
+          <Link className="button button--primary" href="/contact">
+            Contact Imam Zaniar
+          </Link>
         </div>
       </section>
     </div>

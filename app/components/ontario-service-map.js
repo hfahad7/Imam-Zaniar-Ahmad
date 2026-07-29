@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { siteContent } from '../../lib/site-content';
 import Icon from './ui-icon';
 
@@ -82,14 +84,12 @@ export default function OntarioServiceMap({ compact = false }) {
             Available by request with additional travel fees.
           </span>
         </div>
-        <a
+        <Link
           className="button button--primary"
-          href={siteContent.contact.nikahBookingForm}
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/contact"
         >
           Ask About Travel Availability
-        </a>
+        </Link>
       </div>
     </div>
   );

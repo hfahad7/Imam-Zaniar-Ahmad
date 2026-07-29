@@ -191,14 +191,12 @@ export default function NikahPage() {
           confidence.
         </p>
         <div className="content-actions">
-          <a
+          <Link
             className="button button--primary"
-            href={siteContent.contact.nikahBookingForm}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
           >
-            Open the Nikah Booking Form
-          </a>
+            Book a Nikah
+          </Link>
           <a className="button button--ghost" href="#guide-preview">
             Read the Free Nikah Guide
           </a>
@@ -206,7 +204,7 @@ export default function NikahPage() {
         <p className="nikah-response-note">
           <Icon name="clock" />
           <strong>{siteContent.contact.nikahResponseTime}</strong>
-          after submitting the Google Form
+          after submitting the form through the Contact page
         </p>
       </section>
 
@@ -286,14 +284,9 @@ export default function NikahPage() {
               </div>
               <h3>{option.title}</h3>
               <p>{option.description}</p>
-              <a
-                className="text-link"
-                href={siteContent.contact.nikahBookingForm}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link className="text-link" href="/contact">
                 Book This Service <span aria-hidden="true">&rarr;</span>
-              </a>
+              </Link>
             </article>
           ))}
         </div>
@@ -325,14 +318,12 @@ export default function NikahPage() {
             <span className="eyebrow">Booking Process</span>
             <h2>From Request to Ceremony</h2>
           </div>
-          <a
+          <Link
             className="button button--primary"
-            href={siteContent.contact.nikahBookingForm}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
           >
             Check Your Date
-          </a>
+          </Link>
         </div>
         <ol className="visual-steps">
           <li><span><Icon name="message" /></span><div><strong>Send the Request</strong><p>Share the date, city, and service you need.</p></div></li>
@@ -489,14 +480,12 @@ export default function NikahPage() {
           </p>
         </div>
         <div className="content-actions">
-          <a
+          <Link
             className="button button--cream"
-            href={siteContent.contact.nikahBookingForm}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
           >
-            Open the Nikah Booking Form
-          </a>
+            Book a Nikah
+          </Link>
           <Link className="button button--outline-light" href="/testimonials">
             View Testimonials
           </Link>
