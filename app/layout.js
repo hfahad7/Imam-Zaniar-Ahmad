@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Script from 'next/script';
 import { Manrope } from 'next/font/google';
+import ActiveNavLink from './components/active-nav-link';
 import { siteContent, sitePathLinks } from '../lib/site-content';
 
 const manrope = Manrope({
@@ -149,9 +150,9 @@ gtag('config', ${JSON.stringify(ga4Id)}, { anonymize_ip: true });`}
               <ul>
                 {primaryLinks.map((link) => (
                   <li key={link.href}>
-                    <Link className={link.featured ? 'nav-featured' : undefined} href={link.href}>
+                    <ActiveNavLink className={link.featured ? 'nav-featured' : undefined} href={link.href}>
                       {link.label}
-                    </Link>
+                    </ActiveNavLink>
                   </li>
                 ))}
               </ul>
@@ -171,9 +172,9 @@ gtag('config', ${JSON.stringify(ga4Id)}, { anonymize_ip: true });`}
                     .slice(1)
                     .filter((link) => link.href !== '/contact')
                     .map((link) => (
-                    <Link key={link.href} href={link.href}>
+                    <ActiveNavLink key={link.href} href={link.href}>
                       {link.label}
-                    </Link>
+                    </ActiveNavLink>
                   ))}
                   <Link href="/contact">
                     Book a Nikah
