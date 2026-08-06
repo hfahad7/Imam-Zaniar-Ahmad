@@ -1291,17 +1291,29 @@ li + li {
   transition: color 0.2s ease;
 }
 
+.site-nav a {
+  position: relative;
+  padding-block: 0.35rem;
+}
+
 .site-nav .nav-featured {
   color: var(--forest);
   font-weight: 800;
 }
 
-.site-nav .nav-featured::after {
+.site-nav a.is-active {
+  color: var(--forest);
+  font-weight: 800;
+}
+
+.site-nav .nav-featured::after,
+.site-nav a.is-active::after {
   content: '';
-  display: block;
-  width: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
   height: 1px;
-  margin-top: 0.15rem;
   background: var(--brass);
 }
 
@@ -2897,6 +2909,11 @@ li + li {
 
   .mobile-nav__panel a:hover {
     background: var(--parchment);
+  }
+
+  .mobile-nav__panel a.is-active {
+    background: var(--parchment);
+    color: var(--forest);
   }
 
   .hero--home {
